@@ -1,0 +1,988 @@
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: query: not connected: CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: query: not connected: CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: query: not connected: CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mMysql::Error: query: not connected: CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (198.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (350.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateRequirementLevels (20100221181326)
+  [4;35;1mSQL (83.0ms)[0m   [0mCREATE TABLE `requirement_levels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (38.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100221181326')[0m
+Migrating to CreateRequirementTypes (20100221182143)
+  [4;35;1mSQL (151.0ms)[0m   [0mCREATE TABLE `requirement_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (65.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100221182143')[0m
+Migrating to CreateReqBreakdowns (20100221201039)
+  [4;35;1mSQL (176.0ms)[0m   [0mCREATE TABLE `req_breakdowns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `higher_level_id` int(11), `lower_level_id` int(11), `is_highest` tinyint(1), `is_lowest` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (76.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100221201039')[0m
+Migrating to CreateProducts (20100221201715)
+  [4;35;1mSQL (161.0ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `identifier` varchar(3), `req_breakdown_id` int(11), `jira_defect_filter` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (56.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100221201715')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `products`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `products`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mdescribe `req_breakdowns`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `req_breakdowns`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `requirement_levels`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `requirement_levels`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_types`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `requirement_types`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `requirement_types`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `Ability_test`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE DATABASE `Ability_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (73.0ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `identifier` varchar(3), `req_breakdown_id` int(11), `jira_defect_filter` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (101.0ms)[0m   [0mCREATE TABLE `req_breakdowns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `higher_level_id` int(11), `lower_level_id` int(11), `is_highest` tinyint(1), `is_lowest` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (140.0ms)[0m   [0mCREATE TABLE `requirement_levels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (146.0ms)[0m   [0mCREATE TABLE `requirement_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (117.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (148.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (37.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221201715')[0m
+  [4;36;1mSQL (38.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221181326')[0m
+  [4;35;1mSQL (29.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221182143')[0m
+  [4;36;1mSQL (29.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221201039')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (220.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `Ability_test`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE DATABASE `Ability_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (128.0ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `identifier` varchar(3), `req_breakdown_id` int(11), `jira_defect_filter` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (133.0ms)[0m   [0mCREATE TABLE `req_breakdowns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `higher_level_id` int(11), `lower_level_id` int(11), `is_highest` tinyint(1), `is_lowest` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (165.0ms)[0m   [0mCREATE TABLE `requirement_levels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (102.0ms)[0m   [0mCREATE TABLE `requirement_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (211.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (471.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (83.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221201715')[0m
+  [4;36;1mSQL (76.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221181326')[0m
+  [4;35;1mSQL (85.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221182143')[0m
+  [4;36;1mSQL (56.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221201039')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (469.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `Ability_test`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE DATABASE `Ability_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (156.0ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `identifier` varchar(3), `req_breakdown_id` int(11), `jira_defect_filter` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (149.0ms)[0m   [0mCREATE TABLE `req_breakdowns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `higher_level_id` int(11), `lower_level_id` int(11), `is_highest` tinyint(1), `is_lowest` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (157.0ms)[0m   [0mCREATE TABLE `requirement_levels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (122.0ms)[0m   [0mCREATE TABLE `requirement_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (152.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (213.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (51.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221201715')[0m
+  [4;36;1mSQL (51.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221181326')[0m
+  [4;35;1mSQL (52.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221182143')[0m
+  [4;36;1mSQL (53.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221201039')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (172.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `Ability_test`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE DATABASE `Ability_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (135.0ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `identifier` varchar(3), `req_breakdown_id` int(11), `jira_defect_filter` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (174.0ms)[0m   [0mCREATE TABLE `req_breakdowns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `higher_level_id` int(11), `lower_level_id` int(11), `is_highest` tinyint(1), `is_lowest` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (158.0ms)[0m   [0mCREATE TABLE `requirement_levels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (115.0ms)[0m   [0mCREATE TABLE `requirement_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (132.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (361.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (60.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221201715')[0m
+  [4;36;1mSQL (55.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221181326')[0m
+  [4;35;1mSQL (81.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221182143')[0m
+  [4;36;1mSQL (43.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221201039')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (336.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `Ability_test`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE DATABASE `Ability_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (125.0ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `identifier` varchar(3), `req_breakdown_id` int(11), `jira_defect_filter` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (140.0ms)[0m   [0mCREATE TABLE `req_breakdowns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `higher_level_id` int(11), `lower_level_id` int(11), `is_highest` tinyint(1), `is_lowest` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (119.0ms)[0m   [0mCREATE TABLE `requirement_levels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (143.0ms)[0m   [0mCREATE TABLE `requirement_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (134.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (170.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (55.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221201715')[0m
+  [4;36;1mSQL (66.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221181326')[0m
+  [4;35;1mSQL (51.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221182143')[0m
+  [4;36;1mSQL (69.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221201039')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (202.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `Ability_test`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE DATABASE `Ability_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (107.0ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `identifier` varchar(3), `req_breakdown_id` int(11), `jira_defect_filter` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (135.0ms)[0m   [0mCREATE TABLE `req_breakdowns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `higher_level_id` int(11), `lower_level_id` int(11), `is_highest` tinyint(1), `is_lowest` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (69.0ms)[0m   [0mCREATE TABLE `requirement_levels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (73.0ms)[0m   [0mCREATE TABLE `requirement_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (65.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (161.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221201715')[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221181326')[0m
+  [4;35;1mSQL (30.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221182143')[0m
+  [4;36;1mSQL (36.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221201039')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-02-21 16:50:57) [GET]
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 2195ms (View: 2165, DB: 1) | 200 OK [http://localhost/products]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRequirementLevels (20100221181326)
+Migrating to CreateRequirementTypes (20100221182143)
+Migrating to CreateReqBreakdowns (20100221201039)
+Migrating to CreateProducts (20100221201715)
+Migrating to CreateRequirements (20100221220657)
+  [4;36;1mSQL (110.0ms)[0m   [0;1mCREATE TABLE `requirements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `requirement_type_id` int(11), `description` varchar(255), `rationale` varchar(255), `originator` varchar(255), `fit_criterion` varchar(255), `source_id` int(11), `priority` int(11), `satisfaction` int(11), `dissatisfaction` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (26.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100221220657')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `products`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `products`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW FIELDS FROM `req_breakdowns`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `req_breakdowns`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `req_breakdowns`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `requirement_levels`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `requirement_levels`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_types`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `requirement_types`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `requirement_types`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW FIELDS FROM `requirements`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `requirements`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `requirements`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RequirementsController#index (for 127.0.0.1 at 2010-02-21 17:07:48) [GET]
+  [4;36;1mRequirement Load (1.0ms)[0m   [0;1mSELECT * FROM `requirements` [0m
+Rendering template within layouts/requirements
+Rendering requirements/index
+Completed in 74ms (View: 68, DB: 2) | 200 OK [http://localhost/requirements]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (168.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `Ability_test`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE DATABASE `Ability_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (67.0ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `identifier` varchar(3), `req_breakdown_id` int(11), `jira_defect_filter` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (82.0ms)[0m   [0mCREATE TABLE `req_breakdowns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `higher_level_id` int(11), `lower_level_id` int(11), `is_highest` tinyint(1), `is_lowest` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (126.0ms)[0m   [0mCREATE TABLE `requirement_levels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (81.0ms)[0m   [0mCREATE TABLE `requirement_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (106.0ms)[0m   [0mCREATE TABLE `requirements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `requirement_type_id` int(11), `description` varchar(255), `rationale` varchar(255), `originator` varchar(255), `fit_criterion` varchar(255), `source_id` int(11), `priority` int(11), `satisfaction` int(11), `dissatisfaction` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (82.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (230.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (30.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221220657')[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221181326')[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221182143')[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221201039')[0m
+  [4;35;1mSQL (38.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221201715')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (218.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `Ability_test`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE DATABASE `Ability_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (68.0ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `identifier` varchar(3), `req_breakdown_id` int(11), `jira_defect_filter` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (54.0ms)[0m   [0mCREATE TABLE `req_breakdowns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `higher_level_id` int(11), `lower_level_id` int(11), `is_highest` tinyint(1), `is_lowest` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (90.0ms)[0m   [0mCREATE TABLE `requirement_levels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (156.0ms)[0m   [0mCREATE TABLE `requirement_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (97.0ms)[0m   [0mCREATE TABLE `requirements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `requirement_type_id` int(11), `description` varchar(255), `rationale` varchar(255), `originator` varchar(255), `fit_criterion` varchar(255), `source_id` int(11), `priority` int(11), `satisfaction` int(11), `dissatisfaction` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (123.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (192.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (24.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221220657')[0m
+  [4;36;1mSQL (31.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221181326')[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221182143')[0m
+  [4;36;1mSQL (30.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221201039')[0m
+  [4;35;1mSQL (36.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221201715')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (222.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `Ability_test`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE DATABASE `Ability_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (61.0ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `identifier` varchar(3), `req_breakdown_id` int(11), `jira_defect_filter` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (74.0ms)[0m   [0mCREATE TABLE `req_breakdowns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `higher_level_id` int(11), `lower_level_id` int(11), `is_highest` tinyint(1), `is_lowest` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (168.0ms)[0m   [0mCREATE TABLE `requirement_levels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (83.0ms)[0m   [0mCREATE TABLE `requirement_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (90.0ms)[0m   [0mCREATE TABLE `requirements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `requirement_type_id` int(11), `description` varchar(255), `rationale` varchar(255), `originator` varchar(255), `fit_criterion` varchar(255), `source_id` int(11), `priority` int(11), `satisfaction` int(11), `dissatisfaction` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (82.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (188.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (24.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221220657')[0m
+  [4;36;1mSQL (31.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221181326')[0m
+  [4;35;1mSQL (37.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221182143')[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221201039')[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221201715')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (271.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `Ability_test`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE DATABASE `Ability_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (85.0ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `identifier` varchar(3), `req_breakdown_id` int(11), `jira_defect_filter` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (82.0ms)[0m   [0mCREATE TABLE `req_breakdowns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `higher_level_id` int(11), `lower_level_id` int(11), `is_highest` tinyint(1), `is_lowest` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (106.0ms)[0m   [0mCREATE TABLE `requirement_levels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (98.0ms)[0m   [0mCREATE TABLE `requirement_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (91.0ms)[0m   [0mCREATE TABLE `requirements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `requirement_type_id` int(11), `description` varchar(255), `rationale` varchar(255), `originator` varchar(255), `fit_criterion` varchar(255), `source_id` int(11), `priority` int(11), `satisfaction` int(11), `dissatisfaction` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (115.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (175.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (37.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221220657')[0m
+  [4;36;1mSQL (26.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221181326')[0m
+  [4;35;1mSQL (32.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221182143')[0m
+  [4;36;1mSQL (26.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221201039')[0m
+  [4;35;1mSQL (32.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221201715')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `Ability_test`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE DATABASE `Ability_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (74.0ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `identifier` varchar(3), `req_breakdown_id` int(11), `jira_defect_filter` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (134.0ms)[0m   [0mCREATE TABLE `req_breakdowns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `higher_level_id` int(11), `lower_level_id` int(11), `is_highest` tinyint(1), `is_lowest` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (81.0ms)[0m   [0mCREATE TABLE `requirement_levels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (80.0ms)[0m   [0mCREATE TABLE `requirement_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (105.0ms)[0m   [0mCREATE TABLE `requirements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `requirement_type_id` int(11), `description` varchar(255), `rationale` varchar(255), `originator` varchar(255), `fit_criterion` varchar(255), `source_id` int(11), `priority` int(11), `satisfaction` int(11), `dissatisfaction` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (90.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (219.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (36.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221220657')[0m
+  [4;36;1mSQL (25.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221181326')[0m
+  [4;35;1mSQL (50.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221182143')[0m
+  [4;36;1mSQL (57.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221201039')[0m
+  [4;35;1mSQL (25.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221201715')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `Ability_test`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE DATABASE `Ability_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (88.0ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `identifier` varchar(3), `req_breakdown_id` int(11), `jira_defect_filter` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (73.0ms)[0m   [0mCREATE TABLE `req_breakdowns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `higher_level_id` int(11), `lower_level_id` int(11), `is_highest` tinyint(1), `is_lowest` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (96.0ms)[0m   [0mCREATE TABLE `requirement_levels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (64.0ms)[0m   [0mCREATE TABLE `requirement_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (98.0ms)[0m   [0mCREATE TABLE `requirements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `requirement_type_id` int(11), `description` varchar(255), `rationale` varchar(255), `originator` varchar(255), `fit_criterion` varchar(255), `source_id` int(11), `priority` int(11), `satisfaction` int(11), `dissatisfaction` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (65.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (171.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (26.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221220657')[0m
+  [4;36;1mSQL (26.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221181326')[0m
+  [4;35;1mSQL (32.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221182143')[0m
+  [4;36;1mSQL (25.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221201039')[0m
+  [4;35;1mSQL (33.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221201715')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (192.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `Ability_test`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE DATABASE `Ability_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (76.0ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `identifier` varchar(3), `req_breakdown_id` int(11), `jira_defect_filter` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (65.0ms)[0m   [0mCREATE TABLE `req_breakdowns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `next_breakdown_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (82.0ms)[0m   [0mCREATE TABLE `requirement_levels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (81.0ms)[0m   [0mCREATE TABLE `requirement_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (124.0ms)[0m   [0mCREATE TABLE `requirements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `requirement_type_id` int(11), `description` varchar(255), `rationale` varchar(255), `originator` varchar(255), `fit_criterion` varchar(255), `source_id` int(11), `priority` int(11), `satisfaction` int(11), `dissatisfaction` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (80.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (161.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (20.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221220657')[0m
+  [4;36;1mSQL (25.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221181326')[0m
+  [4;35;1mSQL (33.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221182143')[0m
+  [4;36;1mSQL (25.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221201039')[0m
+  [4;35;1mSQL (32.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221201715')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `Ability_test`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE DATABASE `Ability_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (62.0ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `identifier` varchar(3), `req_breakdown_id` int(11), `jira_defect_filter` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (203.0ms)[0m   [0mCREATE TABLE `req_breakdowns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `next_breakdown_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (169.0ms)[0m   [0mCREATE TABLE `requirement_levels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (94.0ms)[0m   [0mCREATE TABLE `requirement_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (106.0ms)[0m   [0mCREATE TABLE `requirements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `requirement_type_id` int(11), `description` varchar(255), `rationale` varchar(255), `originator` varchar(255), `fit_criterion` varchar(255), `source_id` int(11), `priority` int(11), `satisfaction` int(11), `dissatisfaction` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (98.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (162.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (21.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221220657')[0m
+  [4;36;1mSQL (33.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221181326')[0m
+  [4;35;1mSQL (25.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221182143')[0m
+  [4;36;1mSQL (33.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221201039')[0m
+  [4;35;1mSQL (33.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221201715')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (207.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `Ability_test`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE DATABASE `Ability_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (76.0ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `identifier` varchar(3), `req_breakdown_id` int(11), `jira_defect_filter` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (107.0ms)[0m   [0mCREATE TABLE `req_breakdowns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `next_breakdown_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (148.0ms)[0m   [0mCREATE TABLE `requirement_levels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (83.0ms)[0m   [0mCREATE TABLE `requirement_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (263.0ms)[0m   [0mCREATE TABLE `requirements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `requirement_type_id` int(11), `description` varchar(255), `rationale` varchar(255), `originator` varchar(255), `fit_criterion` varchar(255), `source_id` int(11), `priority` int(11), `satisfaction` int(11), `dissatisfaction` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (157.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (213.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (34.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221220657')[0m
+  [4;36;1mSQL (69.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221181326')[0m
+  [4;35;1mSQL (63.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221182143')[0m
+  [4;36;1mSQL (75.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221201039')[0m
+  [4;35;1mSQL (61.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221201715')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (198.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `Ability_test`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE DATABASE `Ability_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (134.0ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `identifier` varchar(3), `req_breakdown_id` int(11), `jira_defect_filter` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (48.0ms)[0m   [0mCREATE TABLE `req_breakdowns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `next_breakdown_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (82.0ms)[0m   [0mCREATE TABLE `requirement_levels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (65.0ms)[0m   [0mCREATE TABLE `requirement_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (82.0ms)[0m   [0mCREATE TABLE `requirements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `requirement_type_id` int(11), `description` varchar(255), `rationale` varchar(255), `originator` varchar(255), `fit_criterion` varchar(255), `source_id` int(11), `priority` int(11), `satisfaction` int(11), `dissatisfaction` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (108.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (240.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (55.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221220657')[0m
+  [4;36;1mSQL (24.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221181326')[0m
+  [4;35;1mSQL (34.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221182143')[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221201039')[0m
+  [4;35;1mSQL (45.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221201715')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (172.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `Ability_test`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE DATABASE `Ability_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (79.0ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `identifier` varchar(3), `req_breakdown_id` int(11), `jira_defect_filter` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (73.0ms)[0m   [0mCREATE TABLE `req_breakdowns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `next_breakdown_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (92.0ms)[0m   [0mCREATE TABLE `requirement_levels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (90.0ms)[0m   [0mCREATE TABLE `requirement_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (115.0ms)[0m   [0mCREATE TABLE `requirements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `requirement_type_id` int(11), `description` varchar(255), `rationale` varchar(255), `originator` varchar(255), `fit_criterion` varchar(255), `source_id` int(11), `priority` int(11), `satisfaction` int(11), `dissatisfaction` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (58.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (163.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (24.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221220657')[0m
+  [4;36;1mSQL (39.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221181326')[0m
+  [4;35;1mSQL (36.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221182143')[0m
+  [4;36;1mSQL (24.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221201039')[0m
+  [4;35;1mSQL (43.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221201715')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (242.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `Ability_test`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE DATABASE `Ability_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (117.0ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `identifier` varchar(3), `req_breakdown_id` int(11), `jira_defect_filter` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (157.0ms)[0m   [0mCREATE TABLE `req_breakdowns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `next_breakdown_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (139.0ms)[0m   [0mCREATE TABLE `requirement_levels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (90.0ms)[0m   [0mCREATE TABLE `requirement_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (97.0ms)[0m   [0mCREATE TABLE `requirements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `requirement_type_id` int(11), `description` varchar(255), `rationale` varchar(255), `originator` varchar(255), `fit_criterion` varchar(255), `source_id` int(11), `priority` int(11), `satisfaction` int(11), `dissatisfaction` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (106.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (171.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (28.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221220657')[0m
+  [4;36;1mSQL (32.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221181326')[0m
+  [4;35;1mSQL (26.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221182143')[0m
+  [4;36;1mSQL (24.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221201039')[0m
+  [4;35;1mSQL (35.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221201715')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (246.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `Ability_test`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE DATABASE `Ability_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (71.0ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `identifier` varchar(3), `req_breakdown_id` int(11), `jira_defect_filter` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (82.0ms)[0m   [0mCREATE TABLE `req_breakdowns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `next_breakdown_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (81.0ms)[0m   [0mCREATE TABLE `requirement_levels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (73.0ms)[0m   [0mCREATE TABLE `requirement_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (155.0ms)[0m   [0mCREATE TABLE `requirements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `requirement_type_id` int(11), `description` varchar(255), `rationale` varchar(255), `originator` varchar(255), `fit_criterion` varchar(255), `source_id` int(11), `priority` int(11), `satisfaction` int(11), `dissatisfaction` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (114.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (167.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (23.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221220657')[0m
+  [4;36;1mSQL (32.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221181326')[0m
+  [4;35;1mSQL (34.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221182143')[0m
+  [4;36;1mSQL (31.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221201039')[0m
+  [4;35;1mSQL (26.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221201715')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (216.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `Ability_test`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE DATABASE `Ability_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (110.0ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `identifier` varchar(3), `req_breakdown_id` int(11), `jira_defect_filter` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (58.0ms)[0m   [0mCREATE TABLE `req_breakdowns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `next_breakdown_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (90.0ms)[0m   [0mCREATE TABLE `requirement_levels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (111.0ms)[0m   [0mCREATE TABLE `requirement_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (118.0ms)[0m   [0mCREATE TABLE `requirements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `requirement_type_id` int(11), `description` varchar(255), `rationale` varchar(255), `originator` varchar(255), `fit_criterion` varchar(255), `source_id` int(11), `priority` int(11), `satisfaction` int(11), `dissatisfaction` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (73.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (182.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (32.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221220657')[0m
+  [4;36;1mSQL (32.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221181326')[0m
+  [4;35;1mSQL (51.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221182143')[0m
+  [4;36;1mSQL (39.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221201039')[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221201715')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (227.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `Ability_test`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE DATABASE `Ability_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (96.0ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `identifier` varchar(3), `req_breakdown_id` int(11), `jira_defect_filter` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (129.0ms)[0m   [0mCREATE TABLE `req_breakdowns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `next_breakdown_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (90.0ms)[0m   [0mCREATE TABLE `requirement_levels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (58.0ms)[0m   [0mCREATE TABLE `requirement_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (130.0ms)[0m   [0mCREATE TABLE `requirements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `requirement_type_id` int(11), `description` varchar(255), `rationale` varchar(255), `originator` varchar(255), `fit_criterion` varchar(255), `source_id` int(11), `priority` int(11), `satisfaction` int(11), `dissatisfaction` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (83.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (190.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (24.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221220657')[0m
+  [4;36;1mSQL (31.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221181326')[0m
+  [4;35;1mSQL (35.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221182143')[0m
+  [4;36;1mSQL (31.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221201039')[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221201715')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRequirementLevels (20100221181326)
+Migrating to CreateRequirementTypes (20100221182143)
+Migrating to CreateReqBreakdowns (20100221201039)
+Migrating to CreateProducts (20100221201715)
+Migrating to CreateRequirements (20100221220657)
+Migrating to CreateQualityRisks (20100222003227)
+  [4;36;1mSQL (124.0ms)[0m   [0;1mCREATE TABLE `quality_risks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `product_id` int(11), `risk_category_id` int(11), `description` varchar(255), `mitigation_strategy_id` int(11), `explanation` varchar(255), `likelihood` int(11), `impact` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (22.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100222003227')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `products`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `products`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW FIELDS FROM `quality_risks`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mdescribe `quality_risks`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `quality_risks`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `req_breakdowns`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `req_breakdowns`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `requirement_levels`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `requirement_levels`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_types`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `requirement_types`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `requirement_types`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirements`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `requirements`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `requirements`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (7.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `Ability_test`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE DATABASE `Ability_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (116.0ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `identifier` varchar(3), `req_breakdown_id` int(11), `jira_defect_filter` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (73.0ms)[0m   [0mCREATE TABLE `quality_risks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `product_id` int(11), `risk_category_id` int(11), `description` varchar(255), `mitigation_strategy_id` int(11), `explanation` varchar(255), `likelihood` int(11), `impact` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (98.0ms)[0m   [0mCREATE TABLE `req_breakdowns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `higher_level_id` int(11), `lower_level_id` int(11), `is_highest` tinyint(1), `is_lowest` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (82.0ms)[0m   [0mCREATE TABLE `requirement_levels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (82.0ms)[0m   [0mCREATE TABLE `requirement_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (90.0ms)[0m   [0mCREATE TABLE `requirements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `requirement_type_id` int(11), `description` varchar(255), `rationale` varchar(255), `originator` varchar(255), `fit_criterion` varchar(255), `source_id` int(11), `priority` int(11), `satisfaction` int(11), `dissatisfaction` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (163.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (199.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (32.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100222003227')[0m
+  [4;36;1mSQL (30.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221181326')[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221182143')[0m
+  [4;36;1mSQL (31.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221201039')[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221201715')[0m
+  [4;36;1mSQL (31.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221220657')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (266.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `Ability_test`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE DATABASE `Ability_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (70.0ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `identifier` varchar(3), `req_breakdown_id` int(11), `jira_defect_filter` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (105.0ms)[0m   [0mCREATE TABLE `quality_risks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `product_id` int(11), `risk_category_id` int(11), `description` varchar(255), `mitigation_strategy_id` int(11), `explanation` varchar(255), `likelihood` int(11), `impact` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (75.0ms)[0m   [0mCREATE TABLE `req_breakdowns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `higher_level_id` int(11), `lower_level_id` int(11), `is_highest` tinyint(1), `is_lowest` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (74.0ms)[0m   [0mCREATE TABLE `requirement_levels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (73.0ms)[0m   [0mCREATE TABLE `requirement_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (81.0ms)[0m   [0mCREATE TABLE `requirements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `requirement_type_id` int(11), `description` varchar(255), `rationale` varchar(255), `originator` varchar(255), `fit_criterion` varchar(255), `source_id` int(11), `priority` int(11), `satisfaction` int(11), `dissatisfaction` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (81.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (181.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (55.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100222003227')[0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221181326')[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221182143')[0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221201039')[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221201715')[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221220657')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (230.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `Ability_test`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE DATABASE `Ability_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (93.0ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `identifier` varchar(3), `req_breakdown_id` int(11), `jira_defect_filter` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (82.0ms)[0m   [0mCREATE TABLE `quality_risks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `product_id` int(11), `risk_category_id` int(11), `description` varchar(255), `mitigation_strategy_id` int(11), `explanation` varchar(255), `likelihood` int(11), `impact` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (184.0ms)[0m   [0mCREATE TABLE `req_breakdowns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `higher_level_id` int(11), `lower_level_id` int(11), `is_highest` tinyint(1), `is_lowest` tinyint(1), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (81.0ms)[0m   [0mCREATE TABLE `requirement_levels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (81.0ms)[0m   [0mCREATE TABLE `requirement_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (81.0ms)[0m   [0mCREATE TABLE `requirements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `product_id` int(11), `requirement_level_id` int(11), `requirement_type_id` int(11), `description` varchar(255), `rationale` varchar(255), `originator` varchar(255), `fit_criterion` varchar(255), `source_id` int(11), `priority` int(11), `satisfaction` int(11), `dissatisfaction` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (82.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (189.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (33.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100222003227')[0m
+  [4;36;1mSQL (30.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221181326')[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221182143')[0m
+  [4;36;1mSQL (31.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221201039')[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221201715')[0m
+  [4;36;1mSQL (38.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221220657')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRequirementLevels (20100221181326)
+Migrating to CreateRequirementTypes (20100221182143)
+Migrating to CreateReqBreakdowns (20100221201039)
+Migrating to CreateProducts (20100221201715)
+Migrating to CreateRequirements (20100221220657)
+Migrating to CreateQualityRisks (20100222003227)
+Migrating to Changereqbreakdownstructure (20100222003814)
+  [4;36;1mSQL (198.0ms)[0m   [0;1mALTER TABLE `req_breakdowns` DROP `higher_level_id`[0m
+  [4;35;1mSQL (272.0ms)[0m   [0mALTER TABLE `req_breakdowns` DROP `lower_level_id`[0m
+  [4;36;1mSQL (160.0ms)[0m   [0;1mALTER TABLE `req_breakdowns` DROP `is_highest`[0m
+  [4;35;1mSQL (158.0ms)[0m   [0mALTER TABLE `req_breakdowns` DROP `is_lowest`[0m
+  [4;36;1mSQL (194.0ms)[0m   [0;1mALTER TABLE `req_breakdowns` ADD `requirement_level_id` int(11)[0m
+  [4;35;1mSQL (180.0ms)[0m   [0mALTER TABLE `req_breakdowns` ADD `next_breakdown_id` int(11)[0m
+  [4;36;1mSQL (24.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100222003814')[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `products`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `products`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW FIELDS FROM `quality_risks`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `quality_risks`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `quality_risks`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW FIELDS FROM `req_breakdowns`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `req_breakdowns`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `req_breakdowns`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `requirement_levels`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `requirement_levels`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_types`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `requirement_types`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `requirement_types`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW FIELDS FROM `requirements`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `requirements`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `requirements`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (243.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `Ability_test`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE DATABASE `Ability_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (52.0ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `identifier` varchar(3), `req_breakdown_id` int(11), `jira_defect_filter` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (92.0ms)[0m   [0mCREATE TABLE `quality_risks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `product_id` int(11), `risk_category_id` int(11), `description` varchar(255), `mitigation_strategy_id` int(11), `explanation` varchar(255), `likelihood` int(11), `impact` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (97.0ms)[0m   [0mCREATE TABLE `req_breakdowns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime, `requirement_level_id` int(11), `next_breakdown_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (81.0ms)[0m   [0mCREATE TABLE `requirement_levels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (65.0ms)[0m   [0mCREATE TABLE `requirement_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (73.0ms)[0m   [0mCREATE TABLE `requirements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `requirement_type_id` int(11), `description` varchar(255), `rationale` varchar(255), `originator` varchar(255), `fit_criterion` varchar(255), `source_id` int(11), `priority` int(11), `satisfaction` int(11), `dissatisfaction` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (114.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (250.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (26.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100222003814')[0m
+  [4;36;1mSQL (29.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221181326')[0m
+  [4;35;1mSQL (30.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221182143')[0m
+  [4;36;1mSQL (48.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221201039')[0m
+  [4;35;1mSQL (50.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221201715')[0m
+  [4;36;1mSQL (28.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221220657')[0m
+  [4;35;1mSQL (30.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100222003227')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateRequirementLevels (20100221181326)
+Migrating to CreateRequirementTypes (20100221182143)
+Migrating to CreateReqBreakdowns (20100221201039)
+Migrating to CreateProducts (20100221201715)
+Migrating to CreateRequirements (20100221220657)
+Migrating to CreateQualityRisks (20100222003227)
+Migrating to Changereqbreakdownstructure (20100222003814)
+Migrating to AddProductIdToRequirement (20100222004352)
+  [4;36;1mSQL (196.0ms)[0m   [0;1mALTER TABLE `requirements` ADD `product_id` int(11)[0m
+  [4;35;1mSQL (32.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100222004352')[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `products`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `products`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW FIELDS FROM `quality_risks`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `quality_risks`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `quality_risks`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `req_breakdowns`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `req_breakdowns`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `requirement_levels`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `requirement_levels`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW FIELDS FROM `requirement_types`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `requirement_types`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `requirement_types`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirements`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mdescribe `requirements`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `requirements`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (438.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `Ability_test`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE DATABASE `Ability_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (52.0ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `identifier` varchar(3), `req_breakdown_id` int(11), `jira_defect_filter` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (65.0ms)[0m   [0mCREATE TABLE `quality_risks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `product_id` int(11), `risk_category_id` int(11), `description` varchar(255), `mitigation_strategy_id` int(11), `explanation` varchar(255), `likelihood` int(11), `impact` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (98.0ms)[0m   [0mCREATE TABLE `req_breakdowns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime, `requirement_level_id` int(11), `next_breakdown_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (74.0ms)[0m   [0mCREATE TABLE `requirement_levels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (98.0ms)[0m   [0mCREATE TABLE `requirement_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (81.0ms)[0m   [0mCREATE TABLE `requirements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `requirement_type_id` int(11), `description` varchar(255), `rationale` varchar(255), `originator` varchar(255), `fit_criterion` varchar(255), `source_id` int(11), `priority` int(11), `satisfaction` int(11), `dissatisfaction` int(11), `created_at` datetime, `updated_at` datetime, `product_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (86.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (196.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (25.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100222004352')[0m
+  [4;36;1mSQL (29.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221181326')[0m
+  [4;35;1mSQL (29.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221182143')[0m
+  [4;36;1mSQL (29.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221201039')[0m
+  [4;35;1mSQL (66.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221201715')[0m
+  [4;36;1mSQL (34.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221220657')[0m
+  [4;35;1mSQL (29.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100222003227')[0m
+  [4;36;1mSQL (29.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100222003814')[0m

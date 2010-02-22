@@ -1,0 +1,2 @@
+module RequirementTypesHelper
+end

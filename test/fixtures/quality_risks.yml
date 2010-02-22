@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  product_id: 1
+  risk_category_id: 1
+  description: MyString
+  mitigation_strategy_id: 1
+  explanation: MyString
+  likelihood: 1
+  impact: 1
+
+two:
+  product_id: 1
+  risk_category_id: 1
+  description: MyString
+  mitigation_strategy_id: 1
+  explanation: MyString
+  likelihood: 1
+  impact: 1

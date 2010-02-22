@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+userstory:
+  id: 1
+  name: User Story
+
+SRS:
+  id: 2
+  name: SRS
+
+HLD:
+  id: 3
+  name: HLD
+
+LLD:
+  id: 4
+  name: LLD

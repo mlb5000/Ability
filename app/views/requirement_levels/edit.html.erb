@@ -1,0 +1,16 @@
+<h1>Editing requirement_level</h1>
+
+<% form_for(@requirement_level) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @requirement_level %> |
+<%= link_to 'Back', requirement_levels_path %>

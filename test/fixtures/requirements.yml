@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  requirement_level_id: 1
+  requirement_type_id: 1
+  description: MyString
+  rationale: MyString
+  originator: MyString
+  fit_criterion: MyString
+  source_id: 1
+  priority: 1
+  satisfaction: 1
+  dissatisfaction: 1
+  product_id: 1
+
+two:
+  requirement_level_id: 1
+  requirement_type_id: 1
+  description: MyString
+  rationale: MyString
+  originator: MyString
+  fit_criterion: MyString
+  source_id: 1
+  priority: 1
+  satisfaction: 1
+  dissatisfaction: 1
+  product_id: 1

@@ -1,0 +1,53 @@
+<p>
+  <b>Requirement level:</b>
+  <%=h @requirement.requirement_level_id %>
+</p>
+
+<p>
+  <b>Requirement type:</b>
+  <%=h @requirement.requirement_type_id %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @requirement.description %>
+</p>
+
+<p>
+  <b>Rationale:</b>
+  <%=h @requirement.rationale %>
+</p>
+
+<p>
+  <b>Originator:</b>
+  <%=h @requirement.originator %>
+</p>
+
+<p>
+  <b>Fit criterion:</b>
+  <%=h @requirement.fit_criterion %>
+</p>
+
+<p>
+  <b>Source:</b>
+  <%=h @requirement.source_id %>
+</p>
+
+<p>
+  <b>Priority:</b>
+  <%=h @requirement.priority %>
+</p>
+
+<p>
+  <b>Satisfaction:</b>
+  <%=h @requirement.satisfaction %>
+</p>
+
+<p>
+  <b>Dissatisfaction:</b>
+  <%=h @requirement.dissatisfaction %>
+</p>
+
+
+<%= link_to 'Edit', edit_requirement_path(@requirement) %> |
+<%= link_to 'Back', requirements_path %>

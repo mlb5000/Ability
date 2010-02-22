@@ -1,0 +1,26 @@
+<h1>Listing req_breakdowns</h1>
+
+<table>
+  <tr>
+    <th>Higher level</th>
+    <th>Lower level</th>
+    <th>Is highest</th>
+    <th>Is lowest</th>
+  </tr>
+
+<% @req_breakdowns.each do |req_breakdown| %>
+  <tr>
+    <td><%=h req_breakdown.higher_level_id %></td>
+    <td><%=h req_breakdown.lower_level_id %></td>
+    <td><%=h req_breakdown.is_highest %></td>
+    <td><%=h req_breakdown.is_lowest %></td>
+    <td><%= link_to 'Show', req_breakdown %></td>
+    <td><%= link_to 'Edit', edit_req_breakdown_path(req_breakdown) %></td>
+    <td><%= link_to 'Destroy', req_breakdown, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New req_breakdown', new_req_breakdown_path %>

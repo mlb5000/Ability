@@ -1,0 +1,38 @@
+<h1>Listing requirements</h1>
+
+<table>
+  <tr>
+    <th>Requirement level</th>
+    <th>Requirement type</th>
+    <th>Description</th>
+    <th>Rationale</th>
+    <th>Originator</th>
+    <th>Fit criterion</th>
+    <th>Source</th>
+    <th>Priority</th>
+    <th>Satisfaction</th>
+    <th>Dissatisfaction</th>
+  </tr>
+
+<% @requirements.each do |requirement| %>
+  <tr>
+    <td><%=h requirement.requirement_level_id %></td>
+    <td><%=h requirement.requirement_type_id %></td>
+    <td><%=h requirement.description %></td>
+    <td><%=h requirement.rationale %></td>
+    <td><%=h requirement.originator %></td>
+    <td><%=h requirement.fit_criterion %></td>
+    <td><%=h requirement.source_id %></td>
+    <td><%=h requirement.priority %></td>
+    <td><%=h requirement.satisfaction %></td>
+    <td><%=h requirement.dissatisfaction %></td>
+    <td><%= link_to 'Show', requirement %></td>
+    <td><%= link_to 'Edit', edit_requirement_path(requirement) %></td>
+    <td><%= link_to 'Destroy', requirement, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New requirement', new_requirement_path %>

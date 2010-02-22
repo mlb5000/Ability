@@ -1,0 +1,23 @@
+<p>
+  <b>Name:</b>
+  <%=h @product.name %>
+</p>
+
+<p>
+  <b>Identifier:</b>
+  <%=h @product.identifier %>
+</p>
+
+<p>
+  <b>Req breakdown:</b>
+  <%=h @product.req_breakdown_id %>
+</p>
+
+<p>
+  <b>Jira defect filter:</b>
+  <%=h @product.jira_defect_filter %>
+</p>
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

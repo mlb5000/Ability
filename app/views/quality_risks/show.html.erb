@@ -1,0 +1,38 @@
+<p>
+  <b>Product:</b>
+  <%=h @quality_risk.product_id %>
+</p>
+
+<p>
+  <b>Risk category:</b>
+  <%=h @quality_risk.risk_category_id %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @quality_risk.description %>
+</p>
+
+<p>
+  <b>Mitigation strategy:</b>
+  <%=h @quality_risk.mitigation_strategy_id %>
+</p>
+
+<p>
+  <b>Explanation:</b>
+  <%=h @quality_risk.explanation %>
+</p>
+
+<p>
+  <b>Likelihood:</b>
+  <%=h @quality_risk.likelihood %>
+</p>
+
+<p>
+  <b>Impact:</b>
+  <%=h @quality_risk.impact %>
+</p>
+
+
+<%= link_to 'Edit', edit_quality_risk_path(@quality_risk) %> |
+<%= link_to 'Back', quality_risks_path %>

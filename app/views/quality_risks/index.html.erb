@@ -1,0 +1,32 @@
+<h1>Listing quality_risks</h1>
+
+<table>
+  <tr>
+    <th>Product</th>
+    <th>Risk category</th>
+    <th>Description</th>
+    <th>Mitigation strategy</th>
+    <th>Explanation</th>
+    <th>Likelihood</th>
+    <th>Impact</th>
+  </tr>
+
+<% @quality_risks.each do |quality_risk| %>
+  <tr>
+    <td><%=h quality_risk.product_id %></td>
+    <td><%=h quality_risk.risk_category_id %></td>
+    <td><%=h quality_risk.description %></td>
+    <td><%=h quality_risk.mitigation_strategy_id %></td>
+    <td><%=h quality_risk.explanation %></td>
+    <td><%=h quality_risk.likelihood %></td>
+    <td><%=h quality_risk.impact %></td>
+    <td><%= link_to 'Show', quality_risk %></td>
+    <td><%= link_to 'Edit', edit_quality_risk_path(quality_risk) %></td>
+    <td><%= link_to 'Destroy', quality_risk, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New quality_risk', new_quality_risk_path %>

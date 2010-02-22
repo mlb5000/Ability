@@ -1,0 +1,551 @@
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 980604835) [0m
+  [4;36;1mReqBreakdown Load (0.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 980604835) [0m
+  [4;36;1mReqBreakdown Load (0.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 980604835) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 980604835) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 980604835) [0m
+  [4;36;1mReqBreakdown Load (0.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 980604835) [0m
+  [4;36;1mReqBreakdown Load (1.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `products` [0m
+
+
+Processing ProductsController#create (for 0.0.0.0 at 2010-02-21 18:20:27) [POST]
+  Parameters: {"product"=>{}}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mProduct Create (1.0ms)[0m   [0mINSERT INTO `products` (`name`, `identifier`, `req_breakdown_id`, `jira_defect_filter`, `created_at`, `updated_at`) VALUES(NULL, NULL, NULL, NULL, '2010-02-21 23:20:27', '2010-02-21 23:20:27')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/products/980604836
+Completed in 6ms (DB: 80) | 302 Found [http://test.host/products?]
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `products` [0m
+  [4;36;1mSQL (35.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `products` [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing ProductsController#index (for 0.0.0.0 at 2010-02-21 18:20:27) [GET]
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 17ms (View: 16, DB: 39) | 200 OK [http://test.host/products]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+
+
+Processing ProductsController#new (for 0.0.0.0 at 2010-02-21 18:20:27) [GET]
+Rendering template within layouts/products
+Rendering products/new
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://test.host/products/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `req_breakdowns` [0m
+
+
+Processing ReqBreakdownsController#create (for 0.0.0.0 at 2010-02-21 18:20:27) [POST]
+  Parameters: {"req_breakdown"=>{}}
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mReqBreakdown Create (0.0ms)[0m   [0;1mINSERT INTO `req_breakdowns` (`higher_level_id`, `lower_level_id`, `is_highest`, `is_lowest`, `created_at`, `updated_at`) VALUES(NULL, NULL, NULL, NULL, '2010-02-21 23:20:27', '2010-02-21 23:20:27')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/req_breakdowns/784941271
+Completed in 5ms (DB: 3) | 302 Found [http://test.host/req_breakdowns?]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `req_breakdowns` [0m
+  [4;35;1mSQL (27.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `req_breakdowns` [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+
+
+Processing ReqBreakdownsController#index (for 0.0.0.0 at 2010-02-21 18:20:27) [GET]
+  [4;36;1mReqBreakdown Load (0.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` [0m
+Rendering template within layouts/req_breakdowns
+Rendering req_breakdowns/index
+Completed in 5ms (View: 4, DB: 29) | 200 OK [http://test.host/req_breakdowns]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing ReqBreakdownsController#new (for 0.0.0.0 at 2010-02-21 18:20:27) [GET]
+Rendering template within layouts/req_breakdowns
+Rendering req_breakdowns/new
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://test.host/req_breakdowns/new]
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `requirement_levels` [0m
+
+
+Processing RequirementLevelsController#create (for 0.0.0.0 at 2010-02-21 18:20:27) [POST]
+  Parameters: {"requirement_level"=>{}}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mRequirementLevel Create (1.0ms)[0m   [0mINSERT INTO `requirement_levels` (`name`, `created_at`, `updated_at`) VALUES(NULL, '2010-02-21 23:20:27', '2010-02-21 23:20:27')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/requirement_levels/750092525
+Completed in 6ms (DB: 3) | 302 Found [http://test.host/requirement_levels?]
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `requirement_levels` [0m
+  [4;36;1mSQL (32.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `requirement_levels` [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing RequirementLevelsController#index (for 0.0.0.0 at 2010-02-21 18:20:27) [GET]
+  [4;35;1mRequirementLevel Load (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` [0m
+Rendering template within layouts/requirement_levels
+Rendering requirement_levels/index
+Completed in 6ms (View: 4, DB: 34) | 200 OK [http://test.host/requirement_levels]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+
+
+Processing RequirementLevelsController#new (for 0.0.0.0 at 2010-02-21 18:20:27) [GET]
+Rendering template within layouts/requirement_levels
+Rendering requirement_levels/new
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://test.host/requirement_levels/new]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `requirement_types` [0m
+
+
+Processing RequirementTypesController#create (for 0.0.0.0 at 2010-02-21 18:20:27) [POST]
+  Parameters: {"requirement_type"=>{}}
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mRequirementType Create (0.0ms)[0m   [0;1mINSERT INTO `requirement_types` (`name`, `created_at`, `updated_at`) VALUES(NULL, '2010-02-21 23:20:27', '2010-02-21 23:20:27')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/requirement_types/654791215
+Completed in 5ms (DB: 4) | 302 Found [http://test.host/requirement_types?]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `requirement_types` [0m
+  [4;35;1mSQL (30.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `requirement_types` [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+
+
+Processing RequirementTypesController#index (for 0.0.0.0 at 2010-02-21 18:20:27) [GET]
+  [4;36;1mRequirementType Load (0.0ms)[0m   [0;1mSELECT * FROM `requirement_types` [0m
+Rendering template within layouts/requirement_types
+Rendering requirement_types/index
+Completed in 6ms (View: 4, DB: 30) | 200 OK [http://test.host/requirement_types]
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing RequirementTypesController#new (for 0.0.0.0 at 2010-02-21 18:20:27) [GET]
+Rendering template within layouts/requirement_types
+Rendering requirement_types/new
+Completed in 2ms (View: 2, DB: 1) | 200 OK [http://test.host/requirement_types/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `requirements` [0m
+
+
+Processing RequirementsController#create (for 0.0.0.0 at 2010-02-21 18:20:27) [POST]
+  Parameters: {"requirement"=>{}}
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mRequirement Create (1.0ms)[0m   [0mINSERT INTO `requirements` (`requirement_level_id`, `requirement_type_id`, `description`, `rationale`, `originator`, `fit_criterion`, `source_id`, `priority`, `satisfaction`, `dissatisfaction`, `created_at`, `updated_at`) VALUES(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2010-02-21 23:20:27', '2010-02-21 23:20:27')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/requirements/980190963
+Completed in 7ms (DB: 5) | 302 Found [http://test.host/requirements?]
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `requirements` [0m
+  [4;36;1mSQL (39.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `requirements` [0m
+  [4;35;1mRequirement Load (0.0ms)[0m   [0mSELECT * FROM `requirements` WHERE (`requirements`.`id` = 980190962) [0m
+
+
+Processing RequirementsController#destroy (for 0.0.0.0 at 2010-02-21 18:20:28) [DELETE]
+  Parameters: {"id"=>"980190962"}
+  [4;36;1mRequirement Load (0.0ms)[0m   [0;1mSELECT * FROM `requirements` WHERE (`requirements`.`id` = 980190962) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mRequirement Destroy (0.0ms)[0m   [0;1mDELETE FROM `requirements` WHERE `id` = 980190962[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/requirements
+Completed in 3ms (DB: 39) | 302 Found [http://test.host/requirements/980190962]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `requirements` [0m
+  [4;35;1mSQL (28.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRequirement Load (0.0ms)[0m   [0mSELECT * FROM `requirements` WHERE (`requirements`.`id` = 980190962) [0m
+
+
+Processing RequirementsController#edit (for 0.0.0.0 at 2010-02-21 18:20:28) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;36;1mRequirement Load (1.0ms)[0m   [0;1mSELECT * FROM `requirements` WHERE (`requirements`.`id` = 980190962) [0m
+Rendering template within layouts/requirements
+Rendering requirements/edit
+Completed in 8ms (View: 7, DB: 30) | 200 OK [http://test.host/requirements/980190962/edit]
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing RequirementsController#index (for 0.0.0.0 at 2010-02-21 18:20:28) [GET]
+  [4;35;1mRequirement Load (1.0ms)[0m   [0mSELECT * FROM `requirements` [0m
+Rendering template within layouts/requirements
+Rendering requirements/index
+Completed in 4ms (View: 3, DB: 2) | 200 OK [http://test.host/requirements]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+
+
+Processing RequirementsController#new (for 0.0.0.0 at 2010-02-21 18:20:28) [GET]
+Rendering template within layouts/requirements
+Rendering requirements/new
+Completed in 5ms (View: 5, DB: 2) | 200 OK [http://test.host/requirements/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mRequirement Load (1.0ms)[0m   [0;1mSELECT * FROM `requirements` WHERE (`requirements`.`id` = 980190962) [0m
+
+
+Processing RequirementsController#show (for 0.0.0.0 at 2010-02-21 18:20:28) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;35;1mRequirement Load (1.0ms)[0m   [0mSELECT * FROM `requirements` WHERE (`requirements`.`id` = 980190962) [0m
+Rendering template within layouts/requirements
+Rendering requirements/show
+Completed in 3ms (View: 2, DB: 2) | 200 OK [http://test.host/requirements/980190962]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mRequirement Load (1.0ms)[0m   [0;1mSELECT * FROM `requirements` WHERE (`requirements`.`id` = 980190962) [0m
+
+
+Processing RequirementsController#update (for 0.0.0.0 at 2010-02-21 18:20:28) [PUT]
+  Parameters: {"requirement"=>{}, "id"=>"980190962"}
+  [4;35;1mRequirement Load (1.0ms)[0m   [0mSELECT * FROM `requirements` WHERE (`requirements`.`id` = 980190962) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/requirements/980190962
+Completed in 3ms (DB: 2) | 302 Found [http://test.host/requirements/980190962?]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 980604835) [0m
+  [4;36;1mReqBreakdown Load (0.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 980604835) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 980604835) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 980604835) [0m
+  [4;36;1mReqBreakdown Load (0.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+  [4;35;1mRequirementLevel Load (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 980604835) [0m
+  [4;36;1mReqBreakdown Load (0.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 980604835) [0m
+  [4;36;1mReqBreakdown Load (0.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+  [4;35;1mRequirementLevel Load (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 980604835) [0m
+  [4;36;1mReqBreakdown Load (0.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+  [4;36;1mReqBreakdown Load (0.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 2) [0m
+  [4;35;1mReqBreakdown Load (0.0ms)[0m   [0mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 3) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 980604835) [0m
+  [4;35;1mReqBreakdown Load (0.0ms)[0m   [0mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+  [4;36;1mRequirementLevel Load (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 980604835) [0m
+  [4;36;1mReqBreakdown Load (0.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+  [4;35;1mRequirementLevel Load (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+  [4;36;1mReqBreakdown Load (1.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 2) [0m
+  [4;35;1mReqBreakdown Load (0.0ms)[0m   [0mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 3) [0m
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 2) [0m
+  [4;35;1mReqBreakdown Load (1.0ms)[0m   [0mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 4) [0m
+  [4;36;1mRequirementLevel Load (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 3) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 980604835) [0m
+  [4;36;1mReqBreakdown Load (0.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+  [4;35;1mRequirementLevel Load (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 980604835) [0m
+  [4;36;1mReqBreakdown Load (1.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+  [4;35;1mRequirementLevel Load (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+  [4;36;1mReqBreakdown Load (0.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 2) [0m
+  [4;35;1mReqBreakdown Load (0.0ms)[0m   [0mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 3) [0m
+  [4;36;1mRequirementLevel Load (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 2) [0m
+  [4;35;1mReqBreakdown Load (0.0ms)[0m   [0mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 4) [0m
+  [4;36;1mRequirementLevel Load (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 3) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 980604835) [0m
+  [4;36;1mReqBreakdown Load (0.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 980604835) [0m
+  [4;36;1mReqBreakdown Load (1.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+  [4;35;1mRequirementLevel Load (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+  [4;36;1mReqBreakdown Load (0.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 2) [0m
+  [4;35;1mReqBreakdown Load (0.0ms)[0m   [0mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 3) [0m
+  [4;36;1mRequirementLevel Load (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 2) [0m
+  [4;35;1mReqBreakdown Load (0.0ms)[0m   [0mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 4) [0m
+  [4;36;1mRequirementLevel Load (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 3) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 980604835) [0m
+  [4;36;1mReqBreakdown Load (0.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+  [4;35;1mRequirementLevel Load (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 980604835) [0m
+  [4;36;1mReqBreakdown Load (1.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+  [4;35;1mRequirementLevel Load (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+  [4;36;1mReqBreakdown Load (0.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 2) [0m
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 2) [0m
+  [4;36;1mReqBreakdown Load (0.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 3) [0m
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 3) [0m
+  [4;36;1mReqBreakdown Load (0.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 4) [0m
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 4) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 980604835) [0m
+  [4;35;1mReqBreakdown Load (0.0ms)[0m   [0mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 980604835) [0m
+  [4;36;1mReqBreakdown Load (0.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+  [4;35;1mRequirementLevel Load (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+  [4;36;1mReqBreakdown Load (1.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 2) [0m
+  [4;35;1mRequirementLevel Load (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 2) [0m
+  [4;36;1mReqBreakdown Load (1.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 3) [0m
+  [4;35;1mRequirementLevel Load (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 3) [0m
+  [4;36;1mReqBreakdown Load (1.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 4) [0m
+  [4;35;1mRequirementLevel Load (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 4) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 980604835) [0m
+  [4;35;1mReqBreakdown Load (0.0ms)[0m   [0mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+  [4;36;1mRequirementLevel Load (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m

@@ -1,0 +1,16 @@
+<h1>Editing requirement_type</h1>
+
+<% form_for(@requirement_type) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @requirement_type %> |
+<%= link_to 'Back', requirement_types_path %>

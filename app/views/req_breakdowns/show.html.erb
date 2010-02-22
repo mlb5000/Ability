@@ -1,0 +1,23 @@
+<p>
+  <b>Higher level:</b>
+  <%=h @req_breakdown.higher_level_id %>
+</p>
+
+<p>
+  <b>Lower level:</b>
+  <%=h @req_breakdown.lower_level_id %>
+</p>
+
+<p>
+  <b>Is highest:</b>
+  <%=h @req_breakdown.is_highest %>
+</p>
+
+<p>
+  <b>Is lowest:</b>
+  <%=h @req_breakdown.is_lowest %>
+</p>
+
+
+<%= link_to 'Edit', edit_req_breakdown_path(@req_breakdown) %> |
+<%= link_to 'Back', req_breakdowns_path %>

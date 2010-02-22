@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+Ability:
+  name: Ability
+  identifier: ABL
+  req_breakdown_id: 1
+  jira_defect_filter: AllUnresolvedAbilityBugs
+
+two:
+  name: Product B
+  identifier: PDB
+  req_breakdown_id: 1
+  jira_defect_filter: AllUnresolvedProductBBugs

@@ -1,0 +1,28 @@
+<h1>Editing req_breakdown</h1>
+
+<% form_for(@req_breakdown) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :higher_level_id %><br />
+    <%= f.text_field :higher_level_id %>
+  </p>
+  <p>
+    <%= f.label :lower_level_id %><br />
+    <%= f.text_field :lower_level_id %>
+  </p>
+  <p>
+    <%= f.label :is_highest %><br />
+    <%= f.check_box :is_highest %>
+  </p>
+  <p>
+    <%= f.label :is_lowest %><br />
+    <%= f.check_box :is_lowest %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @req_breakdown %> |
+<%= link_to 'Back', req_breakdowns_path %>
