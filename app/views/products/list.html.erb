@@ -1,0 +1,30 @@
+<h1 text-align="center">Products</h1>
+<table id="flex1"></table>
+<script type="text/javascript">
+  $("#flex1").flexigrid
+    (
+    {
+    url: 'http://localhost:3000/products/grid_data',
+    dataType: 'json',
+    colModel : [
+      {display: 'Name', name : 'name', width : 40, sortable : true, align: 'left'},
+      {display: 'Identifier', name : 'identifier', width : 180, sortable : true, align: 'left'},
+      {display: 'Req Breakdown', name : 'req_breakdown', width : 120, sortable : true, align: 'left'},
+      {display: 'Jira Defect Filter', name : 'jira_defect_filter', width : 130, sortable : true, align: 'left', hide: true}
+    ],
+    searchitems : [
+      {display: 'Name', name : 'name'},
+      {display: 'Identifier', name : 'identifier'}
+    ],
+    sortname: "name",
+    sortorder: "desc",
+    usepager: true,
+    title: 'Products',
+    useRp: true,
+    rp: 15,
+    showTableToggleBtn: true,
+    width: 700,
+    height: 200
+    }
+  );
+</script>

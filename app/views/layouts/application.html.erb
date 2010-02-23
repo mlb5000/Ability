@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="/javascripts/css/flexigrid/flexigrid.css" media="screen" rel="stylesheet" type="text/css" />
+    <link type="text/css" href="/javascripts/menu/menu.css" rel="stylesheet" />
+    <script src="/javascripts/jquery.js" type="text/javascript"></script>
+    <script src="/javascripts/flexigrid.js" type="text/javascript"></script>
+    <script src="/javascripts/menu/menu.js" type="text/javascript"></script>
+  </head>
+  <body>
+    <div id="menu">
+	  <ul class="menu">
+        <li><a href="#"><span>Home</span></a></li>
+        <li><a href="#"><span>Product Dashboard</span></a></li>
+        <li><a href="#"><span>Releases</span></a></li>
+        <li><a href="#"><span>Quality Risks</span></a></li>
+        <li><a href="#"><span>Requirements</span></a></li>
+		<li><a href="#"><span>Defects</span></a></li>
+        <li><a href="#" class="parent"><span>Testing</span></a>
+          <div><ul>
+            <li><a href="#"><span>Test Environments</span></a></li>
+            <li><a href="#"><span>Test Procedures</span></a></li>
+            <li><a href="#"><span>Test Executions</span></a></li>
+          </ul></div>
+        </li>
+        <li class="last" class="parent"><a href="#"><span>Administration</span></a></li>
+      </ul>
+	</div>
+    <%= yield %>
+    <a href="http://apycom.com/">Apycom jQuery Menus</a>
+  </body>
+</html>

@@ -1,8 +1,10 @@
 class CreateReqBreakdowns < ActiveRecord::Migration
   def self.up
     create_table :req_breakdowns do |t|
-      t.integer :requirement_level_id, :null => false
-      t.integer :next_breakdown_id
+      t.integer :higher_level_id
+      t.integer :lower_level_id
+      t.boolean :is_highest
+      t.boolean :is_lowest
 
       t.timestamps
     end
