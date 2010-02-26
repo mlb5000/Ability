@@ -51,7 +51,7 @@ class RequirementsController < ApplicationController
     respond_to do |format|
       if @requirement.save
         flash[:notice] = 'Requirement was successfully created.'
-        format.html { redirect_to(product_requirement_path(@requirement.product, @requirement)) }
+        format.html { redirect_to(product_requirement_url(@requirement.product, @requirement)) }
         format.xml  { render :xml => @requirement, :status => :created, :location => @requirement }
       else
         format.html { render :action => "new" }
@@ -68,7 +68,7 @@ class RequirementsController < ApplicationController
     respond_to do |format|
       if @requirement.update_attributes(params[:requirement])
         flash[:notice] = 'Requirement was successfully updated.'
-        format.html { redirect_to(product_requirement_path(@requirement.product, @requirement)) }
+        format.html { redirect_to(product_requirement_url(@requirement.product, @requirement)) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

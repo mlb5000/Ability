@@ -51,7 +51,7 @@ class QualityRisksController < ApplicationController
     respond_to do |format|
       if @quality_risk.save
         flash[:notice] = 'QualityRisk was successfully created.'
-        format.html { redirect_to(product_quality_risk_path(@product, @quality_risk)) }
+        format.html { redirect_to(product_quality_risk_url(@product, @quality_risk)) }
         format.xml  { render :xml => @quality_risk, :status => :created, :location => @quality_risk }
       else
         format.html { render :action => "new" }
@@ -68,7 +68,7 @@ class QualityRisksController < ApplicationController
     respond_to do |format|
       if @quality_risk.update_attributes(params[:quality_risk])
         flash[:notice] = 'QualityRisk was successfully updated.'
-        format.html { redirect_to(product_quality_risk_path(@quality_risk.product, @quality_risk)) }
+        format.html { redirect_to(product_quality_risk_url(@quality_risk.product, @quality_risk)) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

@@ -45,7 +45,7 @@ class ReqBreakdownsController < ApplicationController
     respond_to do |format|
       if @req_breakdown.save
         flash[:notice] = 'ReqBreakdown was successfully created.'
-        format.html { redirect_to(admin_req_breakdown_path(@req_breakdown)) }
+        format.html { redirect_to(admin_req_breakdown_url(@req_breakdown)) }
         format.xml  { render :xml => @req_breakdown, :status => :created, :location => @req_breakdown }
       else
         format.html { render :action => "new" }
@@ -62,7 +62,7 @@ class ReqBreakdownsController < ApplicationController
     respond_to do |format|
       if @req_breakdown.update_attributes(params[:req_breakdown])
         flash[:notice] = 'ReqBreakdown was successfully updated.'
-        format.html { redirect_to(admin_req_breakdown_path(@req_breakdown)) }
+        format.html { redirect_to(admin_req_breakdown_url(@req_breakdown)) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

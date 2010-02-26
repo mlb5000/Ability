@@ -17054,3 +17054,680 @@ Processing RequirementsController#update (for 0.0.0.0 at 2010-02-25 21:54:13) [P
 Redirected to http://test.host/products/1/requirements/980190962
 Completed in 4ms (DB: 4) | 302 Found [http://test.host/products/1/requirements/980190962?]
   [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (320.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `Ability_test`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE DATABASE `Ability_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (65.0ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `identifier` varchar(3), `req_breakdown_id` int(11), `jira_defect_filter` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (82.0ms)[0m   [0mCREATE TABLE `quality_risks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `product_id` int(11), `risk_category_id` int(11), `description` varchar(255), `mitigation_strategy_id` int(11), `explanation` varchar(255), `likelihood` int(11), `impact` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (81.0ms)[0m   [0mCREATE TABLE `releases` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `version` varchar(255), `startdate` date, `enddate` date, `product_id` int(11), `goal` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (81.0ms)[0m   [0mCREATE TABLE `req_breakdowns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime, `requirement_level_id` int(11), `next_breakdown_id` int(11), `previous_breakdown_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (82.0ms)[0m   [0mCREATE TABLE `requirement_levels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime, `abbreviation` varchar(255)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (73.0ms)[0m   [0mCREATE TABLE `requirement_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (125.0ms)[0m   [0mCREATE TABLE `requirements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `requirement_type_id` int(11), `description` varchar(255), `rationale` varchar(255), `originator` varchar(255), `fit_criterion` varchar(255), `source_id` int(11), `priority` int(11), `satisfaction` int(11), `dissatisfaction` int(11), `created_at` datetime, `updated_at` datetime, `product_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (89.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (169.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (34.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100225233450')[0m
+  [4;36;1mSQL (26.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221181326')[0m
+  [4;35;1mSQL (32.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221182143')[0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221201039')[0m
+  [4;35;1mSQL (32.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221201715')[0m
+  [4;36;1mSQL (37.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221220657')[0m
+  [4;35;1mSQL (29.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100222003227')[0m
+  [4;36;1mSQL (42.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100222003814')[0m
+  [4;35;1mSQL (31.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100222004352')[0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100222235145')[0m
+  [4;35;1mSQL (32.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100224002333')[0m
+  [4;36;1mSQL (26.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100225231726')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;36;1mReqBreakdown Load (0.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+  [4;35;1mRequirementLevel Load (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mReqBreakdown Load (0.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 3) [0m
+  [4;35;1mRequirementLevel Load (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mReqBreakdown Load (1.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+  [4;35;1mRequirementLevel Load (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+  [4;36;1mReqBreakdown Load (0.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 2) [0m
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 2) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `products` [0m
+
+
+Processing ProductsController#create (for 0.0.0.0 at 2010-02-25 22:02:48) [POST]
+  Parameters: {"product"=>{}}
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mProduct Create (1.0ms)[0m   [0mINSERT INTO `products` (`name`, `identifier`, `req_breakdown_id`, `jira_defect_filter`, `created_at`, `updated_at`) VALUES(NULL, NULL, NULL, NULL, '2010-02-26 03:02:48', '2010-02-26 03:02:48')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/products/3
+Completed in 9ms (DB: 98) | 302 Found [http://test.host/products?]
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `products` [0m
+  [4;36;1mSQL (42.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `products` [0m
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+
+
+Processing ProductsController#destroy (for 0.0.0.0 at 2010-02-25 22:02:48) [DELETE]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mProduct Destroy (0.0ms)[0m   [0;1mDELETE FROM `products` WHERE `id` = 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/products
+Completed in 3ms (DB: 48) | 302 Found [http://test.host/products/1]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `products` [0m
+  [4;35;1mSQL (32.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+
+
+Processing ProductsController#edit (for 0.0.0.0 at 2010-02-25 22:02:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 20ms (View: 18, DB: 36) | 200 OK [http://test.host/products/1/edit]
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing ProductsController#index (for 0.0.0.0 at 2010-02-25 22:02:48) [GET]
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 6ms (View: 3, DB: 2) | 200 OK [http://test.host/]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+
+
+Processing ProductsController#new (for 0.0.0.0 at 2010-02-25 22:02:48) [GET]
+Rendering template within layouts/products
+Rendering products/new
+Completed in 3ms (View: 3, DB: 2) | 200 OK [http://test.host/products/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+
+
+Processing ProductsController#show (for 0.0.0.0 at 2010-02-25 22:02:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 4ms (View: 2, DB: 1) | 200 OK [http://test.host/products/1]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+
+
+Processing ProductsController#update (for 0.0.0.0 at 2010-02-25 22:02:49) [PUT]
+  Parameters: {"product"=>{}, "id"=>"1"}
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/products/1
+Completed in 4ms (DB: 3) | 302 Found [http://test.host/products/1?]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `quality_risks` [0m
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+
+
+Processing QualityRisksController#create (for 0.0.0.0 at 2010-02-25 22:02:49) [POST]
+  Parameters: {"quality_risk"=>{"risk_category_id"=>1, "description"=>"Description", "mitigation_strategy_id"=>1, "explanation"=>"", "likelihood"=>4, "impact"=>3}, "product_id"=>"1"}
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mQualityRisk Create (0.0ms)[0m   [0;1mINSERT INTO `quality_risks` (`product_id`, `risk_category_id`, `description`, `mitigation_strategy_id`, `explanation`, `likelihood`, `impact`, `created_at`, `updated_at`) VALUES(1, 1, 'Description', 1, '', 4, 3, '2010-02-26 03:02:49', '2010-02-26 03:02:49')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/products/1/quality_risks/3
+Completed in 69ms (DB: 2) | 302 Found [http://test.host/products/1/quality_risks?quality_risk%5Bdescription%5D=Description&quality_risk%5Bexplanation%5D=&quality_risk%5Bimpact%5D=3&quality_risk%5Blikelihood%5D=4&quality_risk%5Bmitigation_strategy_id%5D=1&quality_risk%5Brisk_category_id%5D=1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `quality_risks` [0m
+  [4;35;1mSQL (31.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `quality_risks` [0m
+  [4;36;1mQualityRisk Load (1.0ms)[0m   [0;1mSELECT * FROM `quality_risks` WHERE (`quality_risks`.`id` = 1) [0m
+
+
+Processing QualityRisksController#destroy (for 0.0.0.0 at 2010-02-25 22:02:49) [DELETE]
+  Parameters: {"id"=>"1"}
+  [4;35;1mQualityRisk Load (0.0ms)[0m   [0mSELECT * FROM `quality_risks` WHERE (`quality_risks`.`id` = 1) [0m
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mQualityRisk Destroy (0.0ms)[0m   [0;1mDELETE FROM `quality_risks` WHERE `id` = 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/products/1/quality_risks
+Completed in 3ms (DB: 32) | 302 Found [http://test.host/quality_risks/destroy/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `quality_risks` [0m
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;36;1mSQL (63.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;35;1mQualityRisk Load (1.0ms)[0m   [0mSELECT * FROM `quality_risks` WHERE (`quality_risks`.`id` = 1) [0m
+
+
+Processing QualityRisksController#edit (for 0.0.0.0 at 2010-02-25 22:02:49) [GET]
+  Parameters: {"product_id"=>"1", "id"=>"1"}
+  [4;36;1mQualityRisk Load (1.0ms)[0m   [0;1mSELECT * FROM `quality_risks` WHERE (`quality_risks`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering quality_risks/edit
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Completed in 7ms (View: 6, DB: 68) | 200 OK [http://test.host/products/1/quality_risks/1/edit]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+
+
+Processing QualityRisksController#index (for 0.0.0.0 at 2010-02-25 22:02:49) [GET]
+  Parameters: {"product_id"=>"1"}
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering quality_risks/index
+  [4;36;1mQualityRisk Load (1.0ms)[0m   [0;1mSELECT * FROM `quality_risks` WHERE (`quality_risks`.product_id = 1) [0m
+Completed in 7ms (View: 4, DB: 2) | 200 OK [http://test.host/products/1/quality_risks]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+
+
+Processing QualityRisksController#new (for 0.0.0.0 at 2010-02-25 22:02:49) [GET]
+  Parameters: {"product_id"=>"1"}
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering quality_risks/new
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://test.host/products/1/quality_risks/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;36;1mQualityRisk Load (1.0ms)[0m   [0;1mSELECT * FROM `quality_risks` WHERE (`quality_risks`.`id` = 1) [0m
+
+
+Processing QualityRisksController#show (for 0.0.0.0 at 2010-02-25 22:02:49) [GET]
+  Parameters: {"product_id"=>"1", "id"=>"1"}
+  [4;35;1mQualityRisk Load (1.0ms)[0m   [0mSELECT * FROM `quality_risks` WHERE (`quality_risks`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering quality_risks/show
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Completed in 6ms (View: 3, DB: 5) | 200 OK [http://test.host/products/1/quality_risks/1]
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;36;1mQualityRisk Load (1.0ms)[0m   [0;1mSELECT * FROM `quality_risks` WHERE (`quality_risks`.`id` = 1) [0m
+
+
+Processing QualityRisksController#update (for 0.0.0.0 at 2010-02-25 22:02:49) [PUT]
+  Parameters: {"quality_risk"=>{}, "product_id"=>"1", "id"=>"1"}
+  [4;35;1mQualityRisk Load (1.0ms)[0m   [0mSELECT * FROM `quality_risks` WHERE (`quality_risks`.`id` = 1) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Redirected to http://test.host/products/1/quality_risks/1
+Completed in 4ms (DB: 7) | 302 Found [http://test.host/products/1/quality_risks/1?]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `releases` [0m
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+
+
+Processing ReleasesController#create (for 0.0.0.0 at 2010-02-25 22:02:49) [POST]
+  Parameters: {"release"=>{}, "product_id"=>"1"}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mRelease Create (0.0ms)[0m   [0mINSERT INTO `releases` (`version`, `startdate`, `enddate`, `product_id`, `goal`, `created_at`, `updated_at`) VALUES(NULL, NULL, NULL, 1, NULL, '2010-02-26 03:02:49', '2010-02-26 03:02:49')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/products/1/releases/3
+Completed in 10ms (DB: 2) | 302 Found [http://test.host/products/1/releases?]
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `releases` [0m
+  [4;36;1mSQL (34.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `releases` [0m
+  [4;35;1mRelease Load (1.0ms)[0m   [0mSELECT * FROM `releases` WHERE (`releases`.`id` = 1) [0m
+
+
+Processing ReleasesController#destroy (for 0.0.0.0 at 2010-02-25 22:02:49) [DELETE]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRelease Load (1.0ms)[0m   [0;1mSELECT * FROM `releases` WHERE (`releases`.`id` = 1) [0m
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mRelease Destroy (0.0ms)[0m   [0mDELETE FROM `releases` WHERE `id` = 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/products/1/releases
+Completed in 4ms (DB: 37) | 302 Found [http://test.host/releases/destroy/1]
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `releases` [0m
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;35;1mSQL (32.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;36;1mRelease Load (1.0ms)[0m   [0;1mSELECT * FROM `releases` WHERE (`releases`.`id` = 1) [0m
+
+
+Processing ReleasesController#edit (for 0.0.0.0 at 2010-02-25 22:02:49) [GET]
+  Parameters: {"product_id"=>"1", "id"=>"1"}
+  [4;35;1mRelease Load (0.0ms)[0m   [0mSELECT * FROM `releases` WHERE (`releases`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering releases/edit
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Completed in 9ms (View: 7, DB: 37) | 200 OK [http://test.host/products/1/releases/1/edit]
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+
+
+Processing ReleasesController#index (for 0.0.0.0 at 2010-02-25 22:02:49) [GET]
+  Parameters: {"product_id"=>"1"}
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering releases/index
+  [4;35;1mRelease Load (1.0ms)[0m   [0mSELECT * FROM `releases` WHERE (`releases`.product_id = 1) [0m
+Completed in 7ms (View: 3, DB: 3) | 200 OK [http://test.host/products/1/releases]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+
+
+Processing ReleasesController#new (for 0.0.0.0 at 2010-02-25 22:02:49) [GET]
+  Parameters: {"product_id"=>"1"}
+Rendering template within layouts/products
+Rendering releases/new
+Completed in 173ms (View: 172, DB: 2) | 200 OK [http://test.host/products/1/releases/new]
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;36;1mRelease Load (1.0ms)[0m   [0;1mSELECT * FROM `releases` WHERE (`releases`.`id` = 1) [0m
+
+
+Processing ReleasesController#show (for 0.0.0.0 at 2010-02-25 22:02:49) [GET]
+  Parameters: {"product_id"=>"1", "id"=>"1"}
+  [4;35;1mRelease Load (0.0ms)[0m   [0mSELECT * FROM `releases` WHERE (`releases`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering releases/show
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Completed in 5ms (View: 2, DB: 4) | 200 OK [http://test.host/products/1/releases/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;36;1mRelease Load (0.0ms)[0m   [0;1mSELECT * FROM `releases` WHERE (`releases`.`id` = 1) [0m
+
+
+Processing ReleasesController#update (for 0.0.0.0 at 2010-02-25 22:02:49) [PUT]
+  Parameters: {"release"=>{}, "product_id"=>"1", "id"=>"1"}
+  [4;35;1mRelease Load (1.0ms)[0m   [0mSELECT * FROM `releases` WHERE (`releases`.`id` = 1) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Redirected to http://test.host/products/1/releases/1
+Completed in 4ms (DB: 3) | 302 Found [http://test.host/products/1/releases/1?]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `req_breakdowns` [0m
+
+
+Processing ReqBreakdownsController#create (for 0.0.0.0 at 2010-02-25 22:02:49) [POST]
+  Parameters: {"req_breakdown"=>{}}
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mReqBreakdown Create (1.0ms)[0m   [0mINSERT INTO `req_breakdowns` (`created_at`, `updated_at`, `requirement_level_id`, `next_breakdown_id`, `previous_breakdown_id`) VALUES('2010-02-26 03:02:49', '2010-02-26 03:02:49', NULL, NULL, NULL)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/admin/req_breakdowns/4
+Completed in 7ms (DB: 4) | 302 Found [http://test.host/req_breakdowns/create?]
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `req_breakdowns` [0m
+  [4;36;1mSQL (32.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `req_breakdowns` [0m
+  [4;35;1mReqBreakdown Load (0.0ms)[0m   [0mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+
+
+Processing ReqBreakdownsController#destroy (for 0.0.0.0 at 2010-02-25 22:02:49) [DELETE]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReqBreakdown Load (1.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mReqBreakdown Destroy (0.0ms)[0m   [0;1mDELETE FROM `req_breakdowns` WHERE `id` = 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/admin/req_breakdowns
+Completed in 3ms (DB: 36) | 302 Found [http://test.host/req_breakdowns/destroy/1]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `req_breakdowns` [0m
+  [4;35;1mSQL (49.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mReqBreakdown Load (1.0ms)[0m   [0mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+
+
+Processing ReqBreakdownsController#edit (for 0.0.0.0 at 2010-02-25 22:02:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mReqBreakdown Load (1.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering req_breakdowns/edit
+  [4;35;1mRequirementLevel Load (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` [0m
+  [4;36;1mRequirementLevel Load (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+Completed in 8ms (View: 6, DB: 52) | 200 OK [http://test.host/req_breakdowns/edit/1]
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing ReqBreakdownsController#index (for 0.0.0.0 at 2010-02-25 22:02:49) [GET]
+  [4;35;1mReqBreakdown Load (0.0ms)[0m   [0mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`previous_breakdown_id` IS NULL) [0m
+Rendering template within layouts/application
+Rendering req_breakdowns/index
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+  [4;35;1mReqBreakdown Load (0.0ms)[0m   [0mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 2) [0m
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 2) [0m
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+Completed in 7ms (View: 2, DB: 4) | 200 OK [http://test.host/req_breakdowns]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+
+
+Processing ReqBreakdownsController#new (for 0.0.0.0 at 2010-02-25 22:02:49) [GET]
+Rendering template within layouts/application
+Rendering req_breakdowns/new
+Completed in 3ms (View: 3, DB: 1) | 200 OK [http://test.host/req_breakdowns/new]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mReqBreakdown Load (1.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+
+
+Processing ReqBreakdownsController#show (for 0.0.0.0 at 2010-02-25 22:02:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReqBreakdown Load (0.0ms)[0m   [0mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering req_breakdowns/show
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+Completed in 5ms (View: 2, DB: 4) | 200 OK [http://test.host/req_breakdowns/show/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mReqBreakdown Load (1.0ms)[0m   [0mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+
+
+Processing ReqBreakdownsController#update (for 0.0.0.0 at 2010-02-25 22:02:49) [PUT]
+  Parameters: {"req_breakdown"=>{}, "id"=>"1"}
+  [4;36;1mReqBreakdown Load (1.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/admin/req_breakdowns/1
+Completed in 4ms (DB: 3) | 302 Found [http://test.host/req_breakdowns/update/1?]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `requirement_levels` [0m
+
+
+Processing RequirementLevelsController#create (for 0.0.0.0 at 2010-02-25 22:02:49) [POST]
+  Parameters: {"requirement_level"=>{}}
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mRequirementLevel Create (1.0ms)[0m   [0mINSERT INTO `requirement_levels` (`name`, `created_at`, `updated_at`, `abbreviation`) VALUES(NULL, '2010-02-26 03:02:49', '2010-02-26 03:02:49', NULL)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/admin/requirement_levels/3
+Completed in 5ms (DB: 1) | 302 Found [http://test.host/requirement_levels/create?]
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `requirement_levels` [0m
+  [4;36;1mSQL (27.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `requirement_levels` [0m
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+
+
+Processing RequirementLevelsController#destroy (for 0.0.0.0 at 2010-02-25 22:02:49) [DELETE]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mRequirementLevel Destroy (0.0ms)[0m   [0;1mDELETE FROM `requirement_levels` WHERE `id` = 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/admin/requirement_levels
+Completed in 3ms (DB: 32) | 302 Found [http://test.host/requirement_levels/destroy/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `requirement_levels` [0m
+  [4;35;1mSQL (32.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+
+
+Processing RequirementLevelsController#edit (for 0.0.0.0 at 2010-02-25 22:02:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mRequirementLevel Load (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering requirement_levels/edit
+Completed in 4ms (View: 3, DB: 34) | 200 OK [http://test.host/requirement_levels/edit/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing RequirementLevelsController#index (for 0.0.0.0 at 2010-02-25 22:02:49) [GET]
+  [4;35;1mRequirementLevel Load (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` [0m
+Rendering template within layouts/application
+Rendering requirement_levels/index
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://test.host/requirement_levels]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+
+
+Processing RequirementLevelsController#new (for 0.0.0.0 at 2010-02-25 22:02:49) [GET]
+Rendering template within layouts/application
+Rendering requirement_levels/new
+Completed in 2ms (View: 2, DB: 2) | 200 OK [http://test.host/requirement_levels/new]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+
+
+Processing RequirementLevelsController#show (for 0.0.0.0 at 2010-02-25 22:02:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mRequirementLevel Load (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering requirement_levels/show
+Completed in 3ms (View: 1, DB: 3) | 200 OK [http://test.host/requirement_levels/show/1]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+
+
+Processing RequirementLevelsController#update (for 0.0.0.0 at 2010-02-25 22:02:49) [PUT]
+  Parameters: {"requirement_level"=>{}, "id"=>"1"}
+  [4;35;1mRequirementLevel Load (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/admin/requirement_levels/1
+Completed in 3ms (DB: 3) | 302 Found [http://test.host/requirement_levels/update/1?]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `requirement_types` [0m
+
+
+Processing RequirementTypesController#create (for 0.0.0.0 at 2010-02-25 22:02:49) [POST]
+  Parameters: {"requirement_type"=>{}}
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mRequirementType Create (1.0ms)[0m   [0;1mINSERT INTO `requirement_types` (`name`, `created_at`, `updated_at`) VALUES(NULL, '2010-02-26 03:02:49', '2010-02-26 03:02:49')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/admin/requirement_types/980190963
+Completed in 7ms (DB: 3) | 302 Found [http://test.host/requirement_types/create?]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `requirement_types` [0m
+  [4;35;1mSQL (42.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `requirement_types` [0m
+  [4;36;1mRequirementType Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_types` WHERE (`requirement_types`.`id` = 980190962) [0m
+
+
+Processing RequirementTypesController#destroy (for 0.0.0.0 at 2010-02-25 22:02:49) [DELETE]
+  Parameters: {"id"=>"980190962"}
+  [4;35;1mRequirementType Load (1.0ms)[0m   [0mSELECT * FROM `requirement_types` WHERE (`requirement_types`.`id` = 980190962) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mRequirementType Destroy (0.0ms)[0m   [0mDELETE FROM `requirement_types` WHERE `id` = 980190962[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/admin/requirement_types
+Completed in 3ms (DB: 46) | 302 Found [http://test.host/requirement_types/destroy/980190962]
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `requirement_types` [0m
+  [4;36;1mSQL (31.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mRequirementType Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_types` WHERE (`requirement_types`.`id` = 980190962) [0m
+
+
+Processing RequirementTypesController#edit (for 0.0.0.0 at 2010-02-25 22:02:50) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;35;1mRequirementType Load (0.0ms)[0m   [0mSELECT * FROM `requirement_types` WHERE (`requirement_types`.`id` = 980190962) [0m
+Rendering template within layouts/application
+Rendering requirement_types/edit
+Completed in 4ms (View: 2, DB: 33) | 200 OK [http://test.host/requirement_types/edit/980190962]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+
+
+Processing RequirementTypesController#index (for 0.0.0.0 at 2010-02-25 22:02:50) [GET]
+  [4;36;1mRequirementType Load (0.0ms)[0m   [0;1mSELECT * FROM `requirement_types` [0m
+Rendering template within layouts/application
+Rendering requirement_types/index
+Completed in 5ms (View: 3, DB: 2) | 200 OK [http://test.host/requirement_types]
+  [4;35;1mSQL (1.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+
+
+Processing RequirementTypesController#new (for 0.0.0.0 at 2010-02-25 22:02:50) [GET]
+Rendering template within layouts/application
+Rendering requirement_types/new
+Completed in 33ms (View: 33, DB: 1) | 200 OK [http://test.host/requirement_types/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRequirementType Load (1.0ms)[0m   [0mSELECT * FROM `requirement_types` WHERE (`requirement_types`.`id` = 980190962) [0m
+
+
+Processing RequirementTypesController#show (for 0.0.0.0 at 2010-02-25 22:02:50) [GET]
+  Parameters: {"id"=>"980190962"}
+  [4;36;1mRequirementType Load (0.0ms)[0m   [0;1mSELECT * FROM `requirement_types` WHERE (`requirement_types`.`id` = 980190962) [0m
+Rendering template within layouts/application
+Rendering requirement_types/show
+Completed in 3ms (View: 1, DB: 1) | 200 OK [http://test.host/requirement_types/show/980190962]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRequirementType Load (1.0ms)[0m   [0mSELECT * FROM `requirement_types` WHERE (`requirement_types`.`id` = 980190962) [0m
+
+
+Processing RequirementTypesController#update (for 0.0.0.0 at 2010-02-25 22:02:50) [PUT]
+  Parameters: {"requirement_type"=>{}, "id"=>"980190962"}
+  [4;36;1mRequirementType Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_types` WHERE (`requirement_types`.`id` = 980190962) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/admin/requirement_types/980190962
+Completed in 3ms (DB: 4) | 302 Found [http://test.host/requirement_types/update/980190962?]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `requirements` [0m
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+
+
+Processing RequirementsController#create (for 0.0.0.0 at 2010-02-25 22:02:50) [POST]
+  Parameters: {"requirement"=>{}, "product_id"=>"1"}
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mRequirement Create (0.0ms)[0m   [0mINSERT INTO `requirements` (`requirement_level_id`, `requirement_type_id`, `description`, `rationale`, `originator`, `fit_criterion`, `source_id`, `priority`, `satisfaction`, `dissatisfaction`, `created_at`, `updated_at`, `product_id`) VALUES(NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2010-02-26 03:02:50', '2010-02-26 03:02:50', 1)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/products/1/requirements/980190963
+Completed in 11ms (DB: 4) | 302 Found [http://test.host/products/1/requirements?]
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `requirements` [0m
+  [4;36;1mSQL (29.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `requirements` [0m
+  [4;35;1mRequirement Load (1.0ms)[0m   [0mSELECT * FROM `requirements` WHERE (`requirements`.`id` = 980190962) [0m
+
+
+Processing RequirementsController#destroy (for 0.0.0.0 at 2010-02-25 22:02:50) [DELETE]
+  Parameters: {"id"=>"980190962"}
+  [4;36;1mRequirement Load (1.0ms)[0m   [0;1mSELECT * FROM `requirements` WHERE (`requirements`.`id` = 980190962) [0m
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSAVEPOINT active_record_1[0m
+  [4;35;1mRequirement Destroy (0.0ms)[0m   [0mDELETE FROM `requirements` WHERE `id` = 980190962[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/products/1/requirements
+Completed in 4ms (DB: 35) | 302 Found [http://test.host/requirements/destroy/980190962]
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM `requirements` [0m
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;35;1mSQL (30.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;36;1mRequirement Load (1.0ms)[0m   [0;1mSELECT * FROM `requirements` WHERE (`requirements`.`id` = 980190962) [0m
+
+
+Processing RequirementsController#edit (for 0.0.0.0 at 2010-02-25 22:02:50) [GET]
+  Parameters: {"product_id"=>"1", "id"=>"980190962"}
+  [4;35;1mRequirement Load (1.0ms)[0m   [0mSELECT * FROM `requirements` WHERE (`requirements`.`id` = 980190962) [0m
+Rendering template within layouts/products
+Rendering requirements/edit
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Completed in 8ms (View: 7, DB: 35) | 200 OK [http://test.host/products/1/requirements/980190962/edit]
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+
+
+Processing RequirementsController#index (for 0.0.0.0 at 2010-02-25 22:02:50) [GET]
+  Parameters: {"product_id"=>"1"}
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering requirements/index
+  [4;35;1mRequirement Load (0.0ms)[0m   [0mSELECT * FROM `requirements` WHERE (`requirements`.product_id = 1) [0m
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://test.host/products/1/requirements]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+
+
+Processing RequirementsController#new (for 0.0.0.0 at 2010-02-25 22:02:50) [GET]
+  Parameters: {"product_id"=>"1"}
+  [4;35;1mProduct Load (0.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering requirements/new
+Completed in 8ms (View: 6, DB: 1) | 200 OK [http://test.host/products/1/requirements/new]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;35;1mRequirement Load (0.0ms)[0m   [0mSELECT * FROM `requirements` WHERE (`requirements`.`id` = 980190962) [0m
+
+
+Processing RequirementsController#show (for 0.0.0.0 at 2010-02-25 22:02:50) [GET]
+  Parameters: {"product_id"=>"1", "id"=>"980190962"}
+  [4;36;1mRequirement Load (1.0ms)[0m   [0;1mSELECT * FROM `requirements` WHERE (`requirements`.`id` = 980190962) [0m
+Rendering template within layouts/products
+Rendering requirements/show
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Completed in 5ms (View: 2, DB: 3) | 200 OK [http://test.host/products/1/requirements/980190962]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mProduct Load (1.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+  [4;35;1mRequirement Load (1.0ms)[0m   [0mSELECT * FROM `requirements` WHERE (`requirements`.`id` = 980190962) [0m
+
+
+Processing RequirementsController#update (for 0.0.0.0 at 2010-02-25 22:02:50) [PUT]
+  Parameters: {"requirement"=>{}, "product_id"=>"1", "id"=>"980190962"}
+  [4;36;1mRequirement Load (0.0ms)[0m   [0;1mSELECT * FROM `requirements` WHERE (`requirements`.`id` = 980190962) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSAVEPOINT active_record_1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mRELEASE SAVEPOINT active_record_1[0m
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Redirected to http://test.host/products/1/requirements/980190962
+Completed in 4ms (DB: 3) | 302 Found [http://test.host/products/1/requirements/980190962?]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m

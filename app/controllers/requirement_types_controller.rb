@@ -45,7 +45,7 @@ class RequirementTypesController < ApplicationController
     respond_to do |format|
       if @requirement_type.save
         flash[:notice] = 'RequirementType was successfully created.'
-        format.html { redirect_to(admin_requirement_type_path(@requirement_type)) }
+        format.html { redirect_to(admin_requirement_type_url(@requirement_type)) }
         format.xml  { render :xml => @requirement_type, :status => :created, :location => @requirement_type }
       else
         format.html { render :action => "new" }
@@ -62,7 +62,7 @@ class RequirementTypesController < ApplicationController
     respond_to do |format|
       if @requirement_type.update_attributes(params[:requirement_type])
         flash[:notice] = 'RequirementType was successfully updated.'
-        format.html { redirect_to(admin_requirement_type_path(@requirement_type)) }
+        format.html { redirect_to(admin_requirement_type_url(@requirement_type)) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

@@ -50,7 +50,7 @@ class ReleasesController < ApplicationController
     respond_to do |format|
       if @release.save
         flash[:notice] = 'Release was successfully created.'
-        format.html { redirect_to(product_release_path(@product, @release)) }
+        format.html { redirect_to(product_release_url(@product, @release)) }
         format.xml  { render :xml => @release, :status => :created, :location => @release }
       else
         format.html { render :action => "new" }
