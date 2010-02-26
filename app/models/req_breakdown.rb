@@ -11,7 +11,7 @@ class ReqBreakdown < ActiveRecord::Base
       @highest = @highest.previous_level
     end
 
-    @traceability = @highest.requirement_level.abbreviation
+    @traceability = @highest.requirement_level.abbreviation.nil? ? '' : @highest.requirement_level.abbreviation
     while @highest.next_level != nil
       @highest = @highest.next_level
       @traceability += "=>".concat(@highest.requirement_level.abbreviation)

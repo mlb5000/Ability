@@ -29,7 +29,13 @@
               </ul></div>
             </li>
       <% end %>
-        <li class="last" class="parent"><a href="/administration"><span>Administration</span></a></li>
+        <li class="last" class="parent"><a href="/administration"><span>Administration</span></a>
+          <div><ul>
+            <li><a href=<%= admin_requirement_types_path %>><span>Requirement Types</span></a></li>
+            <li><a href=<%= admin_requirement_levels_path %>><span>Requirement Levels</span></a></li>
+            <li><a href=<%= admin_req_breakdowns_path %>><span>Requirement Breakdowns</span></a></li>
+          </ul></div>
+        </li>
       </ul>
 	</div>
     <%= yield %>

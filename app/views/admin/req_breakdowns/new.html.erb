@@ -1,0 +1,23 @@
+<h1>New req_breakdown</h1>
+
+<% form_for :req_breakdown, @req_breakdown, :url => admin_req_breakdowns_path do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :previous_breakdown_id %><br />
+    <%= f.text_field :previous_breakdown_id %>
+  </p>
+  <p>
+    <%= f.label :next_breakdown_id %><br />
+    <%= f.text_field :next_breakdown_id %>
+  </p>
+  <p>
+    <%= f.label :requirement_level_id %><br />
+    <%= f.check_box :requirement_level_id %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', admin_req_breakdowns_path %>

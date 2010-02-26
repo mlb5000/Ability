@@ -5,11 +5,11 @@
 
   <p>
     <%= f.label :requirement_level_id %><br />
-    <%= f.text_field :requirement_level_id %>
+    <%= collection_select(:requirement, :requirement_level_id, RequirementLevel.all, :id, :name) %>
   </p>
   <p>
     <%= f.label :requirement_type_id %><br />
-    <%= f.text_field :requirement_type_id %>
+    <%= collection_select(:requirement, :requirement_type_id, RequirementType.all, :id, :name) %>
   </p>
   <p>
     <%= f.label :description %><br />

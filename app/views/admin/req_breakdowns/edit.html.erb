@@ -1,0 +1,18 @@
+<h1>Editing req_breakdown</h1>
+
+<% form_for :req_breakdown, @req_breakdown, :url => admin_req_breakdown_url(@req_breakdown) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :lower_level_id %><br />
+    <%= @req_levels = RequirementLevel.all
+        @req_levels.delete(@req_breakdown.requirement_level)
+        options_for_select(@req_levels) %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', admin_req_breakdown_url(@req_breakdown) %> |
+<%= link_to 'Back', admin_req_breakdowns_path %>
