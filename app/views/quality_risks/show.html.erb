@@ -1,9 +1,4 @@
 <p>
-  <b>Product:</b>
-  <%=h @quality_risk.product_id %>
-</p>
-
-<p>
   <b>Risk category:</b>
   <%=h @quality_risk.risk_category_id %>
 </p>
@@ -33,6 +28,5 @@
   <%=h @quality_risk.impact %>
 </p>
 
-
-<%= link_to 'Edit', edit_quality_risk_path(@quality_risk) %> |
-<%= link_to 'Back', quality_risks_path %>
+<%= link_to 'Edit', edit_product_quality_risk_path(@quality_risk.product, @quality_risk) %> |
+<%= link_to 'Back', product_quality_risks_path %>

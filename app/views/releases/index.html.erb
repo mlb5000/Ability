@@ -1,0 +1,28 @@
+<h1>Listing releases</h1>
+
+<table>
+  <tr>
+    <th>Version</th>
+    <th>Start Date</th>
+    <th>Release Date<br>(Targeted)</th>
+    <th>Identified Risks</th>
+    <th>%Risks Mitigated</th>
+  </tr>
+
+<% i = 0
+   @releases.each do |release| %>
+  <tr class=<%= i.odd? ? "d1" : "d0" %> >
+    <td><%= link_to release.version, product_release_path(@product, release) %></td>
+    <td><%=h release.startdate %></td>
+    <td><%=h release.enddate %></td>
+    <td>0</td>
+    <td>0</td>
+    <td><%= link_to 'Destroy', product_release_path(@product, release), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% i = i.next
+   end %>
+</table>
+
+<br />
+
+<%= link_to 'New release', new_product_release_path(@product) %>

@@ -1,15 +1,23 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :quality_risks
+  map.root :controller=>'products', :action=>'index'
 
-  map.resources :requirements
+  map.resources :products do |product|
+    product.resources :requirements
+    product.resources :quality_risks
+    product.resources :releases
+    product.resources :defects
+    product.resources :test_cases, :as => "cases", :path_prefix => "products/:product_id/testing"
+    product.resources :test_executions, :as => "executions", :path_prefix => "products/:product_id/testing"
+    product.resources :test_procedures, :as => "procedures", :path_prefix => "products/:product_id/testing"
+  end
 
-  map.resources :products
+  map.resources :test_environments, :as => "environments"
 
-  map.resources :req_breakdowns
-
-  map.resources :requirement_types
-
-  map.resources :requirement_levels
+  map.namespace(:admin) do |admin|
+    admin.resources :req_breakdowns
+    admin.resources :requirement_types
+    admin.resources :requirement_levels
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
 

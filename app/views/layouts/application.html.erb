@@ -3,31 +3,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link href="/javascripts/css/flexigrid/flexigrid.css" media="screen" rel="stylesheet" type="text/css" />
-    <link type="text/css" href="/javascripts/menu/menu.css" rel="stylesheet" />
+    <link href="/stylesheets/style.css" rel="stylesheet" type="text/css" />
+    <link href="/javascripts/menu/menu.css" rel="stylesheet" type="text/css" />
     <script src="/javascripts/jquery.js" type="text/javascript"></script>
     <script src="/javascripts/flexigrid.js" type="text/javascript"></script>
+    <script src="/javascripts/menu/jquery.js" type="text/javascript"></script>
     <script src="/javascripts/menu/menu.js" type="text/javascript"></script>
   </head>
   <body>
-    <div id="menu">
-	  <ul class="menu">
-        <li><a href="/"><span>Home</span></a></li>
-        <li><a href="/products"><span>Product Dashboard</span></a></li>
-        <li><a href="/releases"><span>Releases</span></a></li>
-        <li><a href="/quality_risks"><span>Quality Risks</span></a></li>
-        <li><a href="/requirements"><span>Requirements</span></a></li>
-		<li><a href="/defects"><span>Defects</span></a></li>
-        <li><a href="#" class="parent"><span>Testing</span></a>
-          <div><ul>
-            <li><a href="/test_environments"><span>Test Environments</span></a></li>
-            <li><a href="/test_procedures"><span>Test Procedures</span></a></li>
-            <li><a href="/test_executions"><span>Test Executions</span></a></li>
-          </ul></div>
-        </li>
-        <li class="last" class="parent"><a href="/administration"><span>Administration</span></a></li>
-      </ul>
-	</div>
     <%= yield %>
-    <a href="http://apycom.com/">Apycom jQuery Menus</a>
+    <div class="Footer"></br><a href="http://apycom.com/">Apycom jQuery Menus</a></div>
   </body>
 </html>

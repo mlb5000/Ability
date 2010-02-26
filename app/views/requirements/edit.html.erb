@@ -1,6 +1,6 @@
 <h1>Editing requirement</h1>
 
-<% form_for(@requirement) do |f| %>
+<% form_for :requirement, @requirement, :url => product_requirement_url(@requirement.product, @requirement), :html => {:method =>:put} do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -48,5 +48,5 @@
   </p>
 <% end %>
 
-<%= link_to 'Show', @requirement %> |
-<%= link_to 'Back', requirements_path %>
+<%= link_to 'Show', product_requirement_path(@requirement.product, @requirement) %> |
+<%= link_to 'Back', product_requirements_path(@product) %>

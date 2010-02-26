@@ -17,7 +17,7 @@ class RequirementTypesControllerTest < ActionController::TestCase
       post :create, :requirement_type => { }
     end
 
-    assert_redirected_to requirement_type_path(assigns(:requirement_type))
+    assert_redirected_to admin_requirement_type_path(assigns(:requirement_type))
   end
 
   test "should show requirement_type" do
@@ -32,7 +32,7 @@ class RequirementTypesControllerTest < ActionController::TestCase
 
   test "should update requirement_type" do
     put :update, :id => requirement_types(:one).to_param, :requirement_type => { }
-    assert_redirected_to requirement_type_path(assigns(:requirement_type))
+    assert_redirected_to admin_requirement_type_path(assigns(:requirement_type))
   end
 
   test "should destroy requirement_type" do
@@ -40,6 +40,6 @@ class RequirementTypesControllerTest < ActionController::TestCase
       delete :destroy, :id => requirement_types(:one).to_param
     end
 
-    assert_redirected_to requirement_types_path
+    assert_redirected_to admin_requirement_types_path
   end
 end

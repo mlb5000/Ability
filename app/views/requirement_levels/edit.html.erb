@@ -1,6 +1,6 @@
 <h1>Editing requirement_level</h1>
 
-<% form_for(@requirement_level) do |f| %>
+<% form_for :requirement_level, @requirement_level, :url => admin_requirement_level_path(@requirement_level) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -12,5 +12,5 @@
   </p>
 <% end %>
 
-<%= link_to 'Show', @requirement_level %> |
-<%= link_to 'Back', requirement_levels_path %>
+<%= link_to 'Show', admin_requirement_level_path(@requirement_level) %> |
+<%= link_to 'Back', admin_requirement_levels_path %>

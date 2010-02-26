@@ -1,23 +1,98 @@
-<p>
-  <b>Name:</b>
-  <%=h @product.name %>
-</p>
+<!-- Column 1 -->
+<table width="100%" border="0" cellpadding="10" class="layout">
+  <tr>
+    <td width="40%">
+      <table width="100%">
+        <tr text-align="center">
+          <th>Requirement Level</th>
+          <th>Test Cases</th>
+          <th>Verified?<br>(As of last execution)</th>
+        </tr>
 
-<p>
-  <b>Identifier:</b>
-  <%=h @product.identifier %>
-</p>
+        <% if false %>
+        <% level = @product.req_breakdown.requirement_level
+           while level != nil %>
+            <tr>
+              <td>
+                <% h level.name %></td>
+              <td>
+                <% @product.tests_at_level(level).count %>0
+              </td>
+              <td><%= check_box "product", "req_verified_by_test", :checked => @product.req_verified_by_test %></td>
+            </tr>
+        <% end %>-->
+            <% end %>
 
-<p>
-  <b>Req breakdown:</b>
-  <%=h @product.req_breakdown_id %>
-</p>
+        <tr class="d0">
+          <td>User Story</td>
+          <td>63</td>
+          <td>No</td>
+        </tr>
+      </table>
 
-<p>
-  <b>Jira defect filter:</b>
-  <%=h @product.jira_defect_filter %>
-</p>
+      <br><br>
 
+      <table width="100%">
+        <tr>
+          <th>Report</th>
+          <th>Run</th>
+        </tr>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+        <tr class="d0">
+          <td>Requirements Traceability</td>
+          <td>(run icon)</td>
+        </tr>
+        <tr class="d1">
+          <td>Residual Risk</td>
+          <td>(run icon)</td>
+        </tr>
+        <tr class="d0">
+          <td>Test Progress</td>
+          <td>(run icon)</td>
+        </tr>
+        <tr class="d1">
+          <td>Test Status</td>
+          <td>(run icon)</td>
+        </tr>
+      </table>
+    </td>
+
+    <!-- Column 2 -->
+    <td width="60%">
+      <table width="100%">
+        <tr text-align="center">
+          <th>Execution</th>
+          <th>Charter Description</th>
+          <th>Assignee(s)</th>
+          <th>Progress<br>(%complete)</th>
+          <th>Status</th>
+        </tr>
+
+        <% if false %>
+        <% @product.current_test_executions.each do |execution| %>
+            <tr>
+              <td>
+                <% h execution.identifier %></td>
+              <td>
+                <% h execution.description[0, 30] %></td>
+              <td>
+                <% execution.assignees[0, 2].each do |assignee| %>
+                    <% h assignee.name %>
+                    <br>
+                <% end %>
+              </td>
+            </tr>
+        <% end %>
+        <% end%>
+
+        <tr class="d0">
+          <td>ABL-SYS-1</td>
+          <td>System Test Execution (verify all system requirements)</td>
+          <td>Tester 1<br>Tester 2</td>
+          <td>67%</td>
+          <td>2</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>

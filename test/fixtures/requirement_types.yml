@@ -1,13 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-functional:
+one:
   name: Functional
 
-usability:
+two:
   name: Usability
 
-performance:
+three:
   name: Performance
 
-accessibility:
+four:
   name: Accessibility

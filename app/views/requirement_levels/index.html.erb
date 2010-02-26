@@ -8,13 +8,13 @@
 <% @requirement_levels.each do |requirement_level| %>
   <tr>
     <td><%=h requirement_level.name %></td>
-    <td><%= link_to 'Show', requirement_level %></td>
-    <td><%= link_to 'Edit', edit_requirement_level_path(requirement_level) %></td>
-    <td><%= link_to 'Destroy', requirement_level, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', admin_requirement_level_path(requirement_level) %></td>
+    <td><%= link_to 'Edit', edit_admin_requirement_level_path(requirement_level) %></td>
+    <td><%= link_to 'Destroy', edit_admin_requirement_level_path(requirement_level), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New requirement_level', new_requirement_level_path %>
+<%= link_to 'New requirement_level', new_admin_requirement_level_path %>

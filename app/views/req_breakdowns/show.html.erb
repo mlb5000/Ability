@@ -1,23 +1,17 @@
 <p>
-  <b>Higher level:</b>
-  <%=h @req_breakdown.higher_level_id %>
+  <b>Requirement Level:</b>
+  <%=h @req_breakdown.requirement_level.name %>
 </p>
 
 <p>
-  <b>Lower level:</b>
-  <%=h @req_breakdown.lower_level_id %>
+  <b>Previous Level:</b>
+  <%=h @req_breakdown.previous_level.requirement_level.name if (@req_breakdown.previous_level != nil) %>
 </p>
 
 <p>
-  <b>Is highest:</b>
-  <%=h @req_breakdown.is_highest %>
+  <b>Next level:</b>
+  <%=h @req_breakdown.next_level.requirement_level.name if (@req_breakdown.previous_level != nil) %>
 </p>
 
-<p>
-  <b>Is lowest:</b>
-  <%=h @req_breakdown.is_lowest %>
-</p>
-
-
-<%= link_to 'Edit', edit_req_breakdown_path(@req_breakdown) %> |
-<%= link_to 'Back', req_breakdowns_path %>
+<%= link_to 'Edit', edit_admin_req_breakdown_path(@req_breakdown) %> |
+<%= link_to 'Back', admin_req_breakdowns_path %>

@@ -45,7 +45,7 @@ class RequirementLevelsController < ApplicationController
     respond_to do |format|
       if @requirement_level.save
         flash[:notice] = 'RequirementLevel was successfully created.'
-        format.html { redirect_to(@requirement_level) }
+        format.html { redirect_to(admin_requirement_level_url(@requirement_level)) }
         format.xml  { render :xml => @requirement_level, :status => :created, :location => @requirement_level }
       else
         format.html { render :action => "new" }
@@ -62,7 +62,7 @@ class RequirementLevelsController < ApplicationController
     respond_to do |format|
       if @requirement_level.update_attributes(params[:requirement_level])
         flash[:notice] = 'RequirementLevel was successfully updated.'
-        format.html { redirect_to(@requirement_level) }
+        format.html { redirect_to(admin_requirement_level_url(@requirement_level)) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -78,7 +78,7 @@ class RequirementLevelsController < ApplicationController
     @requirement_level.destroy
 
     respond_to do |format|
-      format.html { redirect_to(requirement_levels_url) }
+      format.html { redirect_to(admin_requirement_levels_url) }
       format.xml  { head :ok }
     end
   end

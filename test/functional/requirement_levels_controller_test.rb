@@ -17,7 +17,7 @@ class RequirementLevelsControllerTest < ActionController::TestCase
       post :create, :requirement_level => { }
     end
 
-    assert_redirected_to requirement_level_path(assigns(:requirement_level))
+    assert_redirected_to admin_requirement_level_path(assigns(:requirement_level))
   end
 
   test "should show requirement_level" do
@@ -32,7 +32,7 @@ class RequirementLevelsControllerTest < ActionController::TestCase
 
   test "should update requirement_level" do
     put :update, :id => requirement_levels(:one).to_param, :requirement_level => { }
-    assert_redirected_to requirement_level_path(assigns(:requirement_level))
+    assert_redirected_to admin_requirement_level_path(assigns(:requirement_level))
   end
 
   test "should destroy requirement_level" do
@@ -40,6 +40,6 @@ class RequirementLevelsControllerTest < ActionController::TestCase
       delete :destroy, :id => requirement_levels(:one).to_param
     end
 
-    assert_redirected_to requirement_levels_path
+    assert_redirected_to admin_requirement_levels_path
   end
 end

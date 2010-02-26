@@ -8,13 +8,13 @@
 <% @requirement_types.each do |requirement_type| %>
   <tr>
     <td><%=h requirement_type.name %></td>
-    <td><%= link_to 'Show', requirement_type %></td>
-    <td><%= link_to 'Edit', edit_requirement_type_path(requirement_type) %></td>
-    <td><%= link_to 'Destroy', requirement_type, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', admin_requirement_type_path(requirement_type) %></td>
+    <td><%= link_to 'Edit', edit_admin_requirement_type_path(requirement_type) %></td>
+    <td><%= link_to 'Destroy', admin_requirement_type_path(requirement_type), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New requirement_type', new_requirement_type_path %>
+<%= link_to 'New requirement_type', new_admin_requirement_type_path %>

@@ -2,25 +2,19 @@
 
 <table>
   <tr>
-    <th>Higher level</th>
-    <th>Lower level</th>
-    <th>Is highest</th>
-    <th>Is lowest</th>
+    <th>Traceability</th>
   </tr>
 
 <% @req_breakdowns.each do |req_breakdown| %>
   <tr>
-    <td><%=h req_breakdown.higher_level_id %></td>
-    <td><%=h req_breakdown.lower_level_id %></td>
-    <td><%=h req_breakdown.is_highest %></td>
-    <td><%=h req_breakdown.is_lowest %></td>
-    <td><%= link_to 'Show', req_breakdown %></td>
-    <td><%= link_to 'Edit', edit_req_breakdown_path(req_breakdown) %></td>
-    <td><%= link_to 'Destroy', req_breakdown, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%=h req_breakdown.traceabilityStr %></td>
+    <td><%= link_to 'Show', admin_req_breakdown_path(req_breakdown) %></td>
+    <td><%= link_to 'Edit', edit_admin_req_breakdown_path(req_breakdown) %></td>
+    <td><%= link_to 'Destroy', admin_req_breakdown_path(req_breakdown), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New req_breakdown', new_req_breakdown_path %>
+<%= link_to 'New req_breakdown', new_admin_req_breakdown_path %>

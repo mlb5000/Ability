@@ -10,7 +10,7 @@
 
 <% @products.each do |product| %>
   <tr>
-    <td><%=h product.name %></td>
+    <td><%= link_to product.name, product %></td>
     <td><%=h product.identifier %></td>
     <td><%=h product.req_breakdown_id %></td>
     <td><%=h product.jira_defect_filter %></td>

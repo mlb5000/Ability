@@ -17,29 +17,29 @@ class ReqBreakdownsControllerTest < ActionController::TestCase
       post :create, :req_breakdown => { }
     end
 
-    assert_redirected_to req_breakdown_path(assigns(:req_breakdown))
+    assert_redirected_to admin_req_breakdown_path(assigns(:req_breakdown))
   end
 
   test "should show req_breakdown" do
-    get :show, :id => req_breakdowns(:one).to_param
+    get :show, :id => req_breakdowns(:level0).to_param
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :id => req_breakdowns(:one).to_param
+    get :edit, :id => req_breakdowns(:level0).to_param
     assert_response :success
   end
 
   test "should update req_breakdown" do
-    put :update, :id => req_breakdowns(:one).to_param, :req_breakdown => { }
-    assert_redirected_to req_breakdown_path(assigns(:req_breakdown))
+    put :update, :id => req_breakdowns(:level0).to_param, :req_breakdown => { }
+    assert_redirected_to admin_req_breakdown_path(assigns(:req_breakdown))
   end
 
   test "should destroy req_breakdown" do
     assert_difference('ReqBreakdown.count', -1) do
-      delete :destroy, :id => req_breakdowns(:one).to_param
+      delete :destroy, :id => req_breakdowns(:level0).to_param
     end
 
-    assert_redirected_to req_breakdowns_path
+    assert_redirected_to admin_req_breakdowns_path
   end
 end

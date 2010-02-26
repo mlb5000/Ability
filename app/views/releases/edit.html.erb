@@ -1,0 +1,28 @@
+<h1>Editing release</h1>
+
+<% form_for :release, @release, :url => product_release_url, :html => {:method =>:put} do |f| %>
+  <%= f.error_messages %>
+    
+  <p>
+    <%= f.label :version %><br />
+    <%= f.text_field :version %>
+  </p>
+  <p>
+    <%= f.label :startdate %><br />
+    <%= f.date_select :startdate %>
+  </p>
+  <p>
+    <%= f.label :enddate %><br />
+    <%= f.date_select :enddate %>
+  </p>
+  <p>
+    <%= f.label :goal %><br />
+    <%= f.text_field :goal %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', product_release_path(@release.product, @release) %> |
+<%= link_to 'Back', product_releases_path %>

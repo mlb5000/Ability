@@ -22,6 +22,12 @@
       </requirement>
       <source from="config/boot.rb" />
     </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="test-unit" version="0" bound="GREATER_OR_EQUAL" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
   </component>
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
@@ -40,6 +46,7 @@
     <orderEntry type="library" scope="PROVIDED" name="[gem] activerecord (v2.3.5, C:/Ruby19/lib/ruby/gems/1.9.1/gems/activerecord-2.3.5)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] rails (v2.3.5, C:/Ruby19/lib/ruby/gems/1.9.1/gems/rails-2.3.5)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] mysql (v2.8.1, C:/Ruby19/lib/ruby/gems/1.9.1/gems/mysql-2.8.1-x86-mingw32)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] test-unit (v2.0.6, C:/Ruby19/lib/ruby/gems/1.9.1/gems/test-unit-2.0.6)" level="application" />
   </component>
 </module>
 

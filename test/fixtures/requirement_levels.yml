@@ -1,17 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-userstory:
+one:
   id: 1
   name: User Story
+  abbreviation: STRY
 
-SRS:
+two:
   id: 2
   name: SRS
-
-HLD:
-  id: 3
-  name: HLD
-
-LLD:
-  id: 4
-  name: LLD
+  abbreviation: SRS

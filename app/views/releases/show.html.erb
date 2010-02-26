@@ -1,0 +1,28 @@
+<p>
+  <b>Version:</b>
+  <%=h @release.version %>
+</p>
+
+<p>
+  <b>Startdate:</b>
+  <%=h @release.startdate %>
+</p>
+
+<p>
+  <b>Enddate:</b>
+  <%=h @release.enddate %>
+</p>
+
+<p>
+  <b>Product:</b>
+  <%=h @release.product_id %>
+</p>
+
+<p>
+  <b>Goal:</b>
+  <%=h @release.goal %>
+</p>
+
+
+<%= link_to 'Edit', edit_product_release_path(@release.product, @release) %> |
+<%= link_to 'Back', product_releases_path(@release.product) %>

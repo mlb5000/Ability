@@ -1,8 +1,11 @@
 class QualityRisksController < ApplicationController
+  layout "products"
+  
   # GET /quality_risks
   # GET /quality_risks.xml
   def index
-    @quality_risks = QualityRisk.all
+    @product = Product.find(params[:product_id])
+    @quality_risks = @product.quality_risks
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,6 +27,7 @@ class QualityRisksController < ApplicationController
   # GET /quality_risks/new
   # GET /quality_risks/new.xml
   def new
+    @product = Product.find(params[:product_id])
     @quality_risk = QualityRisk.new
 
     respond_to do |format|
@@ -40,12 +44,14 @@ class QualityRisksController < ApplicationController
   # POST /quality_risks
   # POST /quality_risks.xml
   def create
+    @product = Product.find(params[:product_id])
     @quality_risk = QualityRisk.new(params[:quality_risk])
+    @quality_risk.product = @product
 
     respond_to do |format|
       if @quality_risk.save
         flash[:notice] = 'QualityRisk was successfully created.'
-        format.html { redirect_to(@quality_risk) }
+        format.html { redirect_to(product_quality_risk_path(@product, @quality_risk)) }
         format.xml  { render :xml => @quality_risk, :status => :created, :location => @quality_risk }
       else
         format.html { render :action => "new" }
@@ -62,7 +68,7 @@ class QualityRisksController < ApplicationController
     respond_to do |format|
       if @quality_risk.update_attributes(params[:quality_risk])
         flash[:notice] = 'QualityRisk was successfully updated.'
-        format.html { redirect_to(@quality_risk) }
+        format.html { redirect_to(product_quality_risk_path(@quality_risk.product, @quality_risk)) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -75,10 +81,11 @@ class QualityRisksController < ApplicationController
   # DELETE /quality_risks/1.xml
   def destroy
     @quality_risk = QualityRisk.find(params[:id])
+    @product = @quality_risk.product
     @quality_risk.destroy
 
     respond_to do |format|
-      format.html { redirect_to(quality_risks_url) }
+      format.html { redirect_to(product_quality_risks_url(@product)) }
       format.xml  { head :ok }
     end
   end
