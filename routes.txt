@@ -1,0 +1,89 @@
+(in C:/Projects/Ability/dev)
+                        root        /                                                           {:controller=>"products", :action=>"index"}
+        product_requirements GET    /products/:product_id/requirements(.:format)                {:controller=>"requirements", :action=>"index"}
+                             POST   /products/:product_id/requirements(.:format)                {:controller=>"requirements", :action=>"create"}
+     new_product_requirement GET    /products/:product_id/requirements/new(.:format)            {:controller=>"requirements", :action=>"new"}
+    edit_product_requirement GET    /products/:product_id/requirements/:id/edit(.:format)       {:controller=>"requirements", :action=>"edit"}
+         product_requirement GET    /products/:product_id/requirements/:id(.:format)            {:controller=>"requirements", :action=>"show"}
+                             PUT    /products/:product_id/requirements/:id(.:format)            {:controller=>"requirements", :action=>"update"}
+                             DELETE /products/:product_id/requirements/:id(.:format)            {:controller=>"requirements", :action=>"destroy"}
+       product_quality_risks GET    /products/:product_id/quality_risks(.:format)               {:controller=>"quality_risks", :action=>"index"}
+                             POST   /products/:product_id/quality_risks(.:format)               {:controller=>"quality_risks", :action=>"create"}
+    new_product_quality_risk GET    /products/:product_id/quality_risks/new(.:format)           {:controller=>"quality_risks", :action=>"new"}
+   edit_product_quality_risk GET    /products/:product_id/quality_risks/:id/edit(.:format)      {:controller=>"quality_risks", :action=>"edit"}
+        product_quality_risk GET    /products/:product_id/quality_risks/:id(.:format)           {:controller=>"quality_risks", :action=>"show"}
+                             PUT    /products/:product_id/quality_risks/:id(.:format)           {:controller=>"quality_risks", :action=>"update"}
+                             DELETE /products/:product_id/quality_risks/:id(.:format)           {:controller=>"quality_risks", :action=>"destroy"}
+            product_releases GET    /products/:product_id/releases(.:format)                    {:controller=>"releases", :action=>"index"}
+                             POST   /products/:product_id/releases(.:format)                    {:controller=>"releases", :action=>"create"}
+         new_product_release GET    /products/:product_id/releases/new(.:format)                {:controller=>"releases", :action=>"new"}
+        edit_product_release GET    /products/:product_id/releases/:id/edit(.:format)           {:controller=>"releases", :action=>"edit"}
+             product_release GET    /products/:product_id/releases/:id(.:format)                {:controller=>"releases", :action=>"show"}
+                             PUT    /products/:product_id/releases/:id(.:format)                {:controller=>"releases", :action=>"update"}
+                             DELETE /products/:product_id/releases/:id(.:format)                {:controller=>"releases", :action=>"destroy"}
+             product_defects GET    /products/:product_id/defects(.:format)                     {:controller=>"defects", :action=>"index"}
+                             POST   /products/:product_id/defects(.:format)                     {:controller=>"defects", :action=>"create"}
+          new_product_defect GET    /products/:product_id/defects/new(.:format)                 {:controller=>"defects", :action=>"new"}
+         edit_product_defect GET    /products/:product_id/defects/:id/edit(.:format)            {:controller=>"defects", :action=>"edit"}
+              product_defect GET    /products/:product_id/defects/:id(.:format)                 {:controller=>"defects", :action=>"show"}
+                             PUT    /products/:product_id/defects/:id(.:format)                 {:controller=>"defects", :action=>"update"}
+                             DELETE /products/:product_id/defects/:id(.:format)                 {:controller=>"defects", :action=>"destroy"}
+          product_test_cases GET    /products/:product_id/testing/cases(.:format)               {:controller=>"test_cases", :action=>"index"}
+                             POST   /products/:product_id/testing/cases(.:format)               {:controller=>"test_cases", :action=>"create"}
+       new_product_test_case GET    /products/:product_id/testing/cases/new(.:format)           {:controller=>"test_cases", :action=>"new"}
+      edit_product_test_case GET    /products/:product_id/testing/cases/:id/edit(.:format)      {:controller=>"test_cases", :action=>"edit"}
+           product_test_case GET    /products/:product_id/testing/cases/:id(.:format)           {:controller=>"test_cases", :action=>"show"}
+                             PUT    /products/:product_id/testing/cases/:id(.:format)           {:controller=>"test_cases", :action=>"update"}
+                             DELETE /products/:product_id/testing/cases/:id(.:format)           {:controller=>"test_cases", :action=>"destroy"}
+     product_test_executions GET    /products/:product_id/testing/executions(.:format)          {:controller=>"test_executions", :action=>"index"}
+                             POST   /products/:product_id/testing/executions(.:format)          {:controller=>"test_executions", :action=>"create"}
+  new_product_test_execution GET    /products/:product_id/testing/executions/new(.:format)      {:controller=>"test_executions", :action=>"new"}
+ edit_product_test_execution GET    /products/:product_id/testing/executions/:id/edit(.:format) {:controller=>"test_executions", :action=>"edit"}
+      product_test_execution GET    /products/:product_id/testing/executions/:id(.:format)      {:controller=>"test_executions", :action=>"show"}
+                             PUT    /products/:product_id/testing/executions/:id(.:format)      {:controller=>"test_executions", :action=>"update"}
+                             DELETE /products/:product_id/testing/executions/:id(.:format)      {:controller=>"test_executions", :action=>"destroy"}
+     product_test_procedures GET    /products/:product_id/testing/procedures(.:format)          {:controller=>"test_procedures", :action=>"index"}
+                             POST   /products/:product_id/testing/procedures(.:format)          {:controller=>"test_procedures", :action=>"create"}
+  new_product_test_procedure GET    /products/:product_id/testing/procedures/new(.:format)      {:controller=>"test_procedures", :action=>"new"}
+ edit_product_test_procedure GET    /products/:product_id/testing/procedures/:id/edit(.:format) {:controller=>"test_procedures", :action=>"edit"}
+      product_test_procedure GET    /products/:product_id/testing/procedures/:id(.:format)      {:controller=>"test_procedures", :action=>"show"}
+                             PUT    /products/:product_id/testing/procedures/:id(.:format)      {:controller=>"test_procedures", :action=>"update"}
+                             DELETE /products/:product_id/testing/procedures/:id(.:format)      {:controller=>"test_procedures", :action=>"destroy"}
+                    products GET    /products(.:format)                                         {:controller=>"products", :action=>"index"}
+                             POST   /products(.:format)                                         {:controller=>"products", :action=>"create"}
+                 new_product GET    /products/new(.:format)                                     {:controller=>"products", :action=>"new"}
+                edit_product GET    /products/:id/edit(.:format)                                {:controller=>"products", :action=>"edit"}
+                     product GET    /products/:id(.:format)                                     {:controller=>"products", :action=>"show"}
+                             PUT    /products/:id(.:format)                                     {:controller=>"products", :action=>"update"}
+                             DELETE /products/:id(.:format)                                     {:controller=>"products", :action=>"destroy"}
+           test_environments GET    /environments(.:format)                                     {:controller=>"test_environments", :action=>"index"}
+                             POST   /environments(.:format)                                     {:controller=>"test_environments", :action=>"create"}
+        new_test_environment GET    /environments/new(.:format)                                 {:controller=>"test_environments", :action=>"new"}
+       edit_test_environment GET    /environments/:id/edit(.:format)                            {:controller=>"test_environments", :action=>"edit"}
+            test_environment GET    /environments/:id(.:format)                                 {:controller=>"test_environments", :action=>"show"}
+                             PUT    /environments/:id(.:format)                                 {:controller=>"test_environments", :action=>"update"}
+                             DELETE /environments/:id(.:format)                                 {:controller=>"test_environments", :action=>"destroy"}
+        admin_req_breakdowns GET    /admin/req_breakdowns(.:format)                             {:controller=>"admin/req_breakdowns", :action=>"index"}
+                             POST   /admin/req_breakdowns(.:format)                             {:controller=>"admin/req_breakdowns", :action=>"create"}
+     new_admin_req_breakdown GET    /admin/req_breakdowns/new(.:format)                         {:controller=>"admin/req_breakdowns", :action=>"new"}
+    edit_admin_req_breakdown GET    /admin/req_breakdowns/:id/edit(.:format)                    {:controller=>"admin/req_breakdowns", :action=>"edit"}
+         admin_req_breakdown GET    /admin/req_breakdowns/:id(.:format)                         {:controller=>"admin/req_breakdowns", :action=>"show"}
+                             PUT    /admin/req_breakdowns/:id(.:format)                         {:controller=>"admin/req_breakdowns", :action=>"update"}
+                             DELETE /admin/req_breakdowns/:id(.:format)                         {:controller=>"admin/req_breakdowns", :action=>"destroy"}
+                                    /admin/req_breakdowns/:action                               {:controller=>"req_breakdowns"}
+     admin_requirement_types GET    /admin/requirement_types(.:format)                          {:controller=>"admin/requirement_types", :action=>"index"}
+                             POST   /admin/requirement_types(.:format)                          {:controller=>"admin/requirement_types", :action=>"create"}
+  new_admin_requirement_type GET    /admin/requirement_types/new(.:format)                      {:controller=>"admin/requirement_types", :action=>"new"}
+ edit_admin_requirement_type GET    /admin/requirement_types/:id/edit(.:format)                 {:controller=>"admin/requirement_types", :action=>"edit"}
+      admin_requirement_type GET    /admin/requirement_types/:id(.:format)                      {:controller=>"admin/requirement_types", :action=>"show"}
+                             PUT    /admin/requirement_types/:id(.:format)                      {:controller=>"admin/requirement_types", :action=>"update"}
+                             DELETE /admin/requirement_types/:id(.:format)                      {:controller=>"admin/requirement_types", :action=>"destroy"}
+    admin_requirement_levels GET    /admin/requirement_levels(.:format)                         {:controller=>"admin/requirement_levels", :action=>"index"}
+                             POST   /admin/requirement_levels(.:format)                         {:controller=>"admin/requirement_levels", :action=>"create"}
+ new_admin_requirement_level GET    /admin/requirement_levels/new(.:format)                     {:controller=>"admin/requirement_levels", :action=>"new"}
+edit_admin_requirement_level GET    /admin/requirement_levels/:id/edit(.:format)                {:controller=>"admin/requirement_levels", :action=>"edit"}
+     admin_requirement_level GET    /admin/requirement_levels/:id(.:format)                     {:controller=>"admin/requirement_levels", :action=>"show"}
+                             PUT    /admin/requirement_levels/:id(.:format)                     {:controller=>"admin/requirement_levels", :action=>"update"}
+                             DELETE /admin/requirement_levels/:id(.:format)                     {:controller=>"admin/requirement_levels", :action=>"destroy"}
+                                    /:controller/:action/:id                                    
+                                    /:controller/:action/:id(.:format)                          

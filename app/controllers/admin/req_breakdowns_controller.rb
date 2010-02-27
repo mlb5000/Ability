@@ -1,6 +1,6 @@
 class Admin::ReqBreakdownsController < ApplicationController
   layout "products"
-  
+
   # GET /req_breakdowns
   # GET /req_breakdowns.xml
   def index
@@ -82,6 +82,53 @@ class Admin::ReqBreakdownsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(admin_req_breakdowns_url) }
       format.xml  { head :ok }
+    end
+  end
+
+  def level_zero_update
+    return unless request.xhr?
+    level_ones = RequirementLevel.find(:all)
+    logger.debug 'Count:' + level_ones.count().to_s()
+    level_ones.delete(RequirementLevel.find(:level_one_id))
+    logger.info level_ones.count()
+
+    render :update do |page|
+      page << update_select_box( "level_one_id",
+                                 level_ones,
+                                 {:text => :name,
+                                  :clear => ['level_one_id']} )
+    end
+  end
+
+  def level_one_update
+    return unless request.xhr?
+    level_twos = LevelTwo.find(:all, :conditions => ["level_one_id=?", params[:level_one_id]] )
+    render :update do |page|
+      page << update_select_box( "level_two_id",
+                                 level_twos,
+                                 {:text => :name,
+                                  :clear => ['level_three_id']} )
+    end
+  end
+
+  def level_two_update
+    return unless request.xhr?
+    level_threes = LevelThree.find( :all, :conditions => ["level_two_id=?", params[:level_two_id]])
+    render :update do |page|
+      page << update_select_box( "level_three_id",
+                                 level_threes,
+                                 {:text => :name} )
+    end
+  end
+
+  def level_three_update
+    return unless request.xhr?
+    level_twos = LevelTwo.find(:all, :conditions => ["level_one_id=?", params[:level_one_id]] )
+    render :update do |page|
+      page << update_select_box( "level_two_id",
+                                 level_twos,
+                                 {:text => :name,
+                                  :clear => ['level_three_id']} )
     end
   end
 end

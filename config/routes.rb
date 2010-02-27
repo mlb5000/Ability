@@ -15,6 +15,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.namespace(:admin) do |admin|
     admin.resources :req_breakdowns
+    #map.connect '/admin/req_breakdowns/:action', :controller => 'req_breakdowns'
     admin.resources :requirement_types
     admin.resources :requirement_levels
   end

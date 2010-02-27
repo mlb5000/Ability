@@ -1,15 +1,19 @@
 <h1>New requirement_level</h1>
 
 <% form_for :requirement_level, @requirement_level, :url => admin_requirement_levels_path do |f| %>
-  <%= f.error_messages %>
+    <%= f.error_messages %>
 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
+    <p>
+      <%= f.label :name %><br/>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :abbreviation %><br/>
+      <%= f.text_field :abbreviation %>
+    </p>
+    <p>
+      <%= f.submit 'Create' %>
+    </p>
 <% end %>
 
 <%= link_to 'Back', admin_requirement_levels_path %>

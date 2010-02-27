@@ -14747,3 +14747,1083 @@ Migrating to SetEmptyStringDefaultOnRequirementLevelAbbreviation (20100226033408
   [4;35;1mSQL (45.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100224002333')[0m
   [4;36;1mSQL (38.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100225231726')[0m
   [4;35;1mSQL (33.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100225233450')[0m
+  [4;35;1mSQL (23.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2010-02-26 16:41:12) [GET]
+  [4;35;1mProduct Load (1.0ms)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/products
+Rendering products/index
+  [4;36;1mProduct Columns (10.0ms)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Completed in 28ms (View: 9, DB: 34) | 200 OK [http://localhost/products]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2010-02-26 16:41:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProduct Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Load (0.0ms)[0m   [0;1mSELECT * FROM `products` WHERE (`products`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 13ms (View: 2, DB: 4) | 200 OK [http://localhost/products/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#index (for 127.0.0.1 at 2010-02-26 16:41:20) [GET]
+  [4;35;1mReqBreakdown Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+  [4;36;1mReqBreakdown Load (1.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`previous_breakdown_id` IS NULL) [0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/index
+  [4;35;1mRequirementLevel Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+  [4;35;1mReqBreakdown Load (1.0ms)[0m   [0mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 2) [0m
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 2) [0m
+Completed in 27ms (View: 8, DB: 11) | 200 OK [http://localhost/admin/req_breakdowns]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#edit (for 127.0.0.1 at 2010-02-26 16:41:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReqBreakdown Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+  [4;36;1mReqBreakdown Load (0.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/edit
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` [0m
+  [4;36;1mRequirementLevel Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;35;1mRequirementLevel Load (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+Completed in 40ms (View: 24, DB: 8) | 200 OK [http://localhost/admin/req_breakdowns/1/edit]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#index (for 127.0.0.1 at 2010-02-26 16:41:27) [GET]
+  [4;36;1mReqBreakdown Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `req_breakdowns`[0m
+  [4;35;1mReqBreakdown Load (0.0ms)[0m   [0mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`previous_breakdown_id` IS NULL) [0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/index
+  [4;36;1mRequirementLevel Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+  [4;36;1mReqBreakdown Load (0.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 2) [0m
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 2) [0m
+Completed in 27ms (View: 9, DB: 10) | 200 OK [http://localhost/admin/req_breakdowns]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 16:41:29) [GET]
+  [4;36;1mReqBreakdown Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` [0m
+  [4;36;1mRequirementLevel Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+Completed in 38ms (View: 22, DB: 7) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 16:44:37) [GET]
+  [4;35;1mReqBreakdown Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+  [4;35;1mRequirementLevel Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+Completed in 53ms (View: 38, DB: 6) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 16:46:31) [GET]
+  [4;36;1mReqBreakdown Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` [0m
+  [4;36;1mRequirementLevel Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+Completed in 29ms (View: 12, DB: 8) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 16:48:25) [GET]
+  [4;35;1mReqBreakdown Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;36;1mRequirementLevel Load (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+  [4;35;1mRequirementLevel Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+Completed in 27ms (View: 13, DB: 6) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 16:50:05) [GET]
+  [4;36;1mReqBreakdown Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` [0m
+  [4;36;1mRequirementLevel Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+Completed in 27ms (View: 13, DB: 8) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 16:50:27) [GET]
+  [4;35;1mReqBreakdown Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+  [4;35;1mRequirementLevel Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+Completed in 28ms (View: 12, DB: 8) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 16:52:00) [GET]
+  [4;36;1mReqBreakdown Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;35;1mRequirementLevel Load (11.0ms)[0m   [0mSELECT * FROM `requirement_levels` [0m
+  [4;36;1mRequirementLevel Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+Completed in 75ms (View: 49, DB: 18) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 16:52:37) [GET]
+  [4;35;1mReqBreakdown Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+  [4;35;1mRequirementLevel Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+Completed in 52ms (View: 19, DB: 9) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 16:54:40) [GET]
+  [4;36;1mReqBreakdown Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` [0m
+  [4;36;1mRequirementLevel Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+Completed in 83ms (View: 13, DB: 7) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 16:58:40) [GET]
+  [4;35;1mReqBreakdown Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+  [4;35;1mRequirementLevel Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+Completed in 29ms (View: 13, DB: 8) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 17:01:31) [GET]
+  [4;36;1mReqBreakdown Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` [0m
+  [4;36;1mRequirementLevel Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+Completed in 28ms (View: 12, DB: 7) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 17:03:44) [GET]
+  [4;35;1mReqBreakdown Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+  [4;35;1mRequirementLevel Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+Completed in 28ms (View: 12, DB: 8) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 17:03:53) [GET]
+  [4;36;1mReqBreakdown Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` [0m
+  [4;36;1mRequirementLevel Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+Completed in 28ms (View: 12, DB: 8) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 17:04:25) [GET]
+  [4;35;1mReqBreakdown Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+  [4;35;1mRequirementLevel Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+Completed in 28ms (View: 12, DB: 7) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 17:10:54) [GET]
+  [4;36;1mReqBreakdown Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` [0m
+  [4;36;1mRequirementLevel Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+Completed in 25ms (View: 11, DB: 6) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 17:12:15) [GET]
+  [4;35;1mReqBreakdown Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+  [4;35;1mRequirementLevel Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+Completed in 24ms (View: 11, DB: 6) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 17:13:03) [GET]
+  [4;36;1mReqBreakdown Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` [0m
+  [4;36;1mRequirementLevel Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+Completed in 148ms (View: 79, DB: 8) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 17:15:46) [GET]
+  [4;35;1mReqBreakdown Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;36;1mRequirementLevel Load (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+  [4;35;1mRequirementLevel Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+Completed in 24ms (View: 12, DB: 5) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 17:17:11) [GET]
+  [4;36;1mReqBreakdown Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` [0m
+  [4;36;1mRequirementLevel Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+Completed in 40ms (View: 24, DB: 9) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 17:18:02) [GET]
+  [4;35;1mReqBreakdown Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+  [4;35;1mRequirementLevel Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+Completed in 56ms (View: 40, DB: 7) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 17:18:20) [GET]
+  [4;36;1mReqBreakdown Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;35;1mRequirementLevel Load (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` [0m
+  [4;36;1mRequirementLevel Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+Completed in 147ms (View: 79, DB: 5) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#index (for 127.0.0.1 at 2010-02-26 17:18:32) [GET]
+  [4;35;1mReqBreakdown Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+  [4;36;1mReqBreakdown Load (1.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`previous_breakdown_id` IS NULL) [0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/index
+  [4;35;1mRequirementLevel Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;36;1mRequirementLevel Load (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+  [4;35;1mReqBreakdown Load (0.0ms)[0m   [0mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 2) [0m
+  [4;36;1mRequirementLevel Load (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 2) [0m
+Completed in 36ms (View: 19, DB: 8) | 200 OK [http://localhost/admin/req_breakdowns]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#show (for 127.0.0.1 at 2010-02-26 17:18:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReqBreakdown Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+  [4;36;1mReqBreakdown Load (0.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/show
+  [4;35;1mRequirementLevel Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+Completed in 32ms (View: 16, DB: 7) | 200 OK [http://localhost/admin/req_breakdowns/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#edit (for 127.0.0.1 at 2010-02-26 17:18:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReqBreakdown Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+  [4;36;1mReqBreakdown Load (0.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/edit
+  [4;35;1mRequirementLevel Load (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` [0m
+  [4;36;1mRequirementLevel Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+Completed in 37ms (View: 21, DB: 8) | 200 OK [http://localhost/admin/req_breakdowns/1/edit]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#index (for 127.0.0.1 at 2010-02-26 17:18:37) [GET]
+  [4;36;1mReqBreakdown Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `req_breakdowns`[0m
+  [4;35;1mReqBreakdown Load (1.0ms)[0m   [0mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`previous_breakdown_id` IS NULL) [0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/index
+  [4;36;1mRequirementLevel Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;35;1mRequirementLevel Load (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+  [4;36;1mReqBreakdown Load (0.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 2) [0m
+  [4;35;1mRequirementLevel Load (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 2) [0m
+Completed in 27ms (View: 11, DB: 7) | 200 OK [http://localhost/admin/req_breakdowns]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 17:18:38) [GET]
+  [4;36;1mReqBreakdown Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` [0m
+  [4;36;1mRequirementLevel Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+Completed in 26ms (View: 13, DB: 7) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 17:22:08) [GET]
+  [4;35;1mReqBreakdown Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+  [4;35;1mRequirementLevel Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+
+ActionView::TemplateError (undefined method `removeAt' for #<Array:0x41c92c0>) on line #12 of app/views/admin/req_breakdowns/new.html.erb:
+9:   </p>
+10:   <p>
+11:     Next Requirement Level:
+12:     <% @array = RequirementLevel.find(:all).removeAt(0) %>
+13:     <%= select("level_one", "id", array.collect { |l2| [l2.name, l2.id] } ) %>
+14:   </p>
+15:   <p>
+
+    app/views/admin/req_breakdowns/new.html.erb:12:in `block in _run_erb_app47views47admin47req_breakdowns47new46html46erb'
+    app/views/admin/req_breakdowns/new.html.erb:3
+    app/controllers/admin/req_breakdowns_controller.rb:31:in `new'
+    <internal:prelude>:8:in `synchronize'
+    C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (103.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 17:22:35) [GET]
+  [4;35;1mReqBreakdown Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;36;1mRequirementLevel Load (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+  [4;35;1mRequirementLevel Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+
+ActionView::TemplateError (undefined local variable or method `array' for #<ActionView::Base:0x4934320>) on line #13 of app/views/admin/req_breakdowns/new.html.erb:
+10:   <p>
+11:     Next Requirement Level:
+12:     <% @array = RequirementLevel.find(:all).delete_at(0) %>
+13:     <%= select("level_one", "id", array.collect { |l2| [l2.name, l2.id] } ) %>
+14:   </p>
+15:   <p>
+16:     Next Requirement Level:
+
+    app/views/admin/req_breakdowns/new.html.erb:13:in `block in _run_erb_app47views47admin47req_breakdowns47new46html46erb'
+    app/views/admin/req_breakdowns/new.html.erb:3
+    app/controllers/admin/req_breakdowns_controller.rb:31:in `new'
+    <internal:prelude>:8:in `synchronize'
+    C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (77.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 17:22:43) [GET]
+  [4;35;1mReqBreakdown Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+  [4;35;1mRequirementLevel Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+
+ActionView::TemplateError (undefined method `collect' for #<RequirementLevel:0x4bd7320>) on line #13 of app/views/admin/req_breakdowns/new.html.erb:
+10:   <p>
+11:     Next Requirement Level:
+12:     <% @array = RequirementLevel.find(:all).delete_at(0) %>
+13:     <%= select("level_one", "id", @array.collect { |l2| [l2.name, l2.id] } ) %>
+14:   </p>
+15:   <p>
+16:     Next Requirement Level:
+
+    app/views/admin/req_breakdowns/new.html.erb:13:in `block in _run_erb_app47views47admin47req_breakdowns47new46html46erb'
+    app/views/admin/req_breakdowns/new.html.erb:3
+    app/controllers/admin/req_breakdowns_controller.rb:31:in `new'
+    <internal:prelude>:8:in `synchronize'
+    C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (72.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 17:22:45) [GET]
+  [4;35;1mReqBreakdown Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+  [4;35;1mRequirementLevel Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+
+ActionView::TemplateError (undefined method `collect' for #<RequirementLevel:0x404ff40>) on line #13 of app/views/admin/req_breakdowns/new.html.erb:
+10:   <p>
+11:     Next Requirement Level:
+12:     <% @array = RequirementLevel.find(:all).delete_at(0) %>
+13:     <%= select("level_one", "id", @array.collect { |l2| [l2.name, l2.id] } ) %>
+14:   </p>
+15:   <p>
+16:     Next Requirement Level:
+
+    app/views/admin/req_breakdowns/new.html.erb:13:in `block in _run_erb_app47views47admin47req_breakdowns47new46html46erb'
+    app/views/admin/req_breakdowns/new.html.erb:3
+    app/controllers/admin/req_breakdowns_controller.rb:31:in `new'
+    <internal:prelude>:8:in `synchronize'
+    C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (105.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 17:23:44) [GET]
+  [4;35;1mReqBreakdown Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+  [4;35;1mRequirementLevel Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+Completed in 38ms (View: 22, DB: 7) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 17:27:52) [GET]
+  [4;35;1mReqBreakdown Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+  [4;35;1mRequirementLevel Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+Completed in 38ms (View: 22, DB: 9) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 17:28:47) [GET]
+  [4;35;1mReqBreakdown Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+  [4;35;1mRequirementLevel Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+Completed in 38ms (View: 22, DB: 8) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 17:32:08) [GET]
+  [4;35;1mReqBreakdown Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+  [4;35;1mRequirementLevel Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+Completed in 38ms (View: 23, DB: 8) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 17:32:52) [GET]
+  [4;35;1mReqBreakdown Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+  [4;35;1mRequirementLevel Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+Completed in 37ms (View: 22, DB: 7) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 17:39:21) [GET]
+  [4;35;1mReqBreakdown Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+  [4;35;1mRequirementLevel Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+Completed in 38ms (View: 22, DB: 8) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 17:39:54) [GET]
+  [4;35;1mReqBreakdown Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+  [4;35;1mRequirementLevel Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+Completed in 40ms (View: 23, DB: 8) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 17:53:30) [GET]
+  [4;35;1mReqBreakdown Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+  [4;35;1mRequirementLevel Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+Completed in 38ms (View: 22, DB: 7) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 17:54:00) [GET]
+  [4;35;1mReqBreakdown Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+  [4;35;1mRequirementLevel Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+Completed in 38ms (View: 22, DB: 7) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 18:25:46) [GET]
+  [4;35;1mReqBreakdown Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+  [4;35;1mRequirementLevel Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+Completed in 38ms (View: 22, DB: 8) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 18:28:07) [GET]
+  [4;35;1mReqBreakdown Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+  [4;35;1mRequirementLevel Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+Completed in 38ms (View: 22, DB: 8) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 18:29:40) [GET]
+  [4;35;1mReqBreakdown Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+  [4;35;1mRequirementLevel Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+Completed in 37ms (View: 22, DB: 7) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 18:31:16) [GET]
+  [4;35;1mReqBreakdown Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;36;1mRequirementLevel Load (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+  [4;35;1mRequirementLevel Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+Completed in 26ms (View: 14, DB: 6) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 18:34:44) [GET]
+  [4;35;1mReqBreakdown Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+ERROR: compiling _run_erb_app47views47admin47req_breakdowns47new46html46erb RAISED C:/Projects/Ability/dev/app/views/admin/req_breakdowns/new.html.erb:14: syntax error, unexpected '}', expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+...{ |l2| [l2.name, l2.id] }, { :} ) ).to_s); @output_buffer.co...
+...                               ^
+Function body:           def _run_erb_app47views47admin47req_breakdowns47new46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>New req_breakdown</h1>\n\n"
+
+;  form_for :req_breakdown, @req_breakdown, :url => admin_req_breakdowns_path do |f| ; @output_buffer.concat "\n  "
+; @output_buffer.concat(( f.error_messages ).to_s); @output_buffer.concat "\n\n  <p>\n    Highest Requirement Level:\n    "
+
+
+
+; @output_buffer.concat(( select("level_zero", "id", RequirementLevel.all.collect {|rl| [ rl.name, rl.id ]} ) ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    Next Requirement Level:\n    "
+
+
+
+;  @array = RequirementLevel.find(:all)
+    @array.delete_at(0); @output_buffer.concat "\n    "
+; @output_buffer.concat(( select("level_one", "id", @array.collect { |l2| [l2.name, l2.id] }, { :} ) ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    Next Requirement Level:\n    "
+
+
+
+; @output_buffer.concat(( select("level_two_", "id", [] ) ).to_s); @output_buffer.concat "\n  </p>    \n  <p>\n    Next Requirement Level:\n    "
+
+
+
+; @output_buffer.concat(( select("level_three", "id", [] ) ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.submit 'Create' ).to_s); @output_buffer.concat "\n  </p>\n"
+
+;  end ; @output_buffer.concat "\n\n"
+
+; @output_buffer.concat(( link_to 'Back', admin_req_breakdowns_path ).to_s); @output_buffer.concat "\n\n"
+
+; @output_buffer.concat(( observe_field 'level_zero_id', {:url => {:action => 'level_zero_update'}, :with => "level_zero_id" } ).to_s); @output_buffer.concat "\n"
+;  if false ; @output_buffer.concat "\n"
+; @output_buffer.concat(( observe_field "level_one_id", {:url => {:action => 'level_one_update'}, :with => "var levels=new Array(level_zero_id, level_one_id)"} ).to_s); @output_buffer.concat "\n"
+; @output_buffer.concat(( observe_field "level_two_id", {:url => {:action => 'level_two_update'}, :with => "var levels=new Array(level_zero_id, level_one_id, level_two_id)" } ).to_s); @output_buffer.concat "\n"
+; @output_buffer.concat(( observe_field "level_three_id", {:url => {:action => 'level_three_update'}, :with => "var levels=new Array(level_zero_id, level_one_id, level_three_id)" } ).to_s); @output_buffer.concat "\n              "
+;  end ; @output_buffer.force_encoding(__ENCODING__)
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_view/renderable.rb:77:in `module_eval'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_view/renderable.rb:77:in `compile!'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:951:in `render'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `block in render_with_benchmark'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `block in ms'
+C:/Ruby19/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render_with_benchmark'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `block in custom'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `call'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `block in respond'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `each'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `respond'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:107:in `respond_to'
+C:/Projects/Ability/dev/app/controllers/admin/req_breakdowns_controller.rb:31:in `new'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `perform_action'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_with_filters'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `block in perform_action_with_benchmark'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `block in ms'
+C:/Ruby19/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_with_benchmark'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_with_rescue'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action_with_flash'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `block in call'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+<internal:prelude>:8:in `synchronize'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+C:/Ruby19/lib/ruby/gems/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+ActionView::TemplateError (C:/Projects/Ability/dev/app/views/admin/req_breakdowns/new.html.erb:14: syntax error, unexpected '}', expecting tSTRING_CONTENT or tSTRING_DBEG or tSTRING_DVAR or tSTRING_END
+...{ |l2| [l2.name, l2.id] }, { :} ) ).to_s); @output_buffer.co...
+...                               ^) on line #14 of app/views/admin/req_breakdowns/new.html.erb:
+11:     Next Requirement Level:
+12:     <% @array = RequirementLevel.find(:all)
+13:     @array.delete_at(0)%>
+14:     <%= select("level_one", "id", @array.collect { |l2| [l2.name, l2.id] }, { :} ) %>
+15:   </p>
+16:   <p>
+17:     Next Requirement Level:
+
+    app/controllers/admin/req_breakdowns_controller.rb:31:in `new'
+    <internal:prelude>:8:in `synchronize'
+    C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (76.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 18:36:47) [GET]
+  [4;36;1mReqBreakdown Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` [0m
+  [4;36;1mRequirementLevel Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` [0m
+Completed in 38ms (View: 22, DB: 8) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 18:37:17) [GET]
+  [4;36;1mReqBreakdown Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` [0m
+  [4;36;1mRequirementLevel Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` [0m
+Completed in 39ms (View: 22, DB: 8) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::RequirementLevelsController#index (for 127.0.0.1 at 2010-02-26 18:39:01) [GET]
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+Rendering template within layouts/products
+Rendering admin/requirement_levels/index
+  [4;35;1mRequirementLevel Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+Completed in 32ms (View: 21, DB: 4) | 200 OK [http://localhost/admin/requirement_levels]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::RequirementLevelsController#new (for 127.0.0.1 at 2010-02-26 18:39:03) [GET]
+  [4;36;1mRequirementLevel Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+Rendering template within layouts/products
+Rendering admin/requirement_levels/new
+Completed in 23ms (View: 12, DB: 4) | 200 OK [http://localhost/admin/requirement_levels/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::RequirementLevelsController#new (for 127.0.0.1 at 2010-02-26 18:40:04) [GET]
+  [4;35;1mRequirementLevel Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+Rendering template within layouts/products
+Rendering admin/requirement_levels/new
+Completed in 23ms (View: 13, DB: 3) | 200 OK [http://localhost/admin/requirement_levels/new]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::RequirementLevelsController#create (for 127.0.0.1 at 2010-02-26 18:40:18) [POST]
+  Parameters: {"authenticity_token"=>"dFub5+XcSN/W7BMhAiXs2EfW0A70P21OvfDXIDTSgz4=", "requirement_level"=>{"name"=>"System Requirement", "abbreviation"=>"SyRS"}, "commit"=>"Create"}
+  [4;36;1mRequirementLevel Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mRequirementLevel Create (0.0ms)[0m   [0;1mINSERT INTO `requirement_levels` (`name`, `created_at`, `updated_at`, `abbreviation`) VALUES('System Requirement', '2010-02-26 23:40:18', '2010-02-26 23:40:18', 'SyRS')[0m
+  [4;35;1mSQL (65.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/admin/requirement_levels/5
+Completed in 78ms (DB: 71) | 302 Found [http://localhost/admin/requirement_levels]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::RequirementLevelsController#show (for 127.0.0.1 at 2010-02-26 18:40:18) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mRequirementLevel Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;35;1mRequirementLevel Load (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 5) [0m
+Rendering template within layouts/products
+Rendering admin/requirement_levels/show
+Completed in 21ms (View: 10, DB: 4) | 200 OK [http://localhost/admin/requirement_levels/5]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::RequirementLevelsController#show (for 127.0.0.1 at 2010-02-26 18:40:46) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mRequirementLevel Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 5) [0m
+Rendering template within layouts/products
+Rendering admin/requirement_levels/show
+Completed in 23ms (View: 11, DB: 5) | 200 OK [http://localhost/admin/requirement_levels/5]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::RequirementLevelsController#show (for 127.0.0.1 at 2010-02-26 18:40:55) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mRequirementLevel Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 5) [0m
+Rendering template within layouts/products
+Rendering admin/requirement_levels/show
+Completed in 22ms (View: 11, DB: 4) | 200 OK [http://localhost/admin/requirement_levels/5]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::RequirementLevelsController#edit (for 127.0.0.1 at 2010-02-26 18:40:58) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mRequirementLevel Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;35;1mRequirementLevel Load (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 5) [0m
+Rendering template within layouts/products
+Rendering admin/requirement_levels/edit
+Completed in 24ms (View: 13, DB: 3) | 200 OK [http://localhost/admin/requirement_levels/5/edit]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::RequirementLevelsController#update (for 127.0.0.1 at 2010-02-26 18:41:00) [PUT]
+  Parameters: {"authenticity_token"=>"dFub5+XcSN/W7BMhAiXs2EfW0A70P21OvfDXIDTSgz4=", "requirement_level"=>{"name"=>"System Requirement", "abbreviation"=>"SyRS"}, "commit"=>"Update", "id"=>"5"}
+  [4;36;1mRequirementLevel Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 5) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/admin/requirement_levels/5
+Completed in 15ms (DB: 5) | 302 Found [http://localhost/admin/requirement_levels/5]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::RequirementLevelsController#show (for 127.0.0.1 at 2010-02-26 18:41:00) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mRequirementLevel Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 5) [0m
+Rendering template within layouts/products
+Rendering admin/requirement_levels/show
+Completed in 15ms (View: 3, DB: 5) | 200 OK [http://localhost/admin/requirement_levels/5]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::RequirementLevelsController#index (for 127.0.0.1 at 2010-02-26 18:41:02) [GET]
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` [0m
+Rendering template within layouts/products
+Rendering admin/requirement_levels/index
+  [4;35;1mRequirementLevel Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+Completed in 16ms (View: 5, DB: 5) | 200 OK [http://localhost/admin/requirement_levels]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::RequirementLevelsController#edit (for 127.0.0.1 at 2010-02-26 18:41:05) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mRequirementLevel Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;35;1mRequirementLevel Load (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 2) [0m
+Rendering template within layouts/products
+Rendering admin/requirement_levels/edit
+Completed in 15ms (View: 4, DB: 4) | 200 OK [http://localhost/admin/requirement_levels/2/edit]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::RequirementLevelsController#update (for 127.0.0.1 at 2010-02-26 18:41:11) [PUT]
+  Parameters: {"authenticity_token"=>"dFub5+XcSN/W7BMhAiXs2EfW0A70P21OvfDXIDTSgz4=", "requirement_level"=>{"name"=>"Software Requirement", "abbreviation"=>"SRS"}, "commit"=>"Update", "id"=>"2"}
+  [4;36;1mRequirementLevel Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 2) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mRequirementLevel Update (1.0ms)[0m   [0mUPDATE `requirement_levels` SET `name` = 'Software Requirement', `updated_at` = '2010-02-26 23:41:11' WHERE `id` = 2[0m
+  [4;36;1mSQL (103.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/admin/requirement_levels/2
+Completed in 119ms (DB: 108) | 302 Found [http://localhost/admin/requirement_levels/2]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::RequirementLevelsController#show (for 127.0.0.1 at 2010-02-26 18:41:11) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mRequirementLevel Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 2) [0m
+Rendering template within layouts/products
+Rendering admin/requirement_levels/show
+Completed in 14ms (View: 3, DB: 5) | 200 OK [http://localhost/admin/requirement_levels/2]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::RequirementLevelsController#index (for 127.0.0.1 at 2010-02-26 18:41:14) [GET]
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` [0m
+Rendering template within layouts/products
+Rendering admin/requirement_levels/index
+  [4;36;1mRequirementLevel Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+Completed in 16ms (View: 5, DB: 5) | 200 OK [http://localhost/admin/requirement_levels]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#index (for 127.0.0.1 at 2010-02-26 18:41:20) [GET]
+  [4;35;1mReqBreakdown Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+  [4;36;1mReqBreakdown Load (1.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`previous_breakdown_id` IS NULL) [0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/index
+  [4;35;1mRequirementLevel Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;36;1mRequirementLevel Load (1.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+  [4;35;1mReqBreakdown Load (0.0ms)[0m   [0mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 2) [0m
+  [4;36;1mRequirementLevel Load (0.0ms)[0m   [0;1mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 2) [0m
+Completed in 30ms (View: 12, DB: 8) | 200 OK [http://localhost/admin/req_breakdowns]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#edit (for 127.0.0.1 at 2010-02-26 18:41:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mReqBreakdown Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `req_breakdowns`[0m
+  [4;36;1mReqBreakdown Load (1.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 1) [0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/edit
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` [0m
+  [4;36;1mRequirementLevel Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+Completed in 61ms (View: 43, DB: 10) | 200 OK [http://localhost/admin/req_breakdowns/1/edit]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#1 (for 127.0.0.1 at 2010-02-26 18:41:26) [POST]
+  Parameters: {"authenticity_token"=>"dFub5+XcSN/W7BMhAiXs2EfW0A70P21OvfDXIDTSgz4=", "commit"=>"Update"}
+
+ActionController::UnknownAction (No action responded to 1. Actions: create, destroy, edit, index, level_one_update, level_three_update, level_two_update, level_zero_update, new, show, and update):
+  <internal:prelude>:8:in `synchronize'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  C:/Ruby19/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#index (for 127.0.0.1 at 2010-02-26 18:41:28) [GET]
+  [4;36;1mReqBreakdown Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `req_breakdowns`[0m
+  [4;35;1mReqBreakdown Load (1.0ms)[0m   [0mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`previous_breakdown_id` IS NULL) [0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/index
+  [4;36;1mRequirementLevel Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;35;1mRequirementLevel Load (1.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 1) [0m
+  [4;36;1mReqBreakdown Load (1.0ms)[0m   [0;1mSELECT * FROM `req_breakdowns` WHERE (`req_breakdowns`.`id` = 2) [0m
+  [4;35;1mRequirementLevel Load (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` WHERE (`requirement_levels`.`id` = 2) [0m
+Completed in 27ms (View: 9, DB: 10) | 200 OK [http://localhost/admin/req_breakdowns]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Admin::ReqBreakdownsController#new (for 127.0.0.1 at 2010-02-26 18:41:30) [GET]
+  [4;36;1mReqBreakdown Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `req_breakdowns`[0m
+Rendering template within layouts/products
+Rendering admin/req_breakdowns/new
+  [4;35;1mRequirementLevel Load (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` [0m
+  [4;36;1mRequirementLevel Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `requirement_levels`[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `requirement_levels` [0m
+Completed in 29ms (View: 14, DB: 7) | 200 OK [http://localhost/admin/req_breakdowns/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (286.0ms)[0m   [0;1mDROP DATABASE IF EXISTS `Ability_test`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE DATABASE `Ability_test` DEFAULT CHARACTER SET `utf8`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (50.0ms)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `identifier` varchar(3), `req_breakdown_id` int(11), `jira_defect_filter` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (73.0ms)[0m   [0mCREATE TABLE `quality_risks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `product_id` int(11), `risk_category_id` int(11), `description` varchar(255), `mitigation_strategy_id` int(11), `explanation` varchar(255), `likelihood` int(11), `impact` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (98.0ms)[0m   [0mCREATE TABLE `releases` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `version` varchar(255), `startdate` date, `enddate` date, `product_id` int(11), `goal` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (121.0ms)[0m   [0mCREATE TABLE `req_breakdowns` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `created_at` datetime, `updated_at` datetime, `requirement_level_id` int(11), `next_breakdown_id` int(11), `previous_breakdown_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (58.0ms)[0m   [0mCREATE TABLE `requirement_levels` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime, `abbreviation` varchar(255) DEFAULT '') ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (73.0ms)[0m   [0mCREATE TABLE `requirement_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (80.0ms)[0m   [0mCREATE TABLE `requirements` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `requirement_level_id` int(11), `requirement_type_id` int(11), `description` varchar(255), `rationale` varchar(255), `originator` varchar(255), `fit_criterion` varchar(255), `source_id` int(11), `priority` int(11), `satisfaction` int(11), `dissatisfaction` int(11), `created_at` datetime, `updated_at` datetime, `product_id` int(11)) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (82.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (173.0ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (32.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100226033408')[0m
+  [4;36;1mSQL (32.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221181326')[0m
+  [4;35;1mSQL (43.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221182143')[0m
+  [4;36;1mSQL (31.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221201039')[0m
+  [4;35;1mSQL (26.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100221201715')[0m
+  [4;36;1mSQL (39.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100221220657')[0m
+  [4;35;1mSQL (60.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100222003227')[0m
+  [4;36;1mSQL (75.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100222003814')[0m
+  [4;35;1mSQL (66.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100222004352')[0m
+  [4;36;1mSQL (40.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100222235145')[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100224002333')[0m
+  [4;36;1mSQL (82.0ms)[0m   [0;1mINSERT INTO `schema_migrations` (version) VALUES ('20100225231726')[0m
+  [4;35;1mSQL (66.0ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100225233450')[0m

@@ -24,91 +24,55 @@
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/admin/req_breakdowns/new.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="97" selection-start="483" selection-end="483" vertical-scroll-proportion="-9.208333">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/admin/requirement_levels/edit.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="35" selection-start="343" selection-end="343" vertical-scroll-proportion="0.35018727">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/admin/requirement_levels/show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="37" selection-start="56" selection-end="56" vertical-scroll-proportion="-1.4166666">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/admin/requirement_levels/new.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="37" selection-start="0" selection-end="450" vertical-scroll-proportion="-7.7916665">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="req_breakdown.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/req_breakdown.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="115" selection-start="557" selection-end="557" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="20100226033408_set_empty_string_default_on_requirement_level_abbreviation.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20100226033408_set_empty_string_default_on_requirement_level_abbreviation.rb">
-          <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/admin/requirement_levels/edit.html.erb">
+      <file leaf-file-name="req_breakdowns_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/admin/req_breakdowns_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="95" selection-start="297" selection-end="297" vertical-scroll-proportion="-7.0833335">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="req_breakdowns_controller_test.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/functional/req_breakdowns_controller_test.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="13" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="requirement_levels_controller_test.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/functional/requirement_levels_controller_test.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="13" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="requirement_types_controller_test.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/functional/requirement_types_controller_test.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="90" selection-start="341" selection-end="341" vertical-scroll-proportion="0.43992606">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/products/edit.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/quality_risks/edit.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/releases/edit.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="86" selection-start="58" selection-end="112" vertical-scroll-proportion="-1.4166666">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="requirement_level.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/requirement_level.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="88" column="4" selection-start="2436" selection-end="2436" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -130,22 +94,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/requirement_types_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/req_breakdowns_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/releases_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/quality_risks_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/requirements/new.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/products.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/admin/requirement_levels_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/admin/req_breakdowns_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/admin/requirement_types_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/admin/req_breakdowns/index.html.erb" />
         <option value="$PROJECT_DIR$/app/models/req_breakdown.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20100226033408_set_empty_string_default_on_requirement_type_abbreviation.rb" />
-        <option value="$PROJECT_DIR$/app/views/admin/requirement_levels/edit.html.erb" />
         <option value="$PROJECT_DIR$/test/functional/req_breakdowns_controller_test.rb" />
         <option value="$PROJECT_DIR$/test/functional/requirement_levels_controller_test.rb" />
         <option value="$PROJECT_DIR$/test/functional/requirement_types_controller_test.rb" />
+        <option value="$PROJECT_DIR$/app/helpers/application_helper.rb" />
+        <option value="$PROJECT_DIR$/public/javascripts/application.js" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/products.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/admin/req_breakdowns_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/admin/req_breakdowns/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/admin/requirement_levels/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/admin/requirement_levels/edit.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/admin/requirement_levels/show.html.erb" />
       </list>
     </option>
   </component>
@@ -268,6 +232,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="fixtures" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -419,6 +415,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -506,6 +524,10 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="helpers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -558,7 +580,7 @@
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
   </component>
-  <component name="RunManager" selected="Rake.test">
+  <component name="RunManager" selected="Rails.Development: Ability">
     <configuration default="false" name="ProductTest" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda" temporary="true">
       <predefined_log_file id="RUBY_TESTUNIT" enabled="true" />
       <module name="Ability" />
@@ -929,70 +951,49 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/controllers/admin/requirement_types_controller.rb">
+    <entry file="file://$PROJECT_DIR$/test/functional/requirement_levels_controller_test.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="2" selection-start="87" selection-end="87" vertical-scroll-proportion="0.0">
+        <state line="2" column="13" selection-start="36" selection-end="36" vertical-scroll-proportion="0.06284658">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/admin/req_breakdowns_controller.rb">
+    <entry file="file://$PROJECT_DIR$/test/functional/req_breakdowns_controller_test.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="2" selection-start="83" selection-end="83" vertical-scroll-proportion="0.0">
+        <state line="2" column="13" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0609319">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/req_breakdowns/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="42" selection-start="178" selection-end="178" vertical-scroll-proportion="-6.375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/admin/requirement_levels/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/db/migrate/20100222235145_add_default_req_breakdown.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/requirement_level.rb">
+    <entry file="file://$PROJECT_DIR$/app/helpers/application_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="11" column="56" selection-start="771" selection-end="771" vertical-scroll-proportion="0.33512545">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="17" column="5" selection-start="733" selection-end="733" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/schema.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/products.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="7" column="41" selection-start="543" selection-end="543" vertical-scroll-proportion="-4.9583335">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/req_breakdown.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="115" selection-start="557" selection-end="557" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20100226033408_set_empty_string_default_on_requirement_level_abbreviation.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/products/edit.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
@@ -1001,42 +1002,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/quality_risks/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.27340823">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/releases/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="86" selection-start="58" selection-end="112" vertical-scroll-proportion="-1.4166666">
+        <state line="2" column="86" selection-start="58" selection-end="112" vertical-scroll-proportion="0.013108614">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="45" selection-start="665" selection-end="665" vertical-scroll-proportion="0.4874552">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/req_breakdown.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/admin/req_breakdowns_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="4" selection-start="2436" selection-end="2436" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/req_breakdowns/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="97" selection-start="483" selection-end="483" vertical-scroll-proportion="-9.208333">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/requirement_levels/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="37" selection-start="0" selection-end="450" vertical-scroll-proportion="-7.7916665">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/admin/requirement_levels/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="37" selection-start="56" selection-end="56" vertical-scroll-proportion="-1.4166666">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/admin/requirement_levels/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="95" selection-start="297" selection-end="297" vertical-scroll-proportion="-7.0833335">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/functional/req_breakdowns_controller_test.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="13" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/functional/requirement_levels_controller_test.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="13" selection-start="36" selection-end="36" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/functional/requirement_types_controller_test.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="90" selection-start="341" selection-end="341" vertical-scroll-proportion="0.43992606">
+        <state line="11" column="35" selection-start="343" selection-end="343" vertical-scroll-proportion="0.35018727">
           <folding />
         </state>
       </provider>

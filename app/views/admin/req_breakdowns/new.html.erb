@@ -4,16 +4,22 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :previous_breakdown_id %><br />
-    <%= f.text_field :previous_breakdown_id %>
+    Highest Requirement Level:
+    <%= select("level_zero", "id", RequirementLevel.all.collect {|rl| [ rl.name, rl.id ]} ) %>
   </p>
   <p>
-    <%= f.label :next_breakdown_id %><br />
-    <%= f.text_field :next_breakdown_id %>
+    Next Requirement Level:
+    <% @array = RequirementLevel.find(:all)
+    @array.delete_at(0)%>
+    <%= select("level_one", "id", @array.collect { |l2| [l2.name, l2.id] }, { :disabled => true, :include_blank => true } ) %>
   </p>
   <p>
-    <%= f.label :requirement_level_id %><br />
-    <%= f.check_box :requirement_level_id %>
+    Next Requirement Level:
+    <%= select("level_two_", "id", [] ) %>
+  </p>    
+  <p>
+    Next Requirement Level:
+    <%= select("level_three", "id", [] ) %>
   </p>
   <p>
     <%= f.submit 'Create' %>
@@ -21,3 +27,10 @@
 <% end %>
 
 <%= link_to 'Back', admin_req_breakdowns_path %>
+
+<%= observe_field 'level_zero_id', {:url => {:action => 'level_zero_update'}, :with => "level_zero_id" } %>
+<% if false %>
+<%= observe_field "level_one_id", {:url => {:action => 'level_one_update'}, :with => "var levels=new Array(level_zero_id, level_one_id)"} %>
+<%= observe_field "level_two_id", {:url => {:action => 'level_two_update'}, :with => "var levels=new Array(level_zero_id, level_one_id, level_two_id)" } %>
+<%= observe_field "level_three_id", {:url => {:action => 'level_three_update'}, :with => "var levels=new Array(level_zero_id, level_one_id, level_three_id)" } %>
+              <% end %>
