@@ -1,5 +1,4 @@
 class ReleasesController < ApplicationController
-  layout "products"
   
   # GET /releases
   # GET /releases.xml

@@ -2,16 +2,23 @@
 
 <% form_for :req_breakdown, @req_breakdown, :url => admin_req_breakdown_url(@req_breakdown) do |f| %>
   <%= f.error_messages %>
-
-  <p>
-    <%= f.label :lower_level_id %><br />
-    <%= @req_levels = RequirementLevel.all
-        @req_levels.delete(@req_breakdown.requirement_level)
-        options_for_select(@req_levels) %>
-  </p>
-  <p>
+    <p>
+      Level 0 Type:
+      <%= collection_select(:req_breakdown, :level0_id, RequirementLevel.all , :id, :name, { :include_blank => 'Select a Level'} ) %>
+    </p>
+    <p id="level1_field">
+      Level 1 Type:
+      <%= collection_select(:req_breakdown, :level1_id, RequirementLevel.all, :id, :name, { :include_blank => 'Select a Level'} ) %>
+    </p>
+    <p id="level2_field">
+      Level 2 Type:
+      <%= collection_select(:req_breakdown, :level2_id, RequirementLevel.all, :id, :name, { :include_blank => 'Select a Level'} ) %>
+    </p>
+    <p id="level3_field">
+      Level 3 Type:
+      <%= collection_select(:req_breakdown, :level3_id, RequirementLevel.all, :id, :name, { :include_blank => 'Select a Level'} ) %>
+    </p>
     <%= f.submit 'Update' %>
-  </p>
 <% end %>
 
 <%= link_to 'Show', admin_req_breakdown_url(@req_breakdown) %> |

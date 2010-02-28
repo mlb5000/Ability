@@ -1,10 +1,9 @@
 class Admin::ReqBreakdownsController < ApplicationController
-  layout "products"
 
   # GET /req_breakdowns
   # GET /req_breakdowns.xml
   def index
-    @req_breakdowns = ReqBreakdown.find_all_by_previous_breakdown_id(nil)
+    @req_breakdowns = ReqBreakdown.find(:all)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -47,13 +46,35 @@ class Admin::ReqBreakdownsController < ApplicationController
     respond_to do |format|
       if @req_breakdown.save
         flash[:notice] = 'ReqBreakdown was successfully created.'
-        format.html { redirect_to(admin_req_breakdown_url(@req_breakdown)) }
+        format.html { redirect_to(admin_req_breakdowns_url) }
         format.xml  { render :xml => @req_breakdown, :status => :created, :location => @req_breakdown }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @req_breakdown.errors, :status => :unprocessable_entity }
       end
     end
+  end
+
+  def build_req_breakdowns(level0, level1, level2, level3)
+    @level0 = ReqBreakdown.new
+    @level0.requirement_level_id=RequirementLevel.find(level0).id
+    @level0.save
+
+    @level1 = create_and_link_level(@level0, level1)
+    @level2 = create_and_link_level(@level1, level2)
+    @level3 = create_and_link_level(@level2, level3)
+  end
+
+  def create_and_link_level(breakdown, level_id)
+    if (breakdown != nil && level_id != '')
+      @new_level = ReqBreakdown.new
+      @new_level.previous_breakdown_id=breakdown.id
+      @new_level.requirement_level_id=RequirementLevel.find(level_id).id
+      @new_level.save
+      breakdown.next_breakdown_id=@new_level.id
+      breakdown.save
+    end
+    return @new_level
   end
 
   # PUT /req_breakdowns/1
@@ -82,53 +103,6 @@ class Admin::ReqBreakdownsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(admin_req_breakdowns_url) }
       format.xml  { head :ok }
-    end
-  end
-
-  def level_zero_update
-    return unless request.xhr?
-    level_ones = RequirementLevel.find(:all)
-    logger.debug 'Count:' + level_ones.count().to_s()
-    level_ones.delete(RequirementLevel.find(:level_one_id))
-    logger.info level_ones.count()
-
-    render :update do |page|
-      page << update_select_box( "level_one_id",
-                                 level_ones,
-                                 {:text => :name,
-                                  :clear => ['level_one_id']} )
-    end
-  end
-
-  def level_one_update
-    return unless request.xhr?
-    level_twos = LevelTwo.find(:all, :conditions => ["level_one_id=?", params[:level_one_id]] )
-    render :update do |page|
-      page << update_select_box( "level_two_id",
-                                 level_twos,
-                                 {:text => :name,
-                                  :clear => ['level_three_id']} )
-    end
-  end
-
-  def level_two_update
-    return unless request.xhr?
-    level_threes = LevelThree.find( :all, :conditions => ["level_two_id=?", params[:level_two_id]])
-    render :update do |page|
-      page << update_select_box( "level_three_id",
-                                 level_threes,
-                                 {:text => :name} )
-    end
-  end
-
-  def level_three_update
-    return unless request.xhr?
-    level_twos = LevelTwo.find(:all, :conditions => ["level_one_id=?", params[:level_one_id]] )
-    render :update do |page|
-      page << update_select_box( "level_two_id",
-                                 level_twos,
-                                 {:text => :name,
-                                  :clear => ['level_three_id']} )
     end
   end
 end

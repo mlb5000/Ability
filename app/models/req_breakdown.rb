@@ -1,22 +1,18 @@
 class ReqBreakdown < ActiveRecord::Base
-  belongs_to :next_level, :class_name => "ReqBreakdown", :foreign_key => "next_breakdown_id"
-  belongs_to :previous_level, :class_name => "ReqBreakdown", :foreign_key => "previous_breakdown_id"
-  belongs_to :requirement_level
+  belongs_to :level0, :class_name => "RequirementLevel", :foreign_key => "level0_id"
+  belongs_to :level1, :class_name => "RequirementLevel", :foreign_key => "level1_id"
+  belongs_to :level2, :class_name => "RequirementLevel", :foreign_key => "level2_id"
+  belongs_to :level3, :class_name => "RequirementLevel", :foreign_key => "level3_id"
   has_many :products
 
-  def traceabilityStr
-    #find highest level
-    @highest = self
-    while(@highest.previous_level != nil)
-      @highest = @highest.previous_level
-    end
+  def traceability
+    return self.level0.abbreviation +
+    (self.level1.nil? ? '' : "=>".concat(self.level1.abbreviation)) +
+    (self.level2.nil? ? '' : "=>".concat(self.level2.abbreviation)) +
+    (self.level3.nil? ? '' : "=>".concat(self.level3.abbreviation))
+  end
 
-    @traceability = @highest.requirement_level.abbreviation.nil? ? '' : @highest.requirement_level.abbreviation
-    while @highest.next_level != nil
-      @highest = @highest.next_level
-      @traceability += "=>".concat(@highest.requirement_level.abbreviation)
-    end
-
-    return @traceability
+  def levels
+    return [self.level0, self.level1, self.level2, self.level3]
   end
 end

@@ -7,7 +7,7 @@
 
 <% @req_breakdowns.each do |req_breakdown| %>
   <tr>
-    <td><%=h req_breakdown.traceabilityStr %></td>
+    <td><%=h req_breakdown.traceability %></td>
     <td><%= link_to 'Show', admin_req_breakdown_path(req_breakdown) %></td>
     <td><%= link_to 'Edit', edit_admin_req_breakdown_path(req_breakdown) %></td>
     <td><%= link_to 'Destroy', admin_req_breakdown_path(req_breakdown), :confirm => 'Are you sure?', :method => :delete %></td>

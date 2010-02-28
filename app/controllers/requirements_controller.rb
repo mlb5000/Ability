@@ -1,5 +1,4 @@
 class RequirementsController < ApplicationController
-  layout "products"
   
   # GET /requirements
   # GET /requirements.xml

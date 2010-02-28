@@ -1,5 +1,4 @@
 class Admin::RequirementTypesController < ApplicationController
-  layout "products"
 
   # GET /requirement_types
   # GET /requirement_types.xml

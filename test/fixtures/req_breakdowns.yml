@@ -3,19 +3,14 @@
 #fixture for Story->SRS->HLD->LLD
 level0:
   id: 1
-  requirement_level_id: 1
-  next_breakdown_id: 2
-  previous_breakdown_id: NULL
+  level0_id: 1
+  level1_id: 2
+  level2_id: 3
+  level3_id: NULL
 
-level1:
+singleTrace:
   id: 2
-  requirement_level_id: 2
-  next_breakdown_id: NULL
-  previous_breakdown_id: 1
-
-
-single:
-  id: 3
-  requirement_level_id: 1
-  next_breakdown_id: NULL
-  previous_breakdown_id: NULL
+  level0_id: 1
+  level1_id: NULL
+  level2_id: NULL
+  level3_id: NULL

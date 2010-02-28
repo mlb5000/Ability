@@ -1,5 +1,4 @@
 class QualityRisksController < ApplicationController
-  layout "products"
   
   # GET /quality_risks
   # GET /quality_risks.xml

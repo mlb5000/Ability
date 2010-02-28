@@ -1,5 +1,4 @@
 class Admin::RequirementLevelsController < ApplicationController
-  layout "products"
   
   # GET /requirement_levels
   # GET /requirement_levels.xml

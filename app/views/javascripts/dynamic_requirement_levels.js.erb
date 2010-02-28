@@ -1,0 +1,80 @@
+var req_levels = new Array();
+        <% for level in @req_levels %>
+        req_levels.push(new Array(<%= level.id %>, '<%=h level.name %>'));
+        <% end %>
+
+        function fillLevelZero() {
+            var levelZeroOptions = $('req_breakdown_level0_id').options;
+            //var levelOneOptions = $('level_one_id').options;
+            levelZeroOptions.length = 1;
+            //levelOneOptions.length = 0;
+            req_levels.each(function(level) {
+                //add all elements except the one selected previously
+                levelZeroOptions[levelZeroOptions.length] = new Option(level[1], level[0]);
+                //if (req_levels[0] != level) {
+                //    levelOneOptions[levelOneOptions.length] = new Option(level[1], level[0]);
+                //}
+            });
+            $('req_breakdown_level0_id').selectedIndex = 1;
+            levelZeroSelected();
+        }
+
+        function levelZeroSelected() {
+            var numOptions = fillNextLevel('req_breakdown_level0_id', 'req_breakdown_level1_id');
+            if (numOptions == 1) {
+                //$('level1_field').hide();
+                $('level2_field').hide();
+                $('level3_field').hide();
+            } else {
+                $('level1_field').show();
+                $('level2_field').hide();
+                $('level3_field').hide();
+            }
+        }
+
+        function levelOneSelected() {
+            var numOptions = fillNextLevel('req_breakdown_level1_id', 'req_breakdown_level2_id');
+            if (numOptions == 1) {
+                $('level2_field').hide();
+                $('level3_field').hide();
+            } else {
+                $('level2_field').show();
+                $('level3_field').hide();
+            }
+        }
+
+        function levelTwoSelected() {
+            var numOptions = fillNextLevel('req_breakdown_level2_id', 'req_breakdown_level3_id');
+            if (numOptions == 1) {
+                $('level3_field').hide();
+            } else {
+                $('level3_field').show();
+            }
+        }
+
+        function fillNextLevel(selected, next) {
+            $(selected).options[0].disabled = true;
+            var level_id = $(selected).getValue();
+            var nextOptions = $(next).options;
+            var selectedOptions = $(selected).options;
+            nextOptions.length = 1;
+            for (var i = 1; i < selectedOptions.length; i++)
+            {
+                var level = selectedOptions[i];
+                //add all elements except the one selected previously
+                if (level.value != level_id) {
+                    nextOptions[nextOptions.length] = new Option(level.text, level.value);
+                }
+            }
+            return nextOptions.length;
+        }
+
+        document.observe('dom:loaded', function() {
+            //$('level1_field').hide();
+            $('level2_field').hide();
+            $('level3_field').hide();
+            $('req_breakdown_level0_id').observe('change', levelZeroSelected);
+            $('req_breakdown_level1_id').observe('change', levelOneSelected);
+            $('req_breakdown_level2_id').observe('change', levelTwoSelected);
+            fillLevelZero();
+        });

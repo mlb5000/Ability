@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: Requirement Review 1
+  description: To Review some stuff
+  requirements: one, two
+  product_id: 1
+
+two:
+  title: Requirement Review 2
+  description: To re-review some stuff
+  requirements: two
+  product_id: 1

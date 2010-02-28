@@ -6,6 +6,7 @@ ActionController::Routing::Routes.draw do |map|
     product.resources :quality_risks
     product.resources :releases
     product.resources :defects
+    product.resources :requirement_reviews
     product.resources :test_cases, :as => "cases", :path_prefix => "products/:product_id/testing"
     product.resources :test_executions, :as => "executions", :path_prefix => "products/:product_id/testing"
     product.resources :test_procedures, :as => "procedures", :path_prefix => "products/:product_id/testing"
@@ -59,6 +60,7 @@ ActionController::Routing::Routes.draw do |map|
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing or commenting them out if you're using named routes and resources.
+  map.connect ':controller/:action.:format'
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end

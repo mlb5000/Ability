@@ -17,7 +17,7 @@ class Admin::ReqBreakdownsControllerTest < ActionController::TestCase
       post :create, :req_breakdown => { }
     end
 
-    assert_redirected_to admin_req_breakdown_path(assigns(:req_breakdown))
+    assert_redirected_to admin_req_breakdowns_path
   end
 
   test "should show req_breakdown" do
@@ -32,7 +32,7 @@ class Admin::ReqBreakdownsControllerTest < ActionController::TestCase
 
   test "should update req_breakdown" do
     put :update, :id => req_breakdowns(:level0).to_param, :req_breakdown => { }
-    assert_redirected_to admin_req_breakdown_path(assigns(:req_breakdown))
+    assert_redirected_to admin_req_breakdown_path
   end
 
   test "should destroy req_breakdown" do

@@ -1,0 +1,22 @@
+<h1>Listing requirement_reviews</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+  </tr>
+
+<% @requirement_reviews.each do |requirement_review| %>
+  <tr>
+    <td><%=h requirement_review.title %></td>
+    <td><%=h requirement_review.description %></td>
+    <td><%= link_to 'Show', product_requirement_review_path(:product_id,requirement_review) %></td>
+    <td><%= link_to 'Edit', edit_product_requirement_review_path(:product_id, requirement_review) %></td>
+    <td><%= link_to 'Destroy', product_requirement_review_path(:product_id, requirement_review), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New requirement_review', new_product_requirement_review_path(:product_id) %>

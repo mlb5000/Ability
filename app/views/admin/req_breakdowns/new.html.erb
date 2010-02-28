@@ -1,36 +1,27 @@
 <h1>New req_breakdown</h1>
+<% javascript 'dynamic_requirement_levels' %>
 
 <% form_for :req_breakdown, @req_breakdown, :url => admin_req_breakdowns_path do |f| %>
-  <%= f.error_messages %>
+    <%= f.error_messages %>
 
-  <p>
-    Highest Requirement Level:
-    <%= select("level_zero", "id", RequirementLevel.all.collect {|rl| [ rl.name, rl.id ]} ) %>
-  </p>
-  <p>
-    Next Requirement Level:
-    <% @array = RequirementLevel.find(:all)
-    @array.delete_at(0)%>
-    <%= select("level_one", "id", @array.collect { |l2| [l2.name, l2.id] }, { :disabled => true, :include_blank => true } ) %>
-  </p>
-  <p>
-    Next Requirement Level:
-    <%= select("level_two_", "id", [] ) %>
-  </p>    
-  <p>
-    Next Requirement Level:
-    <%= select("level_three", "id", [] ) %>
-  </p>
-  <p>
+    <p>
+      Level 0 Type:
+      <%= select(:req_breakdown, "level0_id", [], { :include_blank => 'Select a Level'} ) %>
+    </p>
+    <p id="level1_field">
+      Level 1 Type:
+      <%= select(:req_breakdown, "level1_id", [], { :include_blank => 'Select a Level'} ) %>
+    </p>
+    <p id="level2_field">
+      Level 2 Type:
+      <%= select(:req_breakdown, "level2_id", [], { :include_blank => 'Select a Level'} ) %>
+    </p>
+    <p id="level3_field">
+      Level 3 Type:
+      <%= select(:req_breakdown, "level3_id", [], { :include_blank => 'Select a Level'} ) %>
+    </p>
+
     <%= f.submit 'Create' %>
-  </p>
 <% end %>
 
 <%= link_to 'Back', admin_req_breakdowns_path %>
-
-<%= observe_field 'level_zero_id', {:url => {:action => 'level_zero_update'}, :with => "level_zero_id" } %>
-<% if false %>
-<%= observe_field "level_one_id", {:url => {:action => 'level_one_update'}, :with => "var levels=new Array(level_zero_id, level_one_id)"} %>
-<%= observe_field "level_two_id", {:url => {:action => 'level_two_update'}, :with => "var levels=new Array(level_zero_id, level_one_id, level_two_id)" } %>
-<%= observe_field "level_three_id", {:url => {:action => 'level_three_update'}, :with => "var levels=new Array(level_zero_id, level_one_id, level_three_id)" } %>
-              <% end %>
