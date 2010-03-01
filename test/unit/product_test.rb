@@ -11,15 +11,15 @@ class ProductTest < ActiveSupport::TestCase
   end
 
   test "can count tests at level" do
-    assert @product.tests_at_level(requirement_levels(:one)) == 3
+    assert @product.tests_at_level(requirement_levels(:STRY)) == 3
   end
 
   test "can count requirements covered by test" do
-    assert @product.req_verified_by_test(requirement_levels(:one)) == true
+    assert @product.req_verified_by_test(requirement_levels(:STRY)) == true
   end
 
   test "can retrieve requirement reviews" do
     assert @product.requirement_reviews != nil
-    assert @product.requirement_reviews.count == 2
+    assert @product.requirement_reviews.count == 3
   end
 end

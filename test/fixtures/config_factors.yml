@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+os:
+  id: 1
+  name: Operating System
+
+browser:
+  id: 2
+  name: Browser
+
+memory:
+  id: 3
+  name: Memory

@@ -1,16 +1,16 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
+STRY:
   id: 1
   name: User Story
   abbreviation: STRY
 
-two:
+SRS:
   id: 2
   name: SRS
   abbreviation: SRS
 
-three:
+SyRS:
   id: 3
   name: System Requirement
   abbreviation: SyRS

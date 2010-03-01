@@ -3,11 +3,17 @@
 one:
   title: Requirement Review 1
   description: To Review some stuff
-  requirements: one, two
+  requirements: storyOne, srsOne, syRsOne, syRsTwo
   product_id: 1
 
 two:
   title: Requirement Review 2
   description: To re-review some stuff
-  requirements: two
+  requirements: srsOne, syRsOne, syRsTwo
+  product_id: 1
+
+three:
+  title: Requirement Review 3
+  description: To re-re-review some stuff
+  requirements: storyOne
   product_id: 1

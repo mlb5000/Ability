@@ -14,7 +14,7 @@ class RequirementReviewsControllerTest < ActionController::TestCase
 
   test "should create requirement_review" do
     assert_difference('RequirementReview.count') do
-      post :create, :requirement_review => { :requirements => [requirements(:one)] }
+      post :create, :requirement_review => { :requirements => [requirements(:storyOne)] }
     end
 
     assert_redirected_to product_requirement_review_path(products(:Ability), assigns(:requirement_review))

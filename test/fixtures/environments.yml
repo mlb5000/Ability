@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  name: Vista Development Box
+  description: This is the standard configuration against which Ability is tested.
+
+two:
+  id: 2
+  name: Macbook
+  description: This is the next most important configuration.

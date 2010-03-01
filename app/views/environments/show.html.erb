@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @environment.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @environment.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_environment_path(@environment) %> |
+<%= link_to 'Back', environments_path %>

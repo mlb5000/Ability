@@ -7,9 +7,9 @@ class Requirement < ActiveRecord::Base
   def unique_id
     return self.product.identifier + '-' +
            self.requirement_level.abbreviation + '-' +
-           Requirement.all(:order => "created_at",
+           (Requirement.all(:order => "created_at",
                            :conditions => ["requirement_level_id = ? AND product_id = ?",
                                            self.requirement_level.id,
-                                           self.product.id]).index(self)
+                                           self.product.id]).index(self)+1).to_s
   end
 end

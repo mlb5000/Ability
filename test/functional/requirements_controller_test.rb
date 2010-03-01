@@ -21,23 +21,23 @@ class RequirementsControllerTest < ActionController::TestCase
   end
 
   test "should show requirement" do
-    get :show, :product_id => products(:Ability).id, :id => requirements(:one).to_param
+    get :show, :product_id => products(:Ability).id, :id => requirements(:storyOne).to_param
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :product_id => products(:Ability).id, :id => requirements(:one).to_param
+    get :edit, :product_id => products(:Ability).id, :id => requirements(:storyOne).to_param
     assert_response :success
   end
 
   test "should update requirement" do
-    put :update, :product_id => products(:Ability).id, :id => requirements(:one).to_param, :requirement => { }
+    put :update, :product_id => products(:Ability).id, :id => requirements(:storyOne).to_param, :requirement => { }
     assert_redirected_to product_requirement_path(products(:Ability), assigns(:requirement))
   end
 
   test "should destroy requirement" do
     assert_difference('Requirement.count', -1) do
-      delete :destroy, :id => requirements(:one).to_param
+      delete :destroy, :id => requirements(:storyOne).to_param
     end
 
     assert_redirected_to product_requirements_path(products(:Ability))

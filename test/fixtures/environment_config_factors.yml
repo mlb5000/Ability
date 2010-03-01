@@ -1,0 +1,31 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  environment_id: 1
+  config_factor_id: 1
+  value: Windows Vista Ultimate
+
+two:
+  environment_id: 1
+  config_factor_id: 2
+  value: Firefox 3.5
+
+three:
+  environment_id: 1
+  config_factor_id: 3
+  value: 8GB
+
+four:
+  environment_id: 2
+  config_factor_id: 1
+  value: Mac OS 10.5
+
+five:
+  environment_id: 2
+  config_factor_id: 2
+  value: Chrome
+
+six:
+  environment_id: 2
+  config_factor_id: 3
+  value: 2GB
