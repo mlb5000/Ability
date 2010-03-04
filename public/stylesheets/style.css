@@ -6,6 +6,10 @@ body, p, ol, ul, td {
   line-height: 18px;
 }
 
+img.add {
+    border: 0;
+}
+
 pre {
   background-color: #eee;
   padding: 10px;
@@ -14,6 +18,15 @@ pre {
 
 table {
     border: 1px solid black;
+}
+
+table.list {
+    width: 100%;
+}
+
+table.addHeader {
+    width: 100%;
+    border: none;
 }
 
 th {

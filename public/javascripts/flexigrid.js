@@ -949,7 +949,7 @@
 								}
 							}
 							
-							if (this.hide) $(this).hide();
+							if (this.hidden) $(this).hide();
 							
 							if (!p.colmodel)
 							{

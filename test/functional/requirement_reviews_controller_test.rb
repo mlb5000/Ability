@@ -2,7 +2,7 @@ require 'test_helper'
 
 class RequirementReviewsControllerTest < ActionController::TestCase
   test "should get index" do
-    get :index
+    get :index, :product_id => products(:Ability).id
     assert_response :success
     assert_not_nil assigns(:requirement_reviews)
   end

@@ -1,6 +1,7 @@
 <h1>Listing req_breakdowns</h1>
 
-<table>
+<% addheaderhable(new_admin_req_breakdown_path, "Add New Requirement Breakdown") %>
+<table class='list'>
   <tr>
     <th>Traceability</th>
   </tr>
@@ -14,7 +15,3 @@
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New req_breakdown', new_admin_req_breakdown_path %>

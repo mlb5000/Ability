@@ -1,6 +1,7 @@
-<h1>Listing quality_risks</h1>
+<h1>Quality Risks for <%=@product.name%></h1>
 
-<table>
+<% addheaderhable(new_product_quality_risk_path(@product), "Add New Quality Risk") %>
+<table class='list'>
   <tr>
     <th>Product</th>
     <th>Risk category</th>
@@ -26,7 +27,3 @@
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New quality_risk', new_product_quality_risk_path(@product) %>

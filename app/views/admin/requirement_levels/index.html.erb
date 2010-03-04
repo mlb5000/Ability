@@ -1,6 +1,7 @@
 <h1>Listing requirement_levels</h1>
 
-<table>
+<% addheaderhable(new_admin_requirement_level_path, "Add New Requirement Level") %>
+<table class='list'>
   <tr>
     <th>Name</th>
   </tr>
@@ -14,7 +15,3 @@
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New requirement_level', new_admin_requirement_level_path %>

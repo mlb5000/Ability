@@ -1,6 +1,6 @@
 var req_levels = new Array();
         <% for level in @req_levels %>
-        req_levels.push(new Array(<%= level.id %>, '<%=h level.name %>'));
+        req_levels.push(new Array('<%= level.id %>', '<%=h level.name %>'));
         <% end %>
 
         function fillLevelZero() {

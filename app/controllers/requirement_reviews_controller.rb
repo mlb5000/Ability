@@ -2,7 +2,8 @@ class RequirementReviewsController < ApplicationController
   # GET /requirement_reviews
   # GET /requirement_reviews.xml
   def index
-    @requirement_reviews = RequirementReview.all
+    @product = Product.find(params[:product_id])
+    @requirement_reviews = @product.requirement_reviews
 
     respond_to do |format|
       format.html # index.html.erb

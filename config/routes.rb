@@ -14,7 +14,7 @@ ActionController::Routing::Routes.draw do |map|
     product.resources :test_procedures, :as => "procedures", :path_prefix => "products/:product_id/testing"
   end
 
-  map.resources :test_environments, :as => "environments"
+  map.resources :environments
 
   map.namespace(:admin) do |admin|
     admin.resources :req_breakdowns
@@ -62,6 +62,7 @@ ActionController::Routing::Routes.draw do |map|
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing or commenting them out if you're using named routes and resources.
+  map.connect ':controller/:id/:action'
   map.connect ':controller/:action.:format'
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'

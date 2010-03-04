@@ -1,13 +1,53 @@
 <p>
-  <b>Name:</b>
-  <%=h @environment.name %>
+  <strong>Name:</strong>
+  <%= h @environment.name %>
 </p>
 
 <p>
-  <b>Description:</b>
-  <%=h @environment.description %>
+  <strong>Description:</strong>
+  <%= h @environment.description %>
 </p>
+
+<table id="flex1"></table>
 
 
 <%= link_to 'Edit', edit_environment_path(@environment) %> |
 <%= link_to 'Back', environments_path %>
+
+<script type="text/javascript">
+    jq123("#flex1").flexigrid
+            (
+            {
+                url: '<%= environment_factor_griddata_url(@environment.id) %>',
+                dataType: 'json',
+                colModel : [
+                    {display: 'Factor', name : 'config_factor.name', width : 40, sortable : false, align: 'left'},
+                    {display: 'Value', name : 'value', width : 180, sortable : false, align: 'left'}
+                ],
+			buttons : [
+				{name: 'Add', bclass: 'add', onpress : addFactor},
+				{name: 'Delete', bclass: 'delete', onpress : removeFactor},
+				{separator: true}
+				],
+                sortname: "created_at",
+                sortorder: "desc",
+                usepager: true,
+                title: 'Environment Factors',
+                useRp: true,
+                rp: 15,
+                showTableToggleBtn: true,
+                width: 700,
+                height: 200
+            }
+                    );
+
+        function addFactor(com,grid)
+        {
+
+        }
+
+        function removeFactor(com,grid)
+        {
+            
+        }
+</script>

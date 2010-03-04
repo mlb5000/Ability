@@ -1,6 +1,7 @@
-<h1>Listing releases</h1>
+<h1><%=@product.name%> Releases</h1>
 
-<table>
+<% addheaderhable(new_product_release_path(@product), "Add New Release") %>
+<table class='list'>
   <tr>
     <th>Version</th>
     <th>Start Date</th>
@@ -22,7 +23,3 @@
 <% i = i.next
    end %>
 </table>
-
-<br />
-
-<%= link_to 'New release', new_product_release_path(@product) %>

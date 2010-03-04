@@ -39,7 +39,7 @@
     <li><a href="#" class="parent"><span>Testing</span></a>
       <div>
         <ul>
-          <li><a href=<%= test_environments_path %>><span>Test Environments</span></a></li>
+          <li><a href=<%= environments_path %>><span>Test Environments</span></a></li>
           <% if @product != nil and @product.id != nil %>
               <li><a href=<%= product_test_cases_path(@product) %>><span>Test Cases</span></a></li>
               <li><a href=<%= product_test_procedures_path(@product) %>><span>Test Procedures</span></a></li>

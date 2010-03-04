@@ -82,4 +82,58 @@ class EnvironmentsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def factor_griddata
+    @environment = Environment.find(params[:id])
+    page = (params[:page]).to_i
+    rp = (params[:rp]).to_i
+    query = params[:query]
+    qtype = params[:qtype]
+    sortname = params[:sortname]
+    sortorder = params[:sortorder]
+
+    if (!sortname)
+      sortname = "created_at"
+    end
+
+    if (!sortorder)
+      sortorder = "desc"
+    end
+
+    if (!page)
+      page = 1
+    end
+
+    if (!rp)
+      rp = 10
+    end
+
+    start = ((page-1) * rp).to_i
+    if query != nil
+      query = "%"+query+"%"
+    else
+      query = "%%"
+    end
+
+    # No search terms provided
+    if (query == "%%")
+      @factors = EnvironmentConfigFactor.find_all_by_environment_id(@environment.id,
+                                                                    :order => sortname+' '+sortorder,
+                                                                    :limit =>rp,
+                                                                    :offset =>start)
+      count = @factors.count()
+    end
+
+    # Construct a hash from the ActiveRecord result
+    return_data = Hash.new()
+    return_data[:page] = page
+    return_data[:total] = count
+
+    return_data[:rows] = @factors.collect{|u| {:id=>u.config_factor.id,
+                                               :cell=>[u.config_factor.name,
+                                                       u.value]}}
+
+    # Convert the hash to a json object
+    render :text=>return_data.to_json, :layout=>false
+  end
 end

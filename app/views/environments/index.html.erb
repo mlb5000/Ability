@@ -1,6 +1,7 @@
-<h1>Listing environments</h1>
+<h1>Test Environments</h1>
 
-<table>
+<% addheaderhable(new_environment_path, "Add New Test Environment") %>
+<table class='list'>
   <tr>
     <th>Name</th>
     <th>Description</th>
@@ -16,7 +17,3 @@
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New environment', new_environment_path %>
