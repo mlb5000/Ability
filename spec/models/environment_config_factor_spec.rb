@@ -1,6 +1,6 @@
-require 'test_helper'
+require 'spec_helper'
 
-class JavascriptsControllerTest < ActionController::TestCase
+class EnvironmentConfigFactorTest < ActiveSupport::TestCase
   # Replace this with your real tests.
   test "the truth" do
     assert true

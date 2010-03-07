@@ -1,6 +1,6 @@
-require 'test_helper'
+require 'spec_helper'
 
-class ProductsControllerTest < ActionController::TestCase
+describe ProductsController do
   test "should get index" do
     get :index
     assert_response :success

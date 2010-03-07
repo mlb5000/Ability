@@ -1,6 +1,6 @@
-require 'test_helper'
+require 'spec_helper'
 
-class QualityRiskTest < ActiveSupport::TestCase
+class RequirementTypeTest < ActiveSupport::TestCase
   # Replace this with your real tests.
   test "the truth" do
     assert true

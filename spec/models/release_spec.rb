@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'spec_helper'
 
 class ReleaseTest < ActiveSupport::TestCase
   # Replace this with your real tests.

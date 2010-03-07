@@ -46,3 +46,13 @@ production:
   username: root
   password:
   host: localhost
+
+selenium:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: Ability_selenium
+  pool: 5
+  username: root
+  password:
+  host: localhost

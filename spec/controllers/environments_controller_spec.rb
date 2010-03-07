@@ -1,6 +1,6 @@
-require 'test_helper'
+require 'spec_helper'
 
-class EnvironmentsControllerTest < ActionController::TestCase
+describe EnvironmentsController do
   test "should get index" do
     get :index
     assert_response :success
