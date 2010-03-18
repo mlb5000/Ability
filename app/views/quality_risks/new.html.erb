@@ -8,7 +8,6 @@
     <%= f.input :mitigation_strategy, :label => 'Mitigation Strategy' %>
     <%= f.input :description %>
     <%= f.input :explanation %>
-    <%= f.input :likelihood %>
     <%= f.input :likelihood, :as => :select, :collection => [1,2,3,4,5], :include_blank => false, :hint => "1 = very unlikely, 5 = almost certain" %>
     <%= f.input :impact, :as => :select, :collection => [1,2,3,4,5], :include_blank => false, :hint => "1 = none, 5 = catastrophic (e.g. mission failure, loss of life)" %>
   <% end %>

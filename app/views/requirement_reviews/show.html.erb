@@ -9,5 +9,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_product_requirement_review_path(:product_id, @requirement_review) %> |
-<%= link_to 'Back', product_requirement_reviews_path(:product_id) %>
+<%= link_to 'Edit', edit_product_requirement_review_path(params[:product_id], @requirement_review) %> |
+<%= link_to 'Back', product_requirement_reviews_path(params[:product_id]) %>

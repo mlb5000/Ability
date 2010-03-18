@@ -21,8 +21,9 @@
         <td><%= h requirement.satisfaction %></td>
         <td><%= h requirement.dissatisfaction %></td>
         <td><%= h requirement.derived_priority %></td>
-        <td><%= link_to 'Edit', edit_product_requirement_path(@product, requirement) %></td>
-        <td><%= link_to image_tag("/images/close.png", :border=>0), @product, :confirm => 'Are you sure?', :method => :delete %></td>
+        <td><%= editmodelbutton(edit_product_requirement_path(@product, requirement)) %>
+            <%= deletemodelbutton(product_requirement_path(@product, requirement)) %>
+        </td>
       </tr>
   <% end %>
 </table>

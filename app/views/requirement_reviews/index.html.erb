@@ -3,17 +3,19 @@
 <% addheaderhable(new_product_requirement_review_path(@product), "Create a new Requirement Review") %>
 <table class='list'>
   <tr>
+    <th>Review ID</th>
     <th>Title</th>
     <th>Description</th>
+    <th></th>
   </tr>
 
-  <% @requirement_reviews.each do |requirement_review| %>
+  <% @requirement_reviews.each do |review| %>
       <tr>
-        <td><%= h requirement_review.title %></td>
-        <td><%= h requirement_review.description %></td>
-        <td><%= link_to 'Show', product_requirement_review_path(:product_id, requirement_review) %></td>
-        <td><%= link_to 'Edit', edit_product_requirement_review_path(:product_id, requirement_review) %></td>
-        <td><%= link_to 'Destroy', product_requirement_review_path(:product_id, requirement_review), :confirm => 'Are you sure?', :method => :delete %></td>
+        <td><%= link_to review.unique_id, product_requirement_review_path(review.product, review) %></td>
+        <td><%= h review.title %></td>
+        <td><%= h review.description %></td>
+        <td><%= editmodelbutton(edit_product_requirement_review_path(review.product, review)) %>
+            <%= deletemodelbutton(product_requirement_review_path(review.product, review)) %>
       </tr>
   <% end %>
 </table>

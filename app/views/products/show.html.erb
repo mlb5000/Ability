@@ -6,7 +6,7 @@
         <tr text-align="center">
           <th>Requirement Level</th>
           <th>Test Cases</th>
-          <th>Verified?<br>(As of last execution)</th>
+          <th>Verified?<br>(for this release)</th>
         </tr>
 
         <% @product.req_breakdown.levels.each do |level| %>
@@ -17,7 +17,7 @@
                   <td>
                     <% @product.tests_at_level(level) %>0
                   </td>
-                  <td><%= check_box "product", "req_verified_by_test", :checked => @product.req_verified_by_test(level), :disabled => true  %></td>
+                  <td style="text-align:center"><% if @product.req_verified_by_test(level) %> <img src="/images/check-mark-icon.png"/><% else %><img src="/images/delete-icon.png"/><% end %></td>
                 </tr>
             <% end %>
         <% end %>
@@ -33,19 +33,19 @@
 
         <tr class="d0">
           <td>Requirements Traceability</td>
-          <td>(run icon)</td>
+          <td style="text-align:center"><a href=""><img src="/images/play-icon.png"/></a></td>
         </tr>
         <tr class="d1">
           <td>Residual Risk</td>
-          <td>(run icon)</td>
+          <td style="text-align:center"><a href=""><img src="/images/play-icon.png"/></a></td>
         </tr>
         <tr class="d0">
           <td>Test Progress</td>
-          <td>(run icon)</td>
+          <td style="text-align:center"><a href=""><img src="/images/play-icon.png"/></a></td>
         </tr>
         <tr class="d1">
           <td>Test Status</td>
-          <td>(run icon)</td>
+          <td style="text-align:center"><a href=""><img src="/images/play-icon.png"/></a></td>
         </tr>
       </table>
     </td>

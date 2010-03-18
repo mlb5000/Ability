@@ -17,7 +17,8 @@ describe ReleasesController do
       post :create, :product_id => products(:Ability).id, :release => { }
     end
 
-    assert_redirected_to product_release_path(products(:Ability), assigns(:release))
+    assert assigns(:release)
+    assert_redirected_to product_releases_path(products(:Ability))
   end
 
   test "should show release" do

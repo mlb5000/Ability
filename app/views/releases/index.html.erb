@@ -8,6 +8,7 @@
     <th>Release Date<br>(Targeted)</th>
     <th>Identified Risks</th>
     <th>%Risks Mitigated</th>
+    <th></th>
   </tr>
 
 <% i = 0
@@ -18,7 +19,9 @@
     <td><%=h release.enddate %></td>
     <td>0</td>
     <td>0</td>
-    <td><%= link_to 'Destroy', product_release_path(@product, release), :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= editmodelbutton(edit_product_release_path(@product, release)) %>
+        <%= deletemodelbutton(product_release_path(@product, release)) %>
+    </td>
   </tr>
 <% i = i.next
    end %>

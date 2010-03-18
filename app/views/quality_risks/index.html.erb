@@ -3,27 +3,28 @@
 <% addheaderhable(new_product_quality_risk_path(@product), "Add New Quality Risk") %>
 <table class='list'>
   <tr>
-    <th>Product</th>
+    <th>Quality Risk ID</th>
     <th>Risk category</th>
     <th>Description</th>
     <th>Mitigation strategy</th>
     <th>Explanation</th>
     <th>Likelihood</th>
     <th>Impact</th>
+    <th></th>
   </tr>
 
 <% @quality_risks.each do |quality_risk| %>
   <tr>
-    <td><%=h quality_risk.product_id %></td>
+    <td><%= link_to quality_risk.unique_id, product_quality_risk_path(@product, quality_risk) %></td>
     <td><%=h quality_risk.risk_category_id %></td>
     <td><%=h quality_risk.description %></td>
     <td><%=h quality_risk.mitigation_strategy_id %></td>
     <td><%=h quality_risk.explanation %></td>
     <td><%=h quality_risk.likelihood %></td>
     <td><%=h quality_risk.impact %></td>
-    <td><%= link_to 'Show', product_quality_risk_path(@product, quality_risk) %></td>
-    <td><%= link_to 'Edit', edit_product_quality_risk_path(@product, quality_risk) %></td>
-    <td><%= link_to 'Destroy', product_quality_risk_path(@product, quality_risk), :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= editmodelbutton(edit_product_quality_risk_path(@product, quality_risk)) %>
+        <%= deletemodelbutton(product_quality_risk_path(@product, quality_risk)) %>
+    </td>
   </tr>
 <% end %>
 </table>
