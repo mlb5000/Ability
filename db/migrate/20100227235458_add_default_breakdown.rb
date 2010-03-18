@@ -4,6 +4,7 @@ class AddDefaultBreakdown < ActiveRecord::Migration
     RequirementLevel.create :name => "User Story", :abbreviation => "STRY"
     RequirementLevel.create :name => "System Requirement", :abbreviation => "SyRS"
     RequirementLevel.create :name => "Software Requirement", :abbreviation => "SRS"
+    ReqBreakdown.delete_all
     @default = ReqBreakdown.new
     @default.level0_id=RequirementLevel.find_by_abbreviation("STRY").id
     @default.level1_id=RequirementLevel.find_by_abbreviation("SyRS").id

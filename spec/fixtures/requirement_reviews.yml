@@ -1,19 +1,19 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
+  id: 1
   title: Requirement Review 1
   description: To Review some stuff
-  requirements: storyOne, srsOne, syRsOne, syRsTwo
   product_id: 1
 
 two:
+  id: 2
   title: Requirement Review 2
   description: To re-review some stuff
-  requirements: srsOne, syRsOne, syRsTwo
   product_id: 1
 
 three:
+  id: 3
   title: Requirement Review 3
   description: To re-re-review some stuff
-  requirements: storyOne
   product_id: 1

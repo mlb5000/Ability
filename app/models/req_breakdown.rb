@@ -15,4 +15,9 @@ class ReqBreakdown < ActiveRecord::Base
   def levels
     return [self.level0, self.level1, self.level2, self.level3]
   end
+
+  #necessary for formtastic
+  def name 
+    return traceability
+  end
 end

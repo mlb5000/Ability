@@ -1,11 +1,11 @@
 <p>
   <b>Requirement level:</b>
-  <%=h @requirement.requirement_level_id %>
+  <%=h @requirement.requirement_level.name %>
 </p>
 
 <p>
   <b>Requirement type:</b>
-  <%=h @requirement.requirement_type_id %>
+  <%=h @requirement.requirement_type.name %>
 </p>
 
 <p>
@@ -47,7 +47,6 @@
   <b>Dissatisfaction:</b>
   <%=h @requirement.dissatisfaction %>
 </p>
-
 
 <%= link_to 'Edit', edit_product_requirement_path(@requirement.product, @requirement) %> |
 <%= link_to 'Back', product_requirements_path %>

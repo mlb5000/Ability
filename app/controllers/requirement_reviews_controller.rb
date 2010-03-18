@@ -25,6 +25,7 @@ class RequirementReviewsController < ApplicationController
   # GET /requirement_reviews/new
   # GET /requirement_reviews/new.xml
   def new
+    @product = Product.find(params[:product_id])
     @requirement_review = RequirementReview.new
 
     respond_to do |format|

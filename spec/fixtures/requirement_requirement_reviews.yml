@@ -1,0 +1,33 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  requirement_id: 1
+  requirement_review_id: 3
+
+two:
+  requirement_id: 1
+  requirement_review_id: 1
+
+three:
+  requirement_id: 2
+  requirement_review_id: 1
+
+four:
+  requirement_id: 2
+  requirement_review_id: 2
+
+five:
+  requirement_id: 3
+  requirement_review_id: 1
+
+six:
+  requirement_id: 3
+  requirement_review_id: 2
+
+seven:
+  requirement_id: 4
+  requirement_review_id: 1
+
+eight:
+  requirement_id: 4
+  requirement_review_id: 2

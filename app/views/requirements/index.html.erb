@@ -3,33 +3,26 @@
 <% addheaderhable(new_product_requirement_path(@product), "Add New Requirement") %>
 <table class='list'>
   <tr>
-    <th>Requirement level</th>
-    <th>Requirement type</th>
+    <th>Requirement ID</th>
+    <th>Requirement Type</th>
     <th>Description</th>
-    <th>Rationale</th>
-    <th>Originator</th>
-    <th>Fit criterion</th>
-    <th>Source</th>
     <th>Priority</th>
     <th>Satisfaction</th>
     <th>Dissatisfaction</th>
+    <th>Derived Priority<br>(S*D)*(1/P)</th>
   </tr>
 
   <% @requirements.each do |requirement| %>
       <tr>
-        <td><%= h requirement.requirement_level_id %></td>
-        <td><%= h requirement.requirement_type_id %></td>
+        <td><%= link_to requirement.unique_id, product_requirement_path(@product, requirement) %></td>
+        <td><%= h requirement.requirement_type.name %></td>
         <td><%= h requirement.description %></td>
-        <td><%= h requirement.rationale %></td>
-        <td><%= h requirement.originator %></td>
-        <td><%= h requirement.fit_criterion %></td>
-        <td><%= h requirement.source_id %></td>
         <td><%= h requirement.priority %></td>
         <td><%= h requirement.satisfaction %></td>
         <td><%= h requirement.dissatisfaction %></td>
-        <td><%= link_to 'Show', product_requirement_path(@product, requirement) %></td>
+        <td><%= h requirement.derived_priority %></td>
         <td><%= link_to 'Edit', edit_product_requirement_path(@product, requirement) %></td>
-        <td><%= link_to 'Destroy', product_requirement_path(@product, requirement), :confirm => 'Are you sure?', :method => :delete %></td>
+        <td><%= link_to image_tag("/images/close.png", :border=>0), @product, :confirm => 'Are you sure?', :method => :delete %></td>
       </tr>
   <% end %>
 </table>

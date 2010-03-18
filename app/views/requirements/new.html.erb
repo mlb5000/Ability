@@ -1,51 +1,18 @@
 <h1>New requirement</h1>
 
-<% form_for :requirement, @requirement, :url => product_requirements_path(:product_id) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :requirement_level_id %><br />
-    <%= collection_select(:requirement, :requirement_level_id, RequirementLevel.all, :id, :name) %>
-  </p>
-  <p>
-    <%= f.label :requirement_type_id %><br />
-    <%= collection_select(:requirement, :requirement_type_id, RequirementType.all, :id, :name) %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </p>
-  <p>
-    <%= f.label :rationale %><br />
-    <%= f.text_field :rationale %>
-  </p>
-  <p>
-    <%= f.label :originator %><br />
-    <%= f.text_field :originator %>
-  </p>
-  <p>
-    <%= f.label :fit_criterion %><br />
-    <%= f.text_field :fit_criterion %>
-  </p>
-  <p>
-    <%= f.label :source_id %><br />
-    <%= f.text_field :source_id %>
-  </p>
-  <p>
-    <%= f.label :priority %><br />
-    <%= f.text_field :priority %>
-  </p>
-  <p>
-    <%= f.label :satisfaction %><br />
-    <%= f.text_field :satisfaction %>
-  </p>
-  <p>
-    <%= f.label :dissatisfaction %><br />
-    <%= f.text_field :dissatisfaction %>
-  </p>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
+<% semantic_form_for :requirement, @requirement, :url => product_requirements_path(@product) do |f| %>
+  <% f.inputs do%>
+    <%= f.input :product, :as => :hidden, :value => @product.id %>
+    <%= f.input :requirement_level, :include_blank => false %>
+    <%= f.input :requirement_type, :include_blank => false %>
+    <%= f.input :description, :rows => 40 %>
+    <%= f.input :rationale %>
+    <%= f.input :fit_criterion %>
+    <%= f.input :priority, :as => :select, :collection => [5,4,3,2,1], :include_blank => false, :hint => "5 = lowest, 1 = highest" %>
+    <%= f.input :satisfaction, :as => :select, :collection => [1,2,3,4,5], :include_blank => false, :hint => "1 = don't really care, 5 = extremely satisfied'" %>
+    <%= f.input :dissatisfaction, :as => :select, :collection => [1,2,3,4,5], :include_blank => false, :hint => "1 = don't really care, 5 = extremely dissatisfied" %>
+  <% end %>
+  <%= f.buttons %>
 <% end %>
 
-<%= link_to 'Back', product_requirements_path(:product_id) %>
+<%= link_to 'Back', product_requirements_path(@product) %>

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100301014303) do
+ActiveRecord::Schema.define(:version => 20100318003732) do
 
   create_table "config_factors", :force => true do |t|
     t.string   "name"
@@ -28,6 +28,13 @@ ActiveRecord::Schema.define(:version => 20100301014303) do
   create_table "environments", :force => true do |t|
     t.string   "name"
     t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "mitigation_strategies", :force => true do |t|
+    t.string   "name"
+    t.string   "explanation"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -79,6 +86,13 @@ ActiveRecord::Schema.define(:version => 20100301014303) do
     t.string   "abbreviation", :default => ""
   end
 
+  create_table "requirement_requirement_reviews", :force => true do |t|
+    t.integer  "requirement_id"
+    t.integer  "requirement_review_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "requirement_reviews", :force => true do |t|
     t.string   "title"
     t.string   "description"
@@ -113,5 +127,25 @@ ActiveRecord::Schema.define(:version => 20100301014303) do
     t.datetime "updated_at"
     t.integer  "product_id"
   end
+
+  create_table "versions", :force => true do |t|
+    t.integer  "versioned_id"
+    t.string   "versioned_type"
+    t.integer  "user_id"
+    t.string   "user_type"
+    t.string   "user_name"
+    t.text     "changes"
+    t.integer  "number"
+    t.string   "tag"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "versions", ["created_at"], :name => "index_versions_on_created_at"
+  add_index "versions", ["number"], :name => "index_versions_on_number"
+  add_index "versions", ["tag"], :name => "index_versions_on_tag"
+  add_index "versions", ["user_id", "user_type"], :name => "index_versions_on_user_id_and_user_type"
+  add_index "versions", ["user_name"], :name => "index_versions_on_user_name"
+  add_index "versions", ["versioned_id", "versioned_type"], :name => "index_versions_on_versioned_id_and_versioned_type"
 
 end

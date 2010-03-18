@@ -1,6 +1,7 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 storyOne:
+  id: 1
   requirement_level_id: 1
   requirement_type_id: 1
   description: MyString
@@ -9,12 +10,12 @@ storyOne:
   fit_criterion: MyString
   source_id: 1
   priority: 1
-  satisfaction: 1
-  dissatisfaction: 1
+  satisfaction: 2
+  dissatisfaction: 3
   product_id: 1
-  requirement_reviews: one, three
 
 srsOne:
+  id: 2
   requirement_level_id: 2
   requirement_type_id: 1
   description: MyString
@@ -22,13 +23,13 @@ srsOne:
   originator: MyString
   fit_criterion: MyString
   source_id: 1
-  priority: 1
+  priority: 3
   satisfaction: 1
-  dissatisfaction: 1
+  dissatisfaction: 2
   product_id: 1
-  requirement_reviews: one, two
 
 syRsOne:
+  id: 3
   requirement_level_id: 3
   requirement_type_id: 1
   description: MyString
@@ -36,13 +37,13 @@ syRsOne:
   originator: MyString
   fit_criterion: MyString
   source_id: 1
-  priority: 1
-  satisfaction: 1
-  dissatisfaction: 1
+  priority: 2
+  satisfaction: 4
+  dissatisfaction: 5
   product_id: 1
-  requirement_reviews: one, two
 
 syRsTwo:
+  id: 4
   requirement_level_id: 3
   requirement_type_id: 1
   description: MyString
@@ -54,4 +55,3 @@ syRsTwo:
   satisfaction: 1
   dissatisfaction: 1
   product_id: 1
-  requirement_reviews: one, two

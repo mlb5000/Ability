@@ -8,7 +8,7 @@ describe RequirementReviewsController do
   end
 
   test "should get new" do
-    get :new
+    get :new, :product_id => products(:Ability).id
     assert_response :success
   end
 

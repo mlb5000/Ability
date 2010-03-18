@@ -21,6 +21,9 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem "rspec", :lib => false, :version => ">= 1.2.9"
   config.gem "rspec-rails", :lib => false, :version => ">= 1.2.9"
+  config.gem 'vestal_versions'
+  config.gem 'formtastic'
+  config.gem 'jintastic'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
